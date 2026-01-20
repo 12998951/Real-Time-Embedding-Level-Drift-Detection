@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Real-Time Embedding-Level Drift Detection for Trustworthy Biometric Systems"
+message: "If you use this software, please cite the corresponding arXiv paper."
+type: software
+authors:
+  - given-names: Moien
+    family-names: Shaik
+keywords:
+  - concept drift
+  - representation drift
+  - biometric systems
+  - face recognition
+  - voice biometrics
+  - embedding-level monitoring
+license: MIT
+repository-code: "https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection"
