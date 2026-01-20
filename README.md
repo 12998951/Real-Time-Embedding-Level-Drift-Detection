@@ -6,11 +6,11 @@ This repository provides the official implementation of a **real-time, label-fre
 Biometric systems deployed in real-world environments are subject to non-stationary conditions such as illumination changes, ageing, sensor variation, and acoustic noise. These factors introduce representation drift that can silently degrade system trustworthiness. This work addresses the need for **early, interpretable, and modality-agnostic drift detection**.
 
 ## Key Contributions
-- Real-time embedding-level drift detection without labels
-- Unified drift detector for face and voice biometrics
-- Lightweight statistical drift signal with streaming operation
-- Interpretable drift dynamics (onset, transition, stabilization)
-- Reproducible experimental pipeline
+- Real-time embedding-level drift detection without labels  
+- Unified drift detector for face and voice biometrics  
+- Lightweight statistical drift signal with streaming operation  
+- Interpretable drift dynamics (onset, transition, stabilization)  
+- Reproducible experimental pipeline  
 
 ## Repository Structure
 ```text
@@ -21,4 +21,3 @@ embeddings/
 utils/
   └── visualization/  # drift curve plotting
 assets/               # drift curve figures
-
