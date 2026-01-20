@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Experiment outputs
+*.npy
+*.wav
+
+# OS / OneDrive
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Virtual environments
+venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
