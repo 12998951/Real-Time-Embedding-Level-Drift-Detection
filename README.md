@@ -14,10 +14,10 @@ Biometric systems deployed in real-world environments are subject to non-station
 
 ## Repository Structure
 ```text
-drift_detector/        # core drift detection logic
+drift_detector/        # Core drift detection logic
 embeddings/
-  ├── face/            # face encoder + illumination drift experiments
-  └── voice/           # voice encoder + noise drift experiments
+  ├── face/            # Face encoder and illumination drift experiments
+  └── voice/           # Voice encoder and noise drift experiments
 utils/
-  └── visualization/  # drift curve plotting
-assets/               # drift curve figures
+  └── visualization/  # Drift curve plotting utilities
+assets/               # Drift curve figures
