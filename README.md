@@ -4,7 +4,7 @@ A research project investigating label-free distributional drift detection in em
 
 Current status: Synthetic-data prototype with preliminary evaluation. Validation using real biometric embeddings remains future work.
 
-Overview
+## Overview
 
 Machine learning systems can encounter changes in their input data after deployment. In biometric applications, these changes may arise from variations in illumination, ageing, camera or microphone characteristics, environmental noise, and other operating conditions.
 
@@ -14,7 +14,7 @@ This project explores a lightweight statistical approach that compares reference
 
 The present implementation evaluates controlled synthetic distribution shifts. It does not yet validate a complete face or voice recognition pipeline.
 
-Research Objectives
+## Research Objectives
 
 - Investigate whether embedding-level statistics can provide a practical signal for detecting distributional changes without requiring labels.
 - Evaluate the relationship between drift magnitude, detection sensitivity, and false-alarm behaviour.
@@ -22,7 +22,7 @@ Research Objectives
 - Establish a reproducible experimental pipeline that can later be extended to real face and voice embeddings.
 - Investigate the limitations of simple statistical drift signals under noise and changing operating conditions.
 
-Current Implementation
+## Current Implementation
 
 The repository includes:
 
@@ -37,15 +37,15 @@ The repository includes:
 
 The implementation is a window-based statistical prototype. It does not yet establish production-grade streaming performance or validate a complete biometric recognition system.
 
-Methodology
+## Methodology
 
-Reference representation
+### Reference representation
 
 A reference window is generated from a baseline synthetic distribution. Its mean vector represents the initial reference state.
 
 Let $R$ denote the reference window and $C$ the current window.
 
-Drift scoring
+### Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
@@ -59,7 +59,7 @@ where:
 - $\mu_C$ is the mean vector of the current window.
 - $s_t$ is the resulting drift score.
 
-Threshold-based detection
+### Threshold-based detection
 
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
@@ -73,11 +73,11 @@ $$
 
 Here, $\tau$ is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
-Synthetic evaluation
+### Synthetic evaluation
 
 Controlled experiments vary the mean of the generated embedding distribution to investigate how detection sensitivity changes with drift magnitude. Repeated reference samples are used to examine variability in the observed results.
 
-Experimental Configuration
+## Experimental Configuration
 
 The consolidated synthetic evaluation uses the following configuration:
 
@@ -94,7 +94,7 @@ The consolidated synthetic evaluation uses the following configuration:
 
 The script uses fixed random seeds for the reference trials to support repeatable synthetic experiments.
 
-Preliminary Synthetic Results
+## Preliminary Synthetic Results
 
 In the recorded consolidated evaluation, the mean detection rates across 30 independent reference trials were:
 
@@ -110,11 +110,11 @@ In the recorded consolidated evaluation, the mean detection rates across 30 inde
 
 These values are preliminary observations from the recorded synthetic evaluation, not guarantees of future performance. They should be compared against the committed CSV outputs and independently reproduced before being treated as final experimental results.
 
-Interpretation
+## Interpretation
 
 Under the tested synthetic configuration, the mean detection rate generally increased as the imposed distribution shift became larger. Small shifts were more difficult to detect, while larger shifts were detected consistently in the recorded trials.
 
-Limitations of these results
+## Limitations of These Results
 
 - The experiments use synthetic Gaussian vectors, not real face or voice embeddings.
 - The zero-shift detection rate is an empirical result, not a guaranteed false-positive rate.
@@ -123,7 +123,7 @@ Limitations of these results
 - The current experiment evaluates individual windows; it does not demonstrate production-grade streaming behaviour or detection delay in a live system.
 - A detected distribution shift does not necessarily indicate a recognition failure, bias, spoofing attempt, or cyberattack.
 
-Evaluation Outputs
+## Evaluation Outputs
 
 The synthetic evaluation script generates the following outputs:
 
@@ -205,7 +205,7 @@ These metrics should be evaluated using clearly defined protocols and independen
 
 ## Technology
 
-Currently used
+### Currently used
 
 - Python
 - NumPy
@@ -213,7 +213,7 @@ Currently used
 - Matplotlib
 - Google Colab
 
-Potential extensions
+### Potential extensions
 
 - PyTorch or other embedding frameworks.
 - Documented face and voice encoders.
