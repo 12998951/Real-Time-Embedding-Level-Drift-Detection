@@ -1,0 +1,43 @@
+Running the Synthetic Drift Evaluation
+
+Requirements
+
+- Python 3
+- NumPy
+- pandas
+- Matplotlib
+
+Setup
+
+Clone the repository:
+
+git clone https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection.git
+cd Real-Time-Embedding-Level-Drift-Detection
+
+Install the required dependencies:
+
+python -m pip install -r requirements.txt
+
+Run the experiment
+
+Execute the synthetic evaluation script:
+
+python experiments/synthetic_drift_evaluation.py
+
+Expected outputs
+
+After a successful run, the script should generate:
+
+- "results/drift_results_summary.csv"
+- "results/drift_results_by_reference.csv"
+- "assets/drift_detection_curve.png"
+
+Reproducibility note
+
+This experiment uses synthetic data to evaluate controlled distribution shifts. Results may depend on the random-number generation procedure and configuration used by the script.
+
+Compare newly generated outputs with the committed results before treating the reported values as independently reproduced.
+
+Limitations
+
+This experiment does not validate real face or voice embeddings, a complete biometric identification system, or production real-time performance. These remain future research tasks.
