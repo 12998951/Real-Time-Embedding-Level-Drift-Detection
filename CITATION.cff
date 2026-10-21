@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research prototype, please cite it as described here."
+title: "Real-Time Embedding-Level Drift Detection for Trustworthy Biometric Systems"
+authors:
+
+- family-names: Shaik
+  given-names: Moien
+  type: software
+  abstract: "A synthetic-data research prototype exploring window-based statistical drift detection using Euclidean distance between reference and current embedding means."
+  repository-code: "https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection"
+  license: MIT
