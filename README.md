@@ -152,18 +152,13 @@ Real-Time-Embedding-Level-Drift-Detection/
 │   └── .gitkeep
 ├── assets/
 │   └── drift_detection_curve.png
-├── drift_detection_curve.png
-├── drift_results_by_reference.csv
-├── drift_results_summary.csv
 ├── requirements.txt
 ├── RUN_EXPERIMENTS.txt
 ├── CITATION.cff
 ├── LICENSE
 └── .gitignore
 ```
-The tree reflects the files and folders visible in the repository listing. The contents of "embeddings/" and "utils/visualization/" have not yet been verified. The root-level CSV files and chart are retained in this listing until they can be compared with the corresponding files under "results/" and "assets/".
-
-This represents the intended organization of the project. Verify the current repository before assuming that every listed file is present. The synthetic evaluation script, result files, chart, and dependency file have been uploaded to the repository.
+The tree reflects the repository structure after removing the redundant root-level result files. The contents of "embeddings/" and "utils/visualization/" have not yet been verified.
 
 Reproducing the Synthetic Evaluation
 
