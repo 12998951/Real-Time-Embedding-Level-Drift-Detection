@@ -49,9 +49,9 @@ Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
-[
-s_t = |\mu_R-\mu_C|_2
-]
+$$
+s_t = \|\mu_R - \mu_C\|_2
+$$
 
 where:
 
@@ -63,13 +63,13 @@ Threshold-based detection
 
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
-[
+$$
 \operatorname{Alarm}_t =
 \begin{cases}
-1, & s_t > \tau\
+1, & s_t > \tau \\
 0, & s_t \leq \tau
 \end{cases}
-]
+$$
 
 Here, (\tau) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
@@ -81,15 +81,16 @@ Experimental Configuration
 
 The consolidated synthetic evaluation uses the following configuration:
 
-Parameter| Value
-Independent reference windows| 30
-Embedding dimensions| 16
-Vectors per window| 20
-Synthetic noise standard deviation| 0.10
-Calibration windows per reference| 500
-Test windows per reference and shift| 300
-Calibration percentile| 99th percentile
-Shift values| 0.00, 0.02, 0.04, 0.05, 0.07, 0.10, 0.15
+| Parameter | Value |
+|---|---:|
+| Independent reference windows | 30 |
+| Embedding dimensions | 16 |
+| Vectors per window | 20 |
+| Synthetic noise standard deviation | 0.10 |
+| Calibration windows per reference | 500 |
+| Test windows per reference and shift | 300 |
+| Calibration percentile | 99th percentile |
+| Shift values | 0.00, 0.02, 0.04, 0.05, 0.07, 0.10, 0.15 |
 
 The script uses fixed random seeds for the reference trials to support repeatable synthetic experiments.
 
@@ -97,14 +98,15 @@ Preliminary Synthetic Results
 
 In the recorded consolidated evaluation, the mean detection rates across 30 independent reference trials were:
 
-Synthetic mean shift per dimension| Mean detection rate
-0.00| 1.11%
-0.02| 17.32%
-0.04| 86.64%
-0.05| 97.98%
-0.07| 100.00%
-0.10| 100.00%
-0.15| 100.00%
+| Synthetic mean shift per dimension | Mean detection rate |
+|---:|---:|
+| 0.00 | 1.11% |
+| 0.02 | 17.32% |
+| 0.04 | 86.64% |
+| 0.05 | 97.98% |
+| 0.07 | 100.00% |
+| 0.10 | 100.00% |
+| 0.15 | 100.00% |
 
 These values are preliminary observations from the recorded synthetic evaluation, not guarantees of future performance. They should be compared against the committed CSV outputs and independently reproduced before being treated as final experimental results.
 
