@@ -2,15 +2,17 @@ Real-Time Embedding-Level Drift Detection for Trustworthy Biometric Systems
 
 A research project investigating label-free distributional drift detection in embedding spaces, with the long-term goal of improving the reliability and trustworthiness of biometric identification systems under changing operating conditions.
 
+Current status: Synthetic-data prototype with preliminary evaluation. Validation using real biometric embeddings remains future work.
+
 Overview
 
 Machine learning systems can encounter changes in their input data after deployment. In biometric applications, these changes may arise from variations in illumination, ageing, camera or microphone characteristics, environmental noise, and other operating conditions.
 
 Such changes can alter the feature representations produced by face or voice encoders. Monitoring these representations may provide an early indication that the data distribution has changed, even when ground-truth labels or recognition accuracy measurements are unavailable.
 
-This project explores a lightweight statistical approach that compares reference and current embedding windows to produce a drift score. The current prototype uses the Euclidean distance between window-level mean representations, with a threshold calibrated from synthetic reference data.
+This project explores a lightweight statistical approach that compares reference and current embedding windows to produce a drift score. The current evaluation uses the Euclidean distance between window-level mean representations, with thresholds calibrated using synthetic reference data.
 
-Current status: Synthetic-data prototype with preliminary evaluation. Validation using real biometric embeddings remains future work.
+The present implementation evaluates controlled synthetic distribution shifts. It does not yet validate a complete face or voice recognition pipeline.
 
 Research Objectives
 
@@ -22,18 +24,18 @@ Research Objectives
 
 Current Implementation
 
-The implemented prototype includes:
+The repository includes:
 
 - A reference window containing synthetic embedding vectors.
-- A current window of newly generated embedding vectors.
+- A current window of newly generated synthetic vectors.
 - A Euclidean distance score between reference and current window means.
 - Threshold-based drift decisions.
 - Synthetic experiments involving stable data and controlled mean shifts.
 - Threshold calibration using simulated stable windows.
 - Repeated evaluations across independently generated reference windows.
-- CSV export of experimental results and generation of detection-rate plots.
+- CSV export of experimental results and generation of a detection-rate plot.
 
-The current implementation is a window-based statistical prototype. It does not yet establish production-grade streaming performance or validate a complete biometric recognition pipeline.
+The implementation is a window-based statistical prototype. It does not yet establish production-grade streaming performance or validate a complete biometric recognition system.
 
 Methodology
 
@@ -41,45 +43,59 @@ Methodology
 
 A reference window is generated from a baseline synthetic distribution. Its mean vector represents the initial reference state.
 
+Let (R) denote the reference window and (C) the current window.
+
 2. Drift scoring
 
-For a reference window (R) and a current window (C), the prototype calculates:
+The prototype calculates the Euclidean distance between the two window means:
 
 [
-s_t = \left|\mu_R-\mu_C\right|_2
+s_t = |\mu_R-\mu_C|_2
 ]
 
-where (\mu_R) and (\mu_C) are the respective window means, and (s_t) is the drift score.
+where:
+
+- (\mu_R) is the mean vector of the reference window.
+- (\mu_C) is the mean vector of the current window.
+- (s_t) is the resulting drift score.
 
 3. Threshold-based detection
 
-The detector raises an alarm when the score exceeds a calibrated threshold:
+The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
 [
-\text{Alarm}_t =
+\operatorname{Alarm}_t =
 \begin{cases}
-1 & \text{if } s_t > \tau\
-0 & \text{otherwise}
+1, & s_t > \tau\
+0, & s_t \leq \tau
 \end{cases}
 ]
 
-Here, (\tau) is estimated from simulated calibration data. The threshold is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
+Here, (\tau) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
 4. Synthetic evaluation
 
 Controlled experiments vary the mean of the generated embedding distribution to investigate how detection sensitivity changes with drift magnitude. Repeated reference samples are used to examine variability in the observed results.
 
+Experimental Configuration
+
+The consolidated synthetic evaluation uses the following configuration:
+
+Parameter| Value
+Independent reference windows| 30
+Embedding dimensions| 16
+Vectors per window| 20
+Synthetic noise standard deviation| 0.10
+Calibration windows per reference| 500
+Test windows per reference and shift| 300
+Calibration percentile| 99th percentile
+Shift values| 0.00, 0.02, 0.04, 0.05, 0.07, 0.10, 0.15
+
+The script uses fixed random seeds for the reference trials to support repeatable synthetic experiments.
+
 Preliminary Synthetic Results
 
-In one recorded evaluation, the experiment used:
-
-- 30 independently generated reference windows.
-- 16-dimensional synthetic vectors.
-- A window size of 20 vectors.
-- A noise standard deviation of 0.10.
-- A threshold calibrated at the 99th percentile of simulated calibration scores.
-
-The observed mean detection rates were:
+In the recorded consolidated evaluation, the mean detection rates across the 30 independent reference trials were:
 
 Synthetic mean shift per dimension| Mean detection rate
 0.00| 1.11%
@@ -90,31 +106,33 @@ Synthetic mean shift per dimension| Mean detection rate
 0.10| 100.00%
 0.15| 100.00%
 
-These results illustrate how detection sensitivity changes as the synthetic distribution shifts under the selected experimental settings.
+These values are preliminary observations from the recorded synthetic evaluation, not guarantees of future performance. They should be compared against the committed CSV outputs and independently reproduced before being treated as final experimental results.
 
-Interpretation and limitations:
+Interpretation
 
-- The 1.11% observed alarm rate at zero shift is an empirical result, not a guaranteed false-positive rate.
-- The 100% detection rates apply only to the tested synthetic windows and experimental configuration.
-- The results depend on the reference data, noise assumptions, embedding dimensionality, window size, and threshold calibration procedure.
-- These experiments do not establish performance on real biometric systems.
+Under the tested synthetic configuration, the mean detection rate generally increased as the imposed distribution shift became larger. Small shifts were more difficult to detect, while larger shifts were detected consistently in the recorded trials.
 
-The results are preliminary and should be independently reproduced before being used to support broader research claims.
+Limitations of these results
+
+- The experiments use synthetic Gaussian vectors, not real face or voice embeddings.
+- The zero-shift detection rate is an empirical result, not a guaranteed false-positive rate.
+- The 100% detection rates apply only to the tested synthetic windows and configuration.
+- Results depend on the reference samples, noise assumptions, embedding dimensionality, window size, and threshold calibration procedure.
+- The current experiment evaluates individual windows; it does not demonstrate production-grade streaming behaviour or detection delay in a live system.
+- A detected distribution shift does not necessarily indicate a recognition failure, bias, spoofing attempt, or cyberattack.
 
 Evaluation Outputs
 
-The experimental pipeline generates the following outputs:
+The synthetic evaluation script generates the following outputs:
 
 File| Purpose
-"drift_results_summary.csv"| Aggregated detection results by synthetic shift magnitude
-"drift_results_by_reference.csv"| Per-reference evaluation results
-"drift_detection_curve.png"| Visualization of mean detection rate against shift magnitude
+""results/drift_results_summary.csv"" (results/drift_results_summary.csv)| Aggregated detection results by synthetic shift magnitude
+""results/drift_results_by_reference.csv"" (results/drift_results_by_reference.csv)| Detection results for each independent reference window
+""assets/drift_detection_curve.png"" (assets/drift_detection_curve.png)| Plot of mean detection rate against synthetic shift magnitude
 
-These files should be committed to the repository only after their contents have been checked against the corresponding experiment run.
+The outputs should be interpreted alongside the experimental configuration and limitations described in this README.
 
 Repository Structure
-
-The intended project organization is:
 
 Real-Time-Embedding-Level-Drift-Detection/
 ├── README.md
@@ -130,52 +148,51 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── requirements.txt
 └── .gitignore
 
-This is the target organization for the project; directory and file availability should be verified against the current repository. Files should not be described as implemented until they exist and have been tested.
+This structure reflects the current intended organization of the project. The experiment script, result files, chart, and dependency file have been uploaded to the repository. Additional code and datasets should be verified before being described as implemented.
 
-Planned Work
+Reproducing the Synthetic Evaluation
 
-Phase 1 — Strengthen synthetic evaluation
+Requirements
 
-- Consolidate experimental code into a reproducible script.
-- Separate calibration data from evaluation data.
-- Evaluate threshold behaviour across independent reference samples.
-- Report uncertainty and variability alongside average detection rates.
-- Test different window sizes, noise levels, and drift magnitudes.
-- Compare against appropriate statistical baselines.
+- Python 3
+- NumPy
+- pandas
+- Matplotlib
 
-Phase 2 — Real biometric embeddings
+The dependencies are listed in ""requirements.txt"" (requirements.txt).
 
-- Select suitable face and voice datasets, subject to their access and licensing conditions.
-- Generate embeddings using documented, reproducible encoders.
-- Define controlled evaluation scenarios for illumination changes, acoustic noise, and other relevant shifts.
-- Compare detected distributional changes against known experimental conditions.
-- Evaluate the detector separately for each modality before investigating multimodal monitoring.
+Run locally
 
-Phase 3 — Trustworthiness and operational evaluation
+Clone the repository and install the dependencies:
 
-- Investigate whether detected drift corresponds to meaningful changes in biometric system behaviour.
-- Evaluate false alarms, detection delay, sensitivity, and computational overhead.
-- Examine differences across relevant data groups where the dataset and research design permit.
-- Investigate online change-point detection or complementary drift statistics if justified by the results.
-- Explore integration with a streaming monitoring pipeline if the experimental findings support it.
+git clone https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection.git
+cd Real-Time-Embedding-Level-Drift-Detection
+pip install -r requirements.txt
 
-These phases are planned research activities, not completed capabilities.
+Run the evaluation script:
+
+python experiments/synthetic_drift_evaluation.py
+
+The script is designed to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
+
+Before relying on this procedure, verify that the committed script contains the expected output-path handling and that a fresh run completes successfully. The original experiment was also run in Google Colab.
 
 Evaluation Metrics
 
-Future and ongoing evaluations may include:
+The current evaluation reports detection rates for controlled synthetic shifts. Further work should examine:
 
-- Detection rate: proportion of evaluated drift windows that trigger an alarm.
-- False-alarm rate: proportion of stable windows incorrectly flagged as drift.
-- Detection delay: number of observations or windows between the introduction of drift and the first alarm.
-- Reference sensitivity: variation in performance across independent reference samples.
-- Computational cost: runtime and memory requirements under defined conditions.
+- Detection rate: Proportion of shifted test windows that trigger an alarm.
+- False-alarm rate: Proportion of stable test windows incorrectly flagged as drift.
+- Reference sensitivity: Variation in results across independently generated reference samples.
+- Detection delay: Time or observations between drift introduction and the first alarm in a sequential experiment.
+- Computational cost: Runtime and memory requirements under defined conditions.
+- Calibration quality: Whether the observed stable-window alarm rate agrees with the intended calibration level.
 
-Where appropriate, the evaluation should also examine calibration quality, uncertainty, and the relationship between representation drift and downstream biometric performance.
+These metrics should be evaluated using clearly defined protocols and independent test data.
 
 Technology
 
-The current synthetic prototype uses:
+Currently used
 
 - Python
 - NumPy
@@ -183,27 +200,64 @@ The current synthetic prototype uses:
 - Matplotlib
 - Google Colab
 
-Potential extensions include PyTorch or other embedding frameworks, dataset-specific face and voice encoders, and streaming or monitoring tools. These should be listed as planned technologies until they are actually integrated and tested.
+Potential extensions
 
-Reproducibility
+- PyTorch or other embedding frameworks.
+- Documented face and voice encoders.
+- Suitable face and voice datasets, subject to access and licensing conditions.
+- Online change-point detection methods.
+- Streaming and monitoring tools.
 
-The experiments use explicit random seeds and documented synthetic-data settings. For stronger reproducibility, the repository should include the complete evaluation script, dependency versions, calibration procedure, experimental configuration, and generated outputs.
+Potential extensions are research plans, not claims of completed integration.
 
-Synthetic experiments should be reproducible without requiring access to biometric datasets. Real-data experiments should document dataset provenance, permitted use, preprocessing, encoder versions, and evaluation protocols.
+Planned Work
+
+Phase 1 — Strengthen synthetic evaluation
+
+- Reproduce the committed results from a clean environment.
+- Verify that the generated CSV files match the reported summary.
+- Compare the detector with appropriate statistical baselines.
+- Examine uncertainty and variability across independent reference samples.
+- Test different window sizes, noise levels, and drift magnitudes.
+- Evaluate calibration and false-alarm behaviour more thoroughly.
+
+Phase 2 — Real biometric embeddings
+
+- Select suitable face and voice datasets, subject to their access and licensing conditions.
+- Generate embeddings using documented, reproducible encoders.
+- Define controlled evaluation scenarios for illumination changes, acoustic noise, and other relevant shifts.
+- Compare detected distributional changes against known experimental conditions.
+- Evaluate each modality separately before investigating multimodal monitoring.
+
+Phase 3 — Trustworthiness and operational evaluation
+
+- Investigate whether detected drift corresponds to meaningful changes in biometric system behaviour.
+- Evaluate false alarms, detection delay, sensitivity, and computational overhead.
+- Examine differences across relevant data groups where the dataset and research design permit.
+- Investigate online change-point detection or complementary drift statistics where justified.
+- Explore integration with a streaming monitoring pipeline if the experimental findings support it.
+
+These phases are planned research activities, not completed capabilities.
 
 Research Scope and Limitations
 
-This project investigates statistical drift in embedding distributions. Distributional drift is not equivalent to a biometric recognition failure, bias, spoofing, or a cyberattack.
+This project investigates statistical drift in embedding distributions. Distributional drift is not equivalent to biometric recognition failure, bias, spoofing, or a cyberattack.
 
-A detected shift may occur during benign environmental changes, and a security-relevant event may occur without a large change in the monitored mean. Establishing the operational significance of a drift signal requires additional evaluation against relevant system outcomes and threat scenarios.
+A detected shift may occur during benign environmental changes, while a security-relevant event may occur without a large change in the monitored mean. Establishing the operational significance of a drift signal requires additional evaluation against relevant system outcomes and threat scenarios.
 
-The current prototype has not yet demonstrated real-time production deployment, validated face-and-voice integration, or improved biometric recognition accuracy.
+The current prototype has not yet demonstrated:
+
+- Validation using real face and voice embeddings.
+- A complete multimodal biometric identification pipeline.
+- Real-time production deployment.
+- Improved biometric recognition accuracy.
+- Demonstrated mitigation of bias or security threats.
 
 Research Direction
 
-The broader research direction is to investigate how lightweight, interpretable monitoring of representation changes could contribute to trustworthy biometric systems and, potentially, to human-guided cyber defence.
+The broader research direction is to investigate how lightweight, interpretable monitoring of representation changes could contribute to trustworthy biometric systems and, potentially, human-guided cyber defence.
 
-This work is intended as an evolving research prototype. Conclusions will be updated as additional experiments, baselines, and real-data evaluations become available.
+This work is an evolving research prototype. Conclusions will be updated as additional experiments, baselines, and real-data evaluations become available.
 
 Author
 
@@ -213,4 +267,4 @@ Research interests: trustworthy machine learning, distributional drift detection
 
 License
 
-A license has not yet been specified. Before selecting one, confirm the ownership and licensing of the source code, dependencies, datasets, and any third-party model components.
+The repository currently contains a license file. Confirm that its terms are appropriate for the source code and that all third-party dependencies, datasets, and model components are used in accordance with their respective licenses.
