@@ -49,9 +49,7 @@ Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
-$$
 s_t = \|\mu_R - \mu_C\|_2
-$$
 
 where:
 
@@ -64,7 +62,7 @@ Threshold-based detection
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
 $$
-\operatorname{Alarm}_t =
+A_t =
 \begin{cases}
 1, & s_t > \tau \\
 0, & s_t \leq \tau
@@ -136,7 +134,7 @@ The synthetic evaluation script generates the following outputs:
 The outputs should be interpreted alongside the experimental configuration and limitations described in this README.
 
 ## Repository Structure
-```
+```text
 Real-Time-Embedding-Level-Drift-Detection/
 ├── README.md
 ├── drift_detector/
@@ -160,9 +158,9 @@ Real-Time-Embedding-Level-Drift-Detection/
 ```
 The tree reflects the repository structure after removing the redundant root-level result files. The contents of "embeddings/" and "utils/visualization/" have not yet been verified.
 
-Reproducing the Synthetic Evaluation
+## Reproducing the Synthetic Evaluation
 
-Requirements
+### Requirements
 
 - Python 3
 - NumPy
@@ -171,26 +169,26 @@ Requirements
 
 The dependencies are listed in [requirements.txt](requirements.txt)
 
-Run locally
+### Run locally
 
 Clone the repository and enter its directory:
-
+```bash
 git clone https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection.git
 cd Real-Time-Embedding-Level-Drift-Detection
-
+```
 Install the dependencies:
-
+```bash
 python -m pip install -r requirements.txt
-
+```
 Run the evaluation script:
-
+```bash
 python experiments/synthetic_drift_evaluation.py
-
+```
 The script is intended to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
 
 Reproducibility note: Verify that the committed script uses paths relative to the repository root and that a fresh run completes successfully. The original experiment was also run in Google Colab. Re-running the script is necessary to confirm that the committed results match the reported summary.
 
-Evaluation Metrics
+### Evaluation Metrics
 
 The current evaluation reports detection rates for controlled synthetic shifts. Further work should examine:
 
@@ -203,7 +201,7 @@ The current evaluation reports detection rates for controlled synthetic shifts. 
 
 These metrics should be evaluated using clearly defined protocols and independent test data.
 
-Technology
+## Technology
 
 Currently used
 
@@ -223,9 +221,9 @@ Potential extensions
 
 Potential extensions are research plans, not claims of completed integration.
 
-Planned Work
+## Planned Work
 
-Phase 1 — Strengthen synthetic evaluation
+### Phase 1 — Strengthen synthetic evaluation
 
 - Reproduce the committed results from a clean environment.
 - Verify that the generated CSV files match the reported summary.
@@ -234,7 +232,7 @@ Phase 1 — Strengthen synthetic evaluation
 - Test different window sizes, noise levels, and drift magnitudes.
 - Evaluate calibration and false-alarm behaviour more thoroughly.
 
-Phase 2 — Real biometric embeddings
+### Phase 2 — Real biometric embeddings
 
 - Select suitable face and voice datasets, subject to their access and licensing conditions.
 - Generate embeddings using documented, reproducible encoders.
@@ -242,7 +240,7 @@ Phase 2 — Real biometric embeddings
 - Compare detected distributional changes against known experimental conditions.
 - Evaluate each modality separately before investigating multimodal monitoring.
 
-Phase 3 — Trustworthiness and operational evaluation
+### Phase 3 — Trustworthiness and operational evaluation
 
 - Investigate whether detected drift corresponds to meaningful changes in biometric system behaviour.
 - Evaluate false alarms, detection delay, sensitivity, and computational overhead.
@@ -252,7 +250,7 @@ Phase 3 — Trustworthiness and operational evaluation
 
 These phases are planned research activities, not completed capabilities.
 
-Research Scope and Limitations
+## Research Scope and Limitations
 
 This project investigates statistical drift in embedding distributions. Distributional drift is not equivalent to biometric recognition failure, bias, spoofing, or a cyberattack.
 
@@ -266,18 +264,18 @@ The current prototype has not yet demonstrated:
 - Improved biometric recognition accuracy.
 - Demonstrated mitigation of bias or security threats.
 
-Research Direction
+## Research Direction
 
 The broader research direction is to investigate how lightweight, interpretable monitoring of representation changes could contribute to trustworthy biometric systems and, potentially, human-guided cyber defence.
 
 This work is an evolving research prototype. Conclusions will be updated as additional experiments, baselines, and real-data evaluations become available.
 
-Author
+## Author
 
 Moien Shaik
 
 Research interests: trustworthy machine learning, distributional drift detection, biometric systems, out-of-distribution detection, and cybersecurity.
 
-License
+## License
 
 The repository currently contains a "LICENSE" file. Confirm that its terms are appropriate for the source code and that all third-party dependencies, datasets, and model components are used in accordance with their respective licenses.
