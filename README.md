@@ -49,7 +49,9 @@ Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
+$$
 s_t = \|\mu_R - \mu_C\|_2
+$$
 
 where:
 
