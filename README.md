@@ -43,7 +43,7 @@ Reference representation
 
 A reference window is generated from a baseline synthetic distribution. Its mean vector represents the initial reference state.
 
-Let (R) denote the reference window and (C) the current window.
+Let $R$ denote the reference window and $C$ the current window.
 
 Drift scoring
 
@@ -55,9 +55,9 @@ $$
 
 where:
 
-- (\mu_R) is the mean vector of the reference window.
-- (\mu_C) is the mean vector of the current window.
-- (s_t) is the resulting drift score.
+- $\mu_R$ is the mean vector of the reference window.
+- $\mu_C$ is the mean vector of the current window.
+- $s_t$ is the resulting drift score.
 
 Threshold-based detection
 
@@ -71,7 +71,7 @@ $$
 \end{cases}
 $$
 
-Here, (\tau) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
+Here, $\tau$ is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
 Synthetic evaluation
 
@@ -127,10 +127,11 @@ Evaluation Outputs
 
 The synthetic evaluation script generates the following outputs:
 
-File| Purpose
-""results/drift_results_summary.csv"" (results/drift_results_summary.csv)| Aggregated detection results by synthetic shift magnitude
-""results/drift_results_by_reference.csv"" (results/drift_results_by_reference.csv)| Detection results for each independent reference window
-""assets/drift_detection_curve.png"" (assets/drift_detection_curve.png)| Plot of mean detection rate against synthetic shift magnitude
+| File | Purpose |
+|---|---|
+| [drift_results_summary.csv](results/drift_results_summary.csv) | Aggregated detection results by synthetic shift magnitude |
+| [drift_results_by_reference.csv](results/drift_results_by_reference.csv) | Detection results for each independent reference window |
+| [drift_detection_curve.png](assets/drift_detection_curve.png) | Plot of mean detection rate against synthetic shift magnitude |
 
 The outputs should be interpreted alongside the experimental configuration and limitations described in this README.
 
@@ -166,7 +167,7 @@ Requirements
 - pandas
 - Matplotlib
 
-The dependencies are listed in ""requirements.txt"" (requirements.txt).
+The dependencies are listed in [requirements.txt](requirements.txt)
 
 Run locally
 
