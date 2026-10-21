@@ -27,7 +27,7 @@ Current Implementation
 The repository includes:
 
 - A reference window containing synthetic embedding vectors.
-- A current window of newly generated synthetic vectors.
+- Current windows of newly generated synthetic vectors.
 - A Euclidean distance score between reference and current window means.
 - Threshold-based drift decisions.
 - Synthetic experiments involving stable data and controlled mean shifts.
@@ -39,13 +39,13 @@ The implementation is a window-based statistical prototype. It does not yet esta
 
 Methodology
 
-1. Reference representation
+Reference representation
 
 A reference window is generated from a baseline synthetic distribution. Its mean vector represents the initial reference state.
 
 Let (R) denote the reference window and (C) the current window.
 
-2. Drift scoring
+Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
@@ -59,7 +59,7 @@ where:
 - (\mu_C) is the mean vector of the current window.
 - (s_t) is the resulting drift score.
 
-3. Threshold-based detection
+Threshold-based detection
 
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
@@ -73,7 +73,7 @@ The detector raises an alarm when the drift score exceeds a calibrated threshold
 
 Here, (\tau) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
-4. Synthetic evaluation
+Synthetic evaluation
 
 Controlled experiments vary the mean of the generated embedding distribution to investigate how detection sensitivity changes with drift magnitude. Repeated reference samples are used to examine variability in the observed results.
 
@@ -95,7 +95,7 @@ The script uses fixed random seeds for the reference trials to support repeatabl
 
 Preliminary Synthetic Results
 
-In the recorded consolidated evaluation, the mean detection rates across the 30 independent reference trials were:
+In the recorded consolidated evaluation, the mean detection rates across 30 independent reference trials were:
 
 Synthetic mean shift per dimension| Mean detection rate
 0.00| 1.11%
@@ -134,6 +134,8 @@ The outputs should be interpreted alongside the experimental configuration and l
 
 Repository Structure
 
+The intended project organization is:
+
 Real-Time-Embedding-Level-Drift-Detection/
 ├── README.md
 ├── drift_detector/
@@ -146,9 +148,12 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── assets/
 │   └── drift_detection_curve.png
 ├── requirements.txt
+├── RUN_EXPERIMENTS.txt
+├── CITATION.cff
+├── LICENSE
 └── .gitignore
 
-This structure reflects the current intended organization of the project. The experiment script, result files, chart, and dependency file have been uploaded to the repository. Additional code and datasets should be verified before being described as implemented.
+This represents the intended organization of the project. Verify the current repository before assuming that every listed file is present. The synthetic evaluation script, result files, chart, and dependency file have been uploaded to the repository.
 
 Reproducing the Synthetic Evaluation
 
@@ -163,19 +168,22 @@ The dependencies are listed in ""requirements.txt"" (requirements.txt).
 
 Run locally
 
-Clone the repository and install the dependencies:
+Clone the repository and enter its directory:
 
 git clone https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection.git
 cd Real-Time-Embedding-Level-Drift-Detection
-pip install -r requirements.txt
+
+Install the dependencies:
+
+python -m pip install -r requirements.txt
 
 Run the evaluation script:
 
 python experiments/synthetic_drift_evaluation.py
 
-The script is designed to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
+The script is intended to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
 
-Before relying on this procedure, verify that the committed script contains the expected output-path handling and that a fresh run completes successfully. The original experiment was also run in Google Colab.
+Reproducibility note: Verify that the committed script uses paths relative to the repository root and that a fresh run completes successfully. The original experiment was also run in Google Colab. Re-running the script is necessary to confirm that the committed results match the reported summary.
 
 Evaluation Metrics
 
@@ -267,4 +275,4 @@ Research interests: trustworthy machine learning, distributional drift detection
 
 License
 
-The repository currently contains a license file. Confirm that its terms are appropriate for the source code and that all third-party dependencies, datasets, and model components are used in accordance with their respective licenses.
+The repository currently contains a "LICENSE" file. Confirm that its terms are appropriate for the source code and that all third-party dependencies, datasets, and model components are used in accordance with their respective licenses.
