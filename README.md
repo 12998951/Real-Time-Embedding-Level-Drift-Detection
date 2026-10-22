@@ -142,14 +142,21 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── drift_detector/
 │   └── drift_signal.py
 ├── experiments/
-│   └── synthetic_drift_evaluation.py
+│   ├── synthetic_drift_evaluation.py
+│   ├── 04_euclidean_mahalanobis_variance_comparison.ipynb
+│   └── Experiment_Report.md
 ├── embeddings/
 ├── utils/
 │   └── visualization/
 ├── results/
 │   ├── drift_results_summary.csv
 │   ├── drift_results_by_reference.csv
-│   └── .gitkeep
+│   ├── .gitkeep
+│   └── corrected/
+│       ├── README.md
+│       ├── corrected_detection_summary.csv
+│       ├── corrected_multiseed_detection_results.csv
+│       └── independent_false_alarm_validation.csv
 ├── assets/
 │   └── drift_detection_curve.png
 ├── requirements.txt
