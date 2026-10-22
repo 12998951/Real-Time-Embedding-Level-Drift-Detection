@@ -50,7 +50,7 @@ Let $R$ denote the reference window and $C$ the current window.
 The prototype calculates the Euclidean distance between the two window means:
 
 $$
-s_t = \|\mu_R - \mu_C\|_2
+s_t = |\mu_R - \mu_C|_2
 $$
 
 where:
@@ -66,7 +66,7 @@ The detector raises an alarm when the drift score exceeds a calibrated threshold
 $$
 A_t =
 \begin{cases}
-1, & s_t > \tau \\
+1, & s_t > \tau \
 0, & s_t \leq \tau
 \end{cases}
 $$
@@ -108,7 +108,7 @@ In the recorded consolidated evaluation, the mean detection rates across 30 inde
 | 0.10 | 100.00% |
 | 0.15 | 100.00% |
 
-These values are preliminary observations from the recorded synthetic evaluation, not guarantees of future performance. They should be compared against the committed CSV outputs and independently reproduced before being treated as final experimental results.
+These results were reproduced in Google Colab using the committed evaluation script. The generated summary and per-reference CSV files matched the committed versions exactly in that run. The results remain preliminary and apply only to the synthetic data and experimental configuration described here.
 
 ## Interpretation
 
@@ -158,7 +158,7 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── LICENSE
 └── .gitignore
 ```
-The tree reflects the repository structure after removing the redundant root-level result files. The contents of "embeddings/" and "utils/visualization/" have not yet been verified.
+This tree provides a simplified overview of the repository; some subfolder contents are omitted for readability.
 
 ## Reproducing the Synthetic Evaluation
 
@@ -188,7 +188,7 @@ python experiments/synthetic_drift_evaluation.py
 ```
 The script is intended to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
 
-Reproducibility note: Verify that the committed script uses paths relative to the repository root and that a fresh run completes successfully. The original experiment was also run in Google Colab. Re-running the script is necessary to confirm that the committed results match the reported summary.
+Reproducibility note: The evaluation script was run successfully in Google Colab. The generated summary and per-reference CSV files matched the committed versions exactly in that environment. Reproducibility across other environments has not yet been established.
 
 ### Evaluation Metrics
 
