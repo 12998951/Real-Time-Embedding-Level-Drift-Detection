@@ -272,6 +272,34 @@ The broader research direction is to investigate how lightweight, interpretable 
 
 This work is an evolving research prototype. Conclusions will be updated as additional experiments, baselines, and real-data evaluations become available.
 
+## Additional Experiment: Multi-Detector Drift Comparison
+
+A supplementary synthetic-data experiment compares three embedding-level drift detectors:
+
+- **Euclidean distance** — detects changes in the mean of the reference and current embedding windows.
+- **Regularized Mahalanobis distance** — measures mean differences relative to the reference covariance.
+- **Variance-sensitive score** — monitors changes in the spread of the embedding distribution.
+
+### Experimental Configuration
+
+The standardized evaluation uses 16-dimensional synthetic Gaussian vectors, 500 reference samples per seed, 2,000 calibration windows, 1,000 test windows per scenario, and 10 independent random seeds. An independent validation stage uses 5,000 no-drift windows per seed.
+
+### Main Findings
+
+In the tested synthetic scenarios, the variance-sensitive detector responded strongly to increasing variance, while Euclidean and Mahalanobis scores responded to both mean shifts and variance changes. The mean false-alarm rates across the 10 seeds were approximately 1.10%, 1.01%, and 1.10%, respectively, against a 1% target.
+
+These findings are preliminary and apply only to the specified synthetic Gaussian setup. They do not establish performance on real biometric embeddings or a deployed biometric identification system.
+
+### Files
+
+- Notebook: [`04_euclidean_mahalanobis_variance_comparison.ipynb`](experiments/04_euclidean_mahalanobis_variance_comparison.ipynb)
+- Experimental report: [`Experiment_Report.md`](experiments/Experiment_Report.md)
+- Corrected summary: [`corrected_detection_summary.csv`](results/corrected/corrected_detection_summary.csv)
+- Per-seed results: [`corrected_multiseed_detection_results.csv`](results/corrected/corrected_multiseed_detection_results.csv)
+- Independent validation: [`independent_false_alarm_validation.csv`](results/corrected/independent_false_alarm_validation.csv)
+
+The original Euclidean-only evaluation and its results are retained separately. This supplementary experiment is not a replacement for the original evaluation.
+
 ## Author
 
 Moien Shaik
