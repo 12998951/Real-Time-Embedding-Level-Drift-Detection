@@ -151,7 +151,6 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── results/
 │   ├── drift_results_summary.csv
 │   ├── drift_results_by_reference.csv
-│   ├── .gitkeep
 │   └── corrected/
 │       ├── README.md
 │       ├── corrected_detection_summary.csv
