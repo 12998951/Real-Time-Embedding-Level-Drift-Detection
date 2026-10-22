@@ -169,7 +169,7 @@ The tree reflects the repository structure after removing the redundant root-lev
 - pandas
 - Matplotlib
 
-The dependencies are listed in [requirements.txt](requirements.txt)
+The dependencies are listed in [requirements.txt](requirements.txt).
 
 ### Run locally
 
@@ -278,6 +278,6 @@ Moien Shaik
 
 Research interests: trustworthy machine learning, distributional drift detection, biometric systems, out-of-distribution detection, and cybersecurity.
 
- ## License
+## License
 
 This repository includes a `LICENSE` file. Review its terms before reusing or distributing the code. Third-party dependencies, datasets, and model components remain subject to their respective licenses.
