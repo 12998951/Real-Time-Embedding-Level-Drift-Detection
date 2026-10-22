@@ -278,6 +278,6 @@ Moien Shaik
 
 Research interests: trustworthy machine learning, distributional drift detection, biometric systems, out-of-distribution detection, and cybersecurity.
 
-## License
+ ## License
 
-The repository currently contains a "LICENSE" file. Confirm that its terms are appropriate for the source code and that all third-party dependencies, datasets, and model components are used in accordance with their respective licenses.
+This repository includes a `LICENSE` file. Review its terms before reusing or distributing the code. Third-party dependencies, datasets, and model components remain subject to their respective licenses.
