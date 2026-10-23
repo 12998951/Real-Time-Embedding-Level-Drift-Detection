@@ -1,0 +1,7 @@
+shift_magnitude,detector,trials,detections,detection_rate,mean_baseline_false_alarm_rate,mean_detection_delay_windows,mean_post_shift_alarm_rate
+0.1,Euclidean,10,4,0.4,0.0,10.75,0.058333333333333334
+0.1,Mahalanobis,10,10,1.0,0.0,0.0,1.0
+0.25,Euclidean,10,10,1.0,0.0,0.3,0.8694444444444445
+0.25,Mahalanobis,10,10,1.0,0.0,0.0,1.0
+0.5,Euclidean,10,10,1.0,0.0,0.0,1.0
+0.5,Mahalanobis,10,10,1.0,0.0,0.0,1.0
