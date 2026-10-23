@@ -1,0 +1,3 @@
+detector,threshold,calibration_windows,validation_windows,validation_false_alarms,validation_false_alarm_rate
+Euclidean,8.47235722899555,36,39,0,0.0
+Mahalanobis,14.36015565545486,36,39,0,0.0
