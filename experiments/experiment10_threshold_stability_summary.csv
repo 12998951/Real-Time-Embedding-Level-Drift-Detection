@@ -1,0 +1,5 @@
+detector,ridge,splits,mean_threshold,std_threshold,min_threshold,median_threshold,max_threshold
+Euclidean,,100,7.6404,0.627,6.5386,7.6076,9.7583
+Mahalanobis,0.001,100,14.1166,0.7949,12.3555,14.0979,16.9881
+Mahalanobis,0.01,100,11.1965,0.6069,9.5821,11.1178,13.2639
+Mahalanobis,0.1,100,6.8254,0.3356,6.0422,6.7742,7.8473

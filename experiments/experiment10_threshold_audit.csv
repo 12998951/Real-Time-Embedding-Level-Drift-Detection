@@ -1,0 +1,5 @@
+detector,ridge,calibration_windows,threshold,scores_above_threshold,scores_equal_threshold,empirical_alarm_rate
+Euclidean,,30,7.547774314880371,1,1,0.03333333333333333
+Mahalanobis,0.001,30,14.048998820635996,1,1,0.03333333333333333
+Mahalanobis,0.01,30,11.100996476774338,1,1,0.03333333333333333
+Mahalanobis,0.1,30,6.983233036858808,1,1,0.03333333333333333

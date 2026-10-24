@@ -1,0 +1,5 @@
+detector,ridge,threshold,control_windows,control_alarms,control_alarm_rate
+Euclidean,,7.547774314880371,30,3,0.1
+Mahalanobis,0.001,14.048998820635996,30,1,0.03333333333333333
+Mahalanobis,0.01,11.100996476774338,30,1,0.03333333333333333
+Mahalanobis,0.1,6.983233036858808,30,0,0.0

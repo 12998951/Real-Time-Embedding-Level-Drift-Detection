@@ -1,0 +1,17 @@
+drift_multiplier,detector,ridge,directions,any_alarm_pct,strict_detection_pct,post_alarm_pct
+0.0,Euclidean,,50,100.0,0.0,6.666666666666667
+0.0,Mahalanobis,0.001,50,0.0,0.0,0.0
+0.0,Mahalanobis,0.01,50,0.0,0.0,0.0
+0.0,Mahalanobis,0.1,50,0.0,0.0,0.0
+0.25,Euclidean,,50,100.0,0.0,6.666666666666667
+0.25,Mahalanobis,0.001,50,100.0,100.0,66.26666666666665
+0.25,Mahalanobis,0.01,50,100.0,100.0,49.06666666666667
+0.25,Mahalanobis,0.1,50,100.0,100.0,17.73333333333333
+0.5,Euclidean,,50,100.0,0.0,12.933333333333334
+0.5,Mahalanobis,0.001,50,100.0,100.0,100.0
+0.5,Mahalanobis,0.01,50,100.0,100.0,100.0
+0.5,Mahalanobis,0.1,50,100.0,100.0,100.0
+1.0,Euclidean,,50,100.0,100.0,100.0
+1.0,Mahalanobis,0.001,50,100.0,100.0,100.0
+1.0,Mahalanobis,0.01,50,100.0,100.0,100.0
+1.0,Mahalanobis,0.1,50,100.0,100.0,100.0
