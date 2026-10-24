@@ -311,7 +311,7 @@ Evaluates ResNet-18 embedding sensitivity to controlled illumination changes usi
 
 - **Notebook:** [`11_Illumination_Drift_Detection.ipynb`](experiments/11_Illumination_Drift_Detection.ipynb)
 - **Results:** Experiment 11 CSV files and metadata in `results/`
-- **Figures:** `assets/experiment11_detector_score_timeline.png` and `assets/experiment11_illumination_preview.png`
+- **Figures:** [Detector score timeline](assets/experiment11_detector_score_timeline.png) and [Illumination preview](assets/experiment11_illumination_preview.png)
 - **Methods:** Euclidean distance, ridge-regularized Mahalanobis distance, identity-disjoint evaluation, and 20-permutation control analysis.
 - **Status:** Preliminary controlled evaluation. Full from-scratch reproducibility remains unverified.
 
