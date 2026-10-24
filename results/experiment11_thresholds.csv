@@ -1,0 +1,5 @@
+detector,calibration_windows,quantile,threshold
+euclidean,26,0.95,23.684032440185547
+mahalanobis_ridge_0.001,26,0.95,28.698076066382754
+mahalanobis_ridge_0.01,26,0.95,27.29623933425288
+mahalanobis_ridge_0.1,26,0.95,21.56594234112409

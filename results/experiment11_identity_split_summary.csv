@@ -1,0 +1,4 @@
+partition,num_images,num_identities
+reference,2101,37
+calibration,523,12
+evaluation,399,13

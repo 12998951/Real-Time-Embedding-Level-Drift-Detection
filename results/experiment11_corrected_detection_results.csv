@@ -1,0 +1,13 @@
+stream,detector,threshold,pre_drift_alarms,post_drift_alarms,post_drift_detection,first_post_drift_alarm_window,detection_delay_windows
+control,euclidean,6.905387878417969,2,0,False,,
+control,mahalanobis_ridge_0.001,7.592309206341021,2,0,False,,
+control,mahalanobis_ridge_0.01,7.166080410140089,3,0,False,,
+control,mahalanobis_ridge_0.1,5.5936154132963996,3,0,False,,
+dim_drift,euclidean,6.905387878417969,2,10,True,9.0,0.0
+dim_drift,mahalanobis_ridge_0.001,7.592309206341021,2,8,True,9.0,0.0
+dim_drift,mahalanobis_ridge_0.01,7.166080410140089,3,9,True,9.0,0.0
+dim_drift,mahalanobis_ridge_0.1,5.5936154132963996,3,10,True,9.0,0.0
+bright_drift,euclidean,6.905387878417969,2,10,True,9.0,0.0
+bright_drift,mahalanobis_ridge_0.001,7.592309206341021,2,10,True,9.0,0.0
+bright_drift,mahalanobis_ridge_0.01,7.166080410140089,3,10,True,9.0,0.0
+bright_drift,mahalanobis_ridge_0.1,5.5936154132963996,3,10,True,9.0,0.0

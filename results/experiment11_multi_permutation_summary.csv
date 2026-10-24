@@ -1,0 +1,5 @@
+detector,permutations,mean_control_alarms,std_control_alarms,min_control_alarms,max_control_alarms,mean_alarm_rate_percent,mean_pre_transition_alarms,mean_post_transition_alarms
+euclidean,20,1.4,0.88,0,4,7.37,0.5,0.9
+mahalanobis_ridge_0.001,20,1.95,1.05,0,4,10.26,0.8,1.15
+mahalanobis_ridge_0.01,20,2.35,1.04,0,4,12.37,0.95,1.4
+mahalanobis_ridge_0.1,20,3.4,0.99,1,5,17.89,1.5,1.9

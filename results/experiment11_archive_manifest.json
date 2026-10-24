@@ -1,0 +1,28 @@
+{
+  "project": "Experiment 11 \u2014 Illumination Drift Detection",
+  "created_utc": "2026-10-24T19:55:51.138629+00:00",
+  "notebook_included": true,
+  "file_count_before_manifest": 21,
+  "files": [
+    "11_Illumination_Drift_Detection.ipynb",
+    "README_Experiment_11.md",
+    "data/experiment11_resnet18_embeddings.npz",
+    "results/experiment11_metadata.json",
+    "results/experiment11_missing_value_audit.csv",
+    "results/experiment11_multi_permutation_summary.csv",
+    "results/experiment11_consistent_window_thresholds.csv",
+    "results/experiment11_combined_evaluation_results.csv",
+    "results/experiment11_controlled_detection_results.csv",
+    "results/experiment11_score_diagnostics.csv",
+    "results/experiment11_multi_permutation_control.csv",
+    "results/experiment11_identity_split_summary.csv",
+    "results/experiment11_control_order_comparison.csv",
+    "results/experiment11_alarm_rate_metrics.csv",
+    "results/experiment11_thresholds.csv",
+    "results/experiment11_corrected_detection_results.csv",
+    "results/experiment11_embedding_shift_audit.csv",
+    "results/experiment11_randomized_order_results.csv",
+    "figures/experiment11_detector_score_timeline.png",
+    "figures/experiment11_illumination_preview.png"
+  ]
+}
