@@ -305,7 +305,19 @@ These findings are preliminary and apply only to the specified synthetic Gaussia
 - Independent validation: [`independent_false_alarm_validation.csv`](results/corrected/independent_false_alarm_validation.csv)
 
 The original Euclidean-only evaluation and its results are retained separately. This supplementary experiment is not a replacement for the original evaluation.
+## Experiment 11: Illumination Drift Detection
 
+Evaluates ResNet-18 embedding sensitivity to controlled illumination changes using LFW images, calibrated distance-based detectors, and randomized-order control tests.
+
+- **Notebook:** [`11_Illumination_Drift_Detection.ipynb`](experiments/11_Illumination_Drift_Detection.ipynb)
+- **Results:** Experiment 11 CSV files and metadata in `results/`
+- **Figures:** `assets/experiment11_detector_score_timeline.png` and `assets/experiment11_illumination_preview.png`
+- **Methods:** Euclidean distance, ridge-regularized Mahalanobis distance, identity-disjoint evaluation, and 20-permutation control analysis.
+- **Status:** Preliminary controlled evaluation. Full from-scratch reproducibility remains unverified.
+
+### Limitations
+
+The experiment tests controlled brightness transformations rather than naturally occurring illumination changes. It uses pretrained ImageNet ResNet-18 features rather than a dedicated face-recognition encoder. The results do not establish biometric recognition accuracy, fairness, production readiness, or general detector superiority.
 ## Author
 
 Moien Shaik
