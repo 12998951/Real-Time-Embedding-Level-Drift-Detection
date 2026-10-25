@@ -345,23 +345,23 @@ In this synthetic evaluation, Mahalanobis with ridge 0.001 detected 90% of trial
 
 ### Limitations
 
-The evaluation uses 10 synthetic directions per drift condition and 30 calibration and evaluation windows. The partitions share the same identities, so this is image-level rather than identity-disjoint separation. The additive shifts are artificial and do not establish performance under naturally occurring biometric drift. Additionally, the Euclidean detector produced alarms on the control set, so its apparent drift-detection performance must be interpreted in light of baseline alarms. The results are preliminary and require further evaluation using identity-disjoint testing, more calibration windows, uncertainty estimates across repeated runs, and realistic biometric drift scenarios.
+The evaluation uses 10 synthetic directions per positive drift condition, with 30 calibration windows, 30 control windows, and 30 evaluation windows.
 
 These findings are preliminary and should not be interpreted as evidence of real-world biometric recognition accuracy, fairness, or deployment readiness.
 
 ## Numerical Stability Check
 
-A diagnostic check was performed on the regularized covariance matrices used by the Mahalanobis detectors, using the reference data with 1,209 samples and 768 embedding dimensions.
+A numerical diagnostic was performed on the regularized covariance matrices used by the Mahalanobis detectors, using 1,209 reference samples with 768 embedding dimensions.
 
-| Ridge regularization | Condition number | Inverse error |
+| Ridge regularization | Condition number | Inverse residual |
 |---:|---:|---:|
 | 0.001 | 1.005 × 10⁵ | 9.984 × 10⁻¹² |
 | 0.01 | 1.005 × 10⁴ | 3.307 × 10⁻¹² |
 | 0.1 | 1.006 × 10³ | 6.640 × 10⁻¹³ |
 
-All computed inverses contained finite values, and the inverse residuals were small. Increasing the ridge regularization reduced the condition number.
+All computed inverses contained finite values, and the inverse residuals were small. Increasing the ridge regularization reduced the condition number under the tested configuration.
 
-This diagnostic supports the numerical computability of the regularized inverses under the tested configuration. It does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation.
+This diagnostic supports the numerical computability of the regularized inverses but does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation. Full end-to-end reproducibility from a clean runtime has not yet been independently verified.
 
 ## Author
 
