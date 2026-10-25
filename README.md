@@ -326,6 +326,29 @@ The corrected controlled-drift evaluation is recorded in [`experiment11_correcte
 The older [`experiment11_controlled_detection_results.csv`](results/experiment11_controlled_detection_results.csv) is retained for transparency. It uses the earlier per-image calibration thresholds, which are inconsistent with the window-mean scores used in the controlled evaluation. It should not be interpreted as the corrected evaluation.
 
 Post-drift detection percentage represents the proportion of post-drift windows that triggered an alarm. A detected distribution shift does not, by itself, establish a biometric recognition failure, fairness degradation, or security incident.
+
+## Experiment 12: Cross-Condition Generalisation of Embedding-Level Drift Detectors
+
+This experiment compares Euclidean and ridge-regularized Mahalanobis detectors under controlled additive shifts to embedding windows.
+
+- **Results directory:** [`results/experiment12/`](results/experiment12/)
+- **Detection summary:** [`exp12_detection_summary.csv`](results/experiment12/exp12_detection_summary.csv)
+- **Trial-level results:** [`exp12_trial_results.csv`](results/experiment12/exp12_trial_results.csv)
+- **Control-set results:** [`exp12_control_results.csv`](results/experiment12/exp12_control_results.csv)
+- **Calibration thresholds:** [`exp12_calibration_results.csv`](results/experiment12/exp12_calibration_results.csv)
+- **Detection-rate plot:** [`exp12_detection_rate.png`](results/experiment12/exp12_detection_rate.png)
+- **Post-drift alarm-rate plot:** [`exp12_post_alarm_rate.png`](results/experiment12/exp12_post_alarm_rate.png)
+
+### Preliminary findings
+
+In this synthetic evaluation, Mahalanobis with ridge 0.001 detected 90% of trials at drift strength 1.0 and 100% at strengths 1.5–4.0. The Euclidean detector showed baseline alarms even when no drift was injected, which limits the interpretation of its apparent detection rate.
+
+### Limitations
+
+The evaluation uses 10 synthetic directions per drift condition and 30 calibration and evaluation windows. The partitions share the same identities, so this is image-level rather than identity-disjoint separation. The additive shifts are artificial and do not establish performance under naturally occurring biometric drift.
+
+These findings are preliminary and should not be interpreted as evidence of real-world biometric recognition accuracy, fairness, or deployment readiness.
+
 ## Author
 
 Moien Shaik
