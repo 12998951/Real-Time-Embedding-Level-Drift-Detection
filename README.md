@@ -349,6 +349,20 @@ The evaluation uses 10 synthetic directions per drift condition and 30 calibrati
 
 These findings are preliminary and should not be interpreted as evidence of real-world biometric recognition accuracy, fairness, or deployment readiness.
 
+## Numerical Stability Check
+
+A diagnostic check was performed on the regularized covariance matrices used by the Mahalanobis detectors, using the reference data with 1,209 samples and 768 embedding dimensions.
+
+| Ridge regularization | Condition number | Inverse error |
+|---:|---:|---:|
+| 0.001 | 1.005 × 10⁵ | 9.984 × 10⁻¹² |
+| 0.01 | 1.005 × 10⁴ | 3.307 × 10⁻¹² |
+| 0.1 | 1.006 × 10³ | 6.640 × 10⁻¹³ |
+
+All computed inverses contained finite values, and the inverse residuals were small. Increasing the ridge regularization reduced the condition number.
+
+This diagnostic supports the numerical computability of the regularized inverses under the tested configuration. It does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation.
+
 ## Author
 
 Moien Shaik
