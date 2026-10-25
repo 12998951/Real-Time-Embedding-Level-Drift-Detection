@@ -345,7 +345,7 @@ In this synthetic evaluation, Mahalanobis with ridge 0.001 detected 90% of trial
 
 ### Limitations
 
-The evaluation uses 10 synthetic directions per drift condition and 30 calibration and evaluation windows. The partitions share the same identities, so this is image-level rather than identity-disjoint separation. The additive shifts are artificial and do not establish performance under naturally occurring biometric drift.
+The evaluation uses 10 synthetic directions per drift condition and 30 calibration and evaluation windows. The partitions share the same identities, so this is image-level rather than identity-disjoint separation. The additive shifts are artificial and do not establish performance under naturally occurring biometric drift. Additionally, the Euclidean detector produced alarms on the control set, so its apparent drift-detection performance must be interpreted in light of baseline alarms. The results are preliminary and require further evaluation using identity-disjoint testing, more calibration windows, uncertainty estimates across repeated runs, and realistic biometric drift scenarios.
 
 These findings are preliminary and should not be interpreted as evidence of real-world biometric recognition accuracy, fairness, or deployment readiness.
 
