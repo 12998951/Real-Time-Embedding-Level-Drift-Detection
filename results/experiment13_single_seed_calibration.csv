@@ -1,0 +1,7 @@
+detector,target_false_alarm_rate,threshold,calibration_windows
+euclidean,0.01,2.182925397093036,200
+euclidean,0.05,2.0567740431664627,200
+euclidean,0.1,1.9885952087575922,200
+mahalanobis,0.01,15.156866535381832,200
+mahalanobis,0.05,13.982621587842932,200
+mahalanobis,0.1,13.680417800246722,200
