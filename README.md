@@ -365,7 +365,7 @@ This diagnostic supports the numerical computability of the regularized inverses
 
 ## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
-Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The experiment progresses from synthetic robustness analysis to controlled LFW brightness transformations and fresh-identity stream validation using a frozen sequential CUSUM detector.
+Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The work progresses from synthetic robustness analysis to controlled LFW brightness transformations, sequential CUSUM evaluation, fresh-identity stream validation, and repeated bootstrap resampling.
 
 ### Synthetic evaluation
 
@@ -391,78 +391,92 @@ The sequential pilot evaluates a frozen CUSUM configuration on controlled stream
 
 The two pre-onset alarms occurred in the same resampling replicates across the control and transformed conditions. This indicates that stream variability can trigger alarms before the imposed brightness change.
 
-The resampled streams overlap and are not independent datasets. The detection rates are exploratory and do not establish reliable deployment performance.
+The resampled streams overlap and are not independent datasets. These detection rates are exploratory and do not establish reliable deployment performance.
 
 ### Stage 3: Fresh-identity stream validation
 
-Stage 3 evaluates the previously frozen one-sided CUSUM detector on a newly constructed stream of LFW identities that were not used in the earlier 600-image matched-stream experiment.
+Stage 3 evaluates the previously frozen one-sided CUSUM detector on a new stream of 1,000 LFW images representing 1,000 distinct identities that were not used in the earlier 600-image matched-stream experiment.
 
-**Experimental setup**
-
-- Dataset: Labeled Faces in the Wild (LFW), using 512-dimensional FaceNet embeddings.
-- Fresh stream: 1,000 images representing 1,000 distinct identities.
-- Stream configuration: 20 windows of 50 images per condition.
+**Configuration**
+- Embeddings: 512-dimensional pretrained FaceNet representations.
+- Window size: 50 images; 20 windows per condition.
 - Conditions: unchanged control, brightness factor 0.70, and brightness factor 1.30.
-- Change onset: window 10 (zero-based; the 11th window).
-- Windows 0–9 use original embeddings in all conditions. Windows 10–19 use embeddings extracted from brightness-transformed images in the two transformed conditions.
-- The fresh stream excludes identities used in the earlier 600-image matched stream.
-- The fresh identities come from the same LFW dataset and evaluation partition; this is not independent external-dataset validation.
-
-**Frozen detector configuration**
-
-| Parameter | Value |
-|---|---:|
-| Baseline median | 1.041908290 |
-| Robust scale | 0.099255882 |
-| CUSUM allowance, \(k\) | 0.5 |
-| Alarm threshold, \(h\) | 5.0 |
-| Window size | 50 images |
-
-Detector parameters were not retuned on the fresh evaluation streams.
+- Change onset: window 10 (zero-based).
+- Frozen baseline median: 1.041908290.
+- Frozen robust scale: 0.099255882.
+- CUSUM allowance \(k=0.5\); threshold \(h=5.0\).
+- No detector retuning on the fresh evaluation streams.
 
 **Results**
 
-| **Condition** | **First detection window** | **Pre-onset alarm** | **Detected after onset** | **Detection delay** | **Maximum CUSUM** |
-|---|---:|---|---|---:|---:|
-| Control | None | No | Not applicable | Not applicable | 2.842 |
-| Brightness 0.70 | None | No | No | Not applicable | 2.842 |
-| Brightness 1.30 | 14 | No | Yes | 4 windows | 9.762 |
+| **Condition** | **First detection window** | **Pre-onset alarm** | **Detected after onset** | **Delay** |
+|---|---:|---|---|---:|
+| Control | None | No | Not applicable | Not applicable |
+| Brightness 0.70 | None | No | No | Not applicable |
+| Brightness 1.30 | 14 | No | Yes | 4 windows |
 
-The detector did not alarm on the unchanged control stream or the brightness-0.70 stream. It detected the brightness-1.30 stream at window 14, four windows after the imposed onset at window 10.
+The detector detected the brightness-1.30 stream four windows after the imposed onset. It did not alarm on the control or brightness-0.70 stream. This is a positive result for one stream under one controlled transformation, not an estimate of reliable detection performance.
 
-The control and brightness-0.70 streams share the same original embeddings before the onset, which explains their identical maximum CUSUM values in this evaluation.
+### Stage 3: Repeated bootstrap resampling and paired comparison
 
-**Interpretation**
+A further exploratory evaluation performs 20 paired resampling replicates for each condition, using the existing 1,000-image Stage 3 embedding pool and the same frozen detector configuration. The same sampled positions are used across the control and brightness-transformed streams within each replicate.
 
-Stage 3 provides a preliminary positive detection for one fresh stream under the stronger controlled brightness transformation. It does not establish reliable detection rates, false-alarm rates, or generalisation performance because only one stream construction was evaluated per condition.
+**Any alarm at or after window 10**
+
+| **Condition** | **Replicates** | **Pre-onset alarm rate** | **Replicates with an alarm at/after window 10** |
+|---|---:|---:|---:|
+| Control | 20 | 40% | 75% |
+| Brightness 0.70 | 20 | 40% | 90% |
+| Brightness 1.30 | 20 | 40% | 100% |
+
+These late alarms must not be interpreted automatically as successful drift detections. The unchanged control also produces late alarms, and eight of 20 replicates have pre-onset alarms in each condition.
+
+**Paired first-alarm comparison**
+
+| **Condition** | **Both streams alarm** | **Transformed stream alarms earlier** | **Same first-alarm window** | **Transformed stream alarms later** |
+|---|---:|---:|---:|---:|
+| Brightness 0.70 vs control | 16 | 6 | 10 | 0 |
+| Brightness 1.30 vs control | 16 | 8 | 8 | 0 |
+
+Among replicates where both streams alarmed, the transformed stream never had a later first alarm than its paired control in this run. However, this comparison does not eliminate the false-alarm problem: pre-onset alarms and late alarms on the unchanged control indicate that normal stream variability can trigger the detector.
+
+The bootstrap replicates reuse the same underlying image pool and are not independent datasets. These findings measure sensitivity to resampling rather than generalisation to new identities or external datasets.
+
+### Visualization
+
+The Stage 3 CUSUM plot shows the frozen threshold, the imposed onset, and the CUSUM traces for the control and both brightness conditions.
+
+![Experiment 13 Stage 3 CUSUM plot](results/lfw_stage3_fresh_cusum_plot.png)
 
 ### Reports and results
 
-**Synthetic and sequential evaluation**
-
-- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
-- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
-- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_repeated_stream_cusum_results.csv)
-- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_repeated_stream_cusum_summary.csv)
-- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_identity_balanced_calibration_diagnostics.csv)
+**Sequential pilot and repeated-stream evaluation**
+- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
+- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
+- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
+- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
+- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
 
 **Stage 3 fresh-identity validation**
+- Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
+- CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](results/lfw_stage3_fresh_cusum_results.csv)
+- CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](results/lfw_stage3_fresh_cusum_trace.csv)
 
-- Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
-- CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_results.csv)
-- CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_trace.csv)
+**Stage 3 bootstrap comparison**
+- Paired comparison report: [`Experiment_13_Stage_3_Bootstrap_Comparison_Report.md`](results/Experiment_13_Stage_3_Bootstrap_Comparison_Report.md)
+- Bootstrap replicate results: [`lfw_stage3_bootstrap_cusum_results.csv`](results/lfw_stage3_bootstrap_cusum_results.csv)
+- Bootstrap CUSUM trace: [`lfw_stage3_bootstrap_cusum_trace.csv`](results/lfw_stage3_bootstrap_cusum_trace.csv)
+- Paired first-alarm comparison: [`lfw_stage3_bootstrap_paired_comparison.csv`](results/lfw_stage3_bootstrap_paired_comparison.csv)
 
-Additional sequential detector parameters, traces, and diagnostics are stored in `results/`.
+Additional detector parameters, traces, and diagnostics are stored in `results/`.
 
 ### Limitations
 
-These experiments use synthetic distributions and controlled transformations of static face images. They do not represent naturally occurring temporal biometric drift.
+These experiments use synthetic distributions and controlled transformations of static face images, not naturally occurring temporal biometric drift. Bootstrap/resampling replicates overlap and are not independent observations. Stage 3 uses one stream per condition, and the repeated-resampling control results show substantial late alarms and pre-onset alarms.
 
-The repeated-stream bootstrap/resampling replicates overlap and may contain repeated identities within a window. Their detection rates are exploratory. Stage 3 uses one stream per condition, which is insufficient to estimate dependable detection or false-alarm rates.
+The detector has not demonstrated dependable operational false-alarm control. The experiments do not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, cyberattack detection, or deployment readiness. The CUSUM configuration is provisional and does not guarantee a specified operational false-alarm rate.
 
-The fresh-identity evaluation uses the same LFW dataset and evaluation partition rather than an independent external dataset. The experiments do not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, cyberattack detection, or deployment readiness. The CUSUM threshold and configuration are provisional and do not guarantee a specified operational false-alarm rate.
-
-Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
+The fresh-identity evaluation uses the same LFW dataset and evaluation partition, rather than an independent external dataset. Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
 
 ## Author
 
