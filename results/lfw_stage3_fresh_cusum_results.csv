@@ -1,0 +1,4 @@
+stream,first_detection_window,pre_onset_alarm,control_false_alarm,detected_after_onset,detection_delay_windows,max_cusum
+control,none,0,0,,,2.841605259592469
+brightness_070,none,0,0,0.0,,2.841605259592469
+brightness_130,14,0,0,1.0,4.0,9.762240285892949
