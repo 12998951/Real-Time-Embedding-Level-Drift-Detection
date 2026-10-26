@@ -365,7 +365,7 @@ This diagnostic supports the numerical computability of the regularized inverses
 
 ## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
-Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot.
+Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The experiment progresses from synthetic robustness analysis to controlled LFW brightness transformations and fresh-identity stream validation using a frozen sequential CUSUM detector.
 
 ### Synthetic evaluation
 
@@ -383,7 +383,7 @@ The evaluation uses matched image streams and identity-disjoint reference and ev
 
 The sequential pilot evaluates a frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
 
-| Condition | Replicates | Pre-onset alarm rate | Post-onset detection rate |
+| **Condition** | **Replicates** | **Pre-onset alarm rate** | **Post-onset detection rate** |
 |---|---:|---:|---:|
 | Control | 20 | 10% | Not applicable |
 | Brightness 0.70 | 20 | 10% | 40% |
@@ -393,21 +393,76 @@ The two pre-onset alarms occurred in the same resampling replicates across the c
 
 The resampled streams overlap and are not independent datasets. The detection rates are exploratory and do not establish reliable deployment performance.
 
+### Stage 3: Fresh-identity stream validation
+
+Stage 3 evaluates the previously frozen one-sided CUSUM detector on a newly constructed stream of LFW identities that were not used in the earlier 600-image matched-stream experiment.
+
+**Experimental setup**
+
+- Dataset: Labeled Faces in the Wild (LFW), using 512-dimensional FaceNet embeddings.
+- Fresh stream: 1,000 images representing 1,000 distinct identities.
+- Stream configuration: 20 windows of 50 images per condition.
+- Conditions: unchanged control, brightness factor 0.70, and brightness factor 1.30.
+- Change onset: window 10 (zero-based; the 11th window).
+- Windows 0–9 use original embeddings in all conditions. Windows 10–19 use embeddings extracted from brightness-transformed images in the two transformed conditions.
+- The fresh stream excludes identities used in the earlier 600-image matched stream.
+- The fresh identities come from the same LFW dataset and evaluation partition; this is not independent external-dataset validation.
+
+**Frozen detector configuration**
+
+| Parameter | Value |
+|---|---:|
+| Baseline median | 1.041908290 |
+| Robust scale | 0.099255882 |
+| CUSUM allowance, \(k\) | 0.5 |
+| Alarm threshold, \(h\) | 5.0 |
+| Window size | 50 images |
+
+Detector parameters were not retuned on the fresh evaluation streams.
+
+**Results**
+
+| **Condition** | **First detection window** | **Pre-onset alarm** | **Detected after onset** | **Detection delay** | **Maximum CUSUM** |
+|---|---:|---|---|---:|---:|
+| Control | None | No | Not applicable | Not applicable | 2.842 |
+| Brightness 0.70 | None | No | No | Not applicable | 2.842 |
+| Brightness 1.30 | 14 | No | Yes | 4 windows | 9.762 |
+
+The detector did not alarm on the unchanged control stream or the brightness-0.70 stream. It detected the brightness-1.30 stream at window 14, four windows after the imposed onset at window 10.
+
+The control and brightness-0.70 streams share the same original embeddings before the onset, which explains their identical maximum CUSUM values in this evaluation.
+
+**Interpretation**
+
+Stage 3 provides a preliminary positive detection for one fresh stream under the stronger controlled brightness transformation. It does not establish reliable detection rates, false-alarm rates, or generalisation performance because only one stream construction was evaluated per condition.
+
 ### Reports and results
 
-- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
-- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
-- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
-- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
-- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
+**Synthetic and sequential evaluation**
+
+- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
+- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
+- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_repeated_stream_cusum_results.csv)
+- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_repeated_stream_cusum_summary.csv)
+- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_identity_balanced_calibration_diagnostics.csv)
+
+**Stage 3 fresh-identity validation**
+
+- Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
+- CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_results.csv)
+- CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_trace.csv)
 
 Additional sequential detector parameters, traces, and diagnostics are stored in `results/`.
 
 ### Limitations
 
-These are controlled transformations of static images, not naturally occurring biometric drift. Bootstrap/resampling replicates overlap and may contain repeated identities within a window. Pre-onset alarms and modest post-onset detection rates limit the evidence for dependable sequential detection.
+These experiments use synthetic distributions and controlled transformations of static face images. They do not represent naturally occurring temporal biometric drift.
 
-The experiments do not establish real-world biometric recognition accuracy, fairness, bias mitigation, cyberattack detection, or deployment readiness. Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
+The repeated-stream bootstrap/resampling replicates overlap and may contain repeated identities within a window. Their detection rates are exploratory. Stage 3 uses one stream per condition, which is insufficient to estimate dependable detection or false-alarm rates.
+
+The fresh-identity evaluation uses the same LFW dataset and evaluation partition rather than an independent external dataset. The experiments do not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, cyberattack detection, or deployment readiness. The CUSUM threshold and configuration are provisional and do not guarantee a specified operational false-alarm rate.
+
+Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
 
 ## Author
 
