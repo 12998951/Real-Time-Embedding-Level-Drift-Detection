@@ -1,0 +1,12 @@
+# Experiment 13 — LFW Dataset Configuration
+
+- Dataset: Labeled Faces in the Wild (LFW)
+- TensorFlow Datasets package version: 4.9.10
+- Builder name: lfw
+- Builder version: 0.1.1
+- Dataset split used in the notebook: train
+- Loading mode observed: as_supervised=False
+
+This records the dataset configuration reported by the current runtime.
+The local dataset cache and dataset files must be available or downloaded
+successfully for a fresh-runtime reproduction.

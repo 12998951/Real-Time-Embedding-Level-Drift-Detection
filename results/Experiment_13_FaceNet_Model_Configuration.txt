@@ -1,0 +1,30 @@
+# Experiment 13 — FaceNet Model Configuration
+
+## Package and initialization
+- Python package: keras-facenet==0.3.2
+- Import: from keras_facenet import FaceNet
+- Initialization: FaceNet()
+- Constructor defaults observed:
+  - key: 20180402-114759
+  - use_prebuilt: True
+  - cache_folder: ~/.keras-facenet
+
+## Model architecture
+- Model name: inception_resnet_v1
+- Input shape: (None, None, None, 3)
+- Output shape: (None, 512)
+- Number of parameters: 23497424
+- Input dtype: float32
+- Output dtype: float32
+
+## Pretrained weights observed
+- Filename: 20180402-114759-weights.h5
+- Cache path: ~/.keras-facenet/20180402-114759/20180402-114759-weights.h5
+- File size: 94952520 bytes
+- SHA-256: 8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
+
+The model details and checksum were observed in the Colab runtime on
+2026-10-26. The checksum identifies this file; it does not independently
+verify the file's provenance or authenticity.
+
+Fresh-runtime reproducibility has not yet been demonstrated.
