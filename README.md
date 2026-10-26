@@ -363,27 +363,66 @@ All computed inverses contained finite values, and the inverse residuals were sm
 
 This diagnostic supports the numerical computability of the regularized inverses but does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation. Full end-to-end reproducibility from a clean runtime has not yet been independently verified.
 
-## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
+# Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
 Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The work progresses from synthetic robustness analysis to controlled LFW brightness transformations, sequential CUSUM evaluation, fresh-identity stream validation, and repeated bootstrap resampling.
 
-### Synthetic evaluation
+## Synthetic evaluation
 
 The synthetic evaluation examines detection sensitivity, false-alarm behaviour, and robustness across embedding dimensions, covariance regularization settings, and random seeds. A supplementary robustness evaluation covers 360 configurations.
 
 Results are specific to the synthetic data-generating process and tested parameter settings. They do not establish performance on real biometric recognition systems.
 
-### LFW controlled-brightness pilot
+Available synthetic evaluation artifacts include:
+
+- [`experiment13_trial_results.csv`](results/experiment13_trial_results.csv)
+- [`experiment13_detection_summary.csv`](results/experiment13_detection_summary.csv)
+- [`experiment13_control_fpr_summary.csv`](results/experiment13_control_fpr_summary.csv)
+- [`experiment13_single_seed_calibration.csv`](results/experiment13_single_seed_calibration.csv)
+- [`experiment13_single_seed_control.csv`](results/experiment13_single_seed_control.csv)
+- [`experiment13_robustness_summary.csv`](results/experiment13_robustness_summary.csv)
+- [`experiment13_robustness_summary_ci.csv`](results/experiment13_robustness_summary_ci.csv)
+- [`experiment13_robustness_trials.csv`](results/experiment13_robustness_trials.csv)
+- [`experiment13_detection_ci.png`](results/experiment13_detection_ci.png)
+- [`experiment13_robustness_detection.png`](results/experiment13_robustness_detection.png)
+
+## LFW controlled-brightness pilot
 
 A preliminary pilot uses pretrained FaceNet embeddings extracted from the Labeled Faces in the Wild (LFW) dataset. Controlled brightness transformations are applied to images to examine changes in embedding-level detector scores.
 
 The evaluation uses matched image streams and identity-disjoint reference and evaluation partitions. These experiments examine representation-score changes, not biometric recognition accuracy or naturally occurring temporal drift.
 
-### Sequential CUSUM evaluation
+The sequential detector uses Mahalanobis distances calculated from window-mean embeddings. Scores are standardized using calibration-derived statistics and passed to a one-sided cumulative sum (CUSUM) detector.
 
-The sequential pilot evaluates a frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
+### Frozen detector configuration
 
-| **Condition** | **Replicates** | **Pre-onset alarm rate** | **Post-onset detection rate** |
+The saved parameter file records the following values:
+
+| Parameter | Value |
+|---|---:|
+| Baseline median | 1.0419082897513998 |
+| Robust scale | 0.09925588181635098 |
+| CUSUM allowance, \(k\) | 0.5 |
+| Alarm threshold, \(h\) | 5.0 |
+| Calibration windows | 100 |
+| Window size | 50 images |
+| Calibration method | Identity-balanced windows |
+
+These parameters were recorded as frozen settings for the subsequent sequential evaluations. The allowance and threshold are provisional settings and do not guarantee a specified operational false-alarm rate.
+
+Available pilot artifacts:
+
+- [`lfw_sequential_detector_parameters_v2.csv`](results/lfw_sequential_detector_parameters_v2.csv)
+- [`lfw_sequential_detector_results_v2.csv`](results/lfw_sequential_detector_results_v2.csv)
+- [`lfw_sequential_detector_trace_v2.csv`](results/lfw_sequential_detector_trace_v2.csv)
+- [`lfw_sequential_cusum_diagnostics_v2.csv`](results/lfw_sequential_cusum_diagnostics_v2.csv)
+- [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
+
+## Sequential CUSUM evaluation
+
+The sequential pilot evaluates the frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
+
+| Condition | Replicates | Pre-onset alarm rate | Post-onset detection rate |
 |---|---:|---:|---:|
 | Control | 20 | 10% | Not applicable |
 | Brightness 0.70 | 20 | 10% | 40% |
@@ -393,47 +432,64 @@ The two pre-onset alarms occurred in the same resampling replicates across the c
 
 The resampled streams overlap and are not independent datasets. These detection rates are exploratory and do not establish reliable deployment performance.
 
-### Stage 3: Fresh-identity stream validation
+Reports and results:
+
+- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
+- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
+- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
+- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
+
+## Stage 3: Fresh-identity stream validation
 
 Stage 3 evaluates the previously frozen one-sided CUSUM detector on a new stream of 1,000 LFW images representing 1,000 distinct identities that were not used in the earlier 600-image matched-stream experiment.
 
-**Configuration**
+### Configuration
+
 - Embeddings: 512-dimensional pretrained FaceNet representations.
 - Window size: 50 images; 20 windows per condition.
 - Conditions: unchanged control, brightness factor 0.70, and brightness factor 1.30.
-- Change onset: window 10 (zero-based).
+- Change onset: window 10, using zero-based indexing.
 - Frozen baseline median: 1.041908290.
 - Frozen robust scale: 0.099255882.
-- CUSUM allowance \(k=0.5\); threshold \(h=5.0\).
+- CUSUM allowance: \(k=0.5\).
+- Alarm threshold: \(h=5.0\).
 - No detector retuning on the fresh evaluation streams.
 
-**Results**
+### Results
 
-| **Condition** | **First detection window** | **Pre-onset alarm** | **Detected after onset** | **Delay** |
-|---|---:|---|---|---:|
+| Condition | First detection window | Pre-onset alarm | Detected after onset | Delay |
+|---|---:|---|---|---|
 | Control | None | No | Not applicable | Not applicable |
 | Brightness 0.70 | None | No | No | Not applicable |
 | Brightness 1.30 | 14 | No | Yes | 4 windows |
 
 The detector detected the brightness-1.30 stream four windows after the imposed onset. It did not alarm on the control or brightness-0.70 stream. This is a positive result for one stream under one controlled transformation, not an estimate of reliable detection performance.
 
-### Stage 3: Repeated bootstrap resampling and paired comparison
+The fresh identities came from the same LFW dataset and evaluation partition, rather than an independent external dataset.
+
+### Stage 3 artifacts
+
+- Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
+- CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](results/lfw_stage3_fresh_cusum_results.csv)
+- CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](results/lfw_stage3_fresh_cusum_trace.csv)
+
+## Stage 3: Repeated bootstrap resampling and paired comparison
 
 A further exploratory evaluation performs 20 paired resampling replicates for each condition, using the existing 1,000-image Stage 3 embedding pool and the same frozen detector configuration. The same sampled positions are used across the control and brightness-transformed streams within each replicate.
 
-**Any alarm at or after window 10**
+### Any alarm at or after window 10
 
-| **Condition** | **Replicates** | **Pre-onset alarm rate** | **Replicates with an alarm at/after window 10** |
+| Condition | Replicates | Pre-onset alarm rate | Replicates with an alarm at/after window 10 |
 |---|---:|---:|---:|
 | Control | 20 | 40% | 75% |
 | Brightness 0.70 | 20 | 40% | 90% |
 | Brightness 1.30 | 20 | 40% | 100% |
 
-These late alarms must not be interpreted automatically as successful drift detections. The unchanged control also produces late alarms, and eight of 20 replicates have pre-onset alarms in each condition.
+These late alarms must not automatically be interpreted as successful drift detections. The unchanged control also produces late alarms, and eight of 20 replicates have pre-onset alarms in each condition.
 
-**Paired first-alarm comparison**
+### Paired first-alarm comparison
 
-| **Condition** | **Both streams alarm** | **Transformed stream alarms earlier** | **Same first-alarm window** | **Transformed stream alarms later** |
+| Condition | Both streams alarm | Transformed stream alarms earlier | Same first-alarm window | Transformed stream alarms later |
 |---|---:|---:|---:|---:|
 | Brightness 0.70 vs control | 16 | 6 | 10 | 0 |
 | Brightness 1.30 vs control | 16 | 8 | 8 | 0 |
@@ -442,41 +498,64 @@ Among replicates where both streams alarmed, the transformed stream never had a 
 
 The bootstrap replicates reuse the same underlying image pool and are not independent datasets. These findings measure sensitivity to resampling rather than generalisation to new identities or external datasets.
 
-### Visualization
+### Bootstrap artifact availability
 
-The Stage 3 CUSUM plot shows the frozen threshold, the imposed onset, and the CUSUM traces for the control and both brightness conditions.
+The following two files were not found at the checked GitHub paths or in the checked Google Drive locations during the reproducibility audit:
 
-![Experiment 13 Stage 3 CUSUM plot](results/lfw_stage3_fresh_cusum_plot.png)
+- `lfw_stage3_bootstrap_cusum_results.csv`
+- `lfw_stage3_bootstrap_cusum_trace.csv`
 
-### Reports and results
+The numerical summaries above reflect previously recorded outputs, but the raw bootstrap CSVs were not independently recovered. They should not be treated as independently reproducible from the currently available artifacts alone.
 
-**Sequential pilot and repeated-stream evaluation**
-- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
-- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
-- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
-- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
-- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
+The paired comparison report is also not linked here because its current GitHub availability has not been verified.
 
-**Stage 3 fresh-identity validation**
-- Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
-- CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](results/lfw_stage3_fresh_cusum_results.csv)
-- CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](results/lfw_stage3_fresh_cusum_trace.csv)
+## Visualization
 
-**Stage 3 bootstrap comparison**
-- Paired comparison report: [`Experiment_13_Stage_3_Bootstrap_Comparison_Report.md`](results/Experiment_13_Stage_3_Bootstrap_Comparison_Report.md)
-- Bootstrap replicate results: [`lfw_stage3_bootstrap_cusum_results.csv`](results/lfw_stage3_bootstrap_cusum_results.csv)
-- Bootstrap CUSUM trace: [`lfw_stage3_bootstrap_cusum_trace.csv`](results/lfw_stage3_bootstrap_cusum_trace.csv)
-- Paired first-alarm comparison: [`lfw_stage3_bootstrap_paired_comparison.csv`](results/lfw_stage3_bootstrap_paired_comparison.csv)
+The Stage 3 CUSUM plot shows the frozen threshold, imposed onset, and CUSUM traces for the control and both brightness conditions.
 
-Additional detector parameters, traces, and diagnostics are stored in `results/`.
+[Experiment 13 Stage 3 CUSUM plot](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_plot.png) ([view raw image](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/raw/main/results/lfw_stage3_fresh_cusum_plot.png))
 
-### Limitations
+## Reproducibility audit
+
+A separate Colab runtime was used to check selected environment and model prerequisites without rerunning the complete experiment.
+
+The audit verified that:
+
+- LFW could be downloaded and prepared in the fresh runtime.
+- FaceNet initialized successfully.
+- A sample LFW image produced a finite 512-dimensional embedding.
+- The frozen detector parameter CSV could be retrieved from GitHub.
+- The Stage 3 fresh-identity result CSV and CUSUM trace could be retrieved and parsed.
+- The saved notebook contains the code used to calculate the reference centre and regularized precision matrix.
+
+However, the original reference centre and precision matrix were not located among the artifacts checked. Consequently, exact reproduction of the original Mahalanobis scores has not been independently verified.
+
+The bootstrap result and trace CSVs were also not recovered from the checked GitHub paths and Google Drive locations. The fresh-runtime smoke test verifies selected prerequisites, not the complete end-to-end experiment.
+
+Environment and model configuration records:
+
+- [`Experiment_13_requirements_observed.txt`](results/Experiment_13_requirements_observed.txt)
+- [`Experiment_13_FaceNet_Model_Configuration.txt`](results/Experiment_13_FaceNet_Model_Configuration.txt)
+- [`Experiment_13_LFW_Dataset_Configuration.txt`](results/Experiment_13_LFW_Dataset_Configuration.txt)
+
+## Limitations
 
 These experiments use synthetic distributions and controlled transformations of static face images, not naturally occurring temporal biometric drift. Bootstrap/resampling replicates overlap and are not independent observations. Stage 3 uses one stream per condition, and the repeated-resampling control results show substantial late alarms and pre-onset alarms.
 
 The detector has not demonstrated dependable operational false-alarm control. The experiments do not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, cyberattack detection, or deployment readiness. The CUSUM configuration is provisional and does not guarantee a specified operational false-alarm rate.
 
-The fresh-identity evaluation uses the same LFW dataset and evaluation partition, rather than an independent external dataset. Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
+The fresh-identity evaluation uses the same LFW dataset and evaluation partition rather than an independent external dataset. The original reference centre and precision matrix have not been recovered, so exact score reproduction remains unverified. The Stage 3 bootstrap CSVs also remain unavailable at the locations checked during the audit.
+
+Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
+
+## Conclusion
+
+Experiment 13 investigates false-alarm-controlled embedding-level drift detection through synthetic evaluations and an exploratory LFW FaceNet pilot. The fresh-identity evaluation recorded a threshold crossing under the stronger controlled brightness transformation, while the repeated-stream analyses exposed important pre-onset and control-condition alarm concerns.
+
+The evidence supports continued methodological investigation, not a claim of reliable real-world biometric drift detection. The frozen detector parameters and Stage 3 fresh-identity results are available in the repository, but exact reproduction of the original Mahalanobis scores remains unverified because the reference-model artifacts were not located. The Stage 3 bootstrap CSVs also remain unavailable at the checked locations.
+
+**Overall status:** exploratory experiment completed; selected outputs verified; full numerical reproducibility remains incomplete.
+
 
 ## Author
 
