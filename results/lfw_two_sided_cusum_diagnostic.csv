@@ -1,0 +1,4 @@
+stream,first_positive_cusum_alarm,first_negative_cusum_alarm,first_two_sided_alarm,post_change_positive_cusum_max,threshold,allowance
+control,none,none,none,0.4248858080568829,5.0,0.5
+brightness_070,none,none,none,1.0177599081320237,5.0,0.5
+brightness_130,none,none,none,2.4981358932158377,5.0,0.5

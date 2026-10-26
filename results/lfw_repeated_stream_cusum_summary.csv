@@ -1,0 +1,4 @@
+condition,replicates,pre_onset_alarm_count,pre_onset_alarm_rate,post_onset_detection_count,post_onset_detection_rate,mean_detection_delay_windows,median_detection_delay_windows,mean_max_cusum,max_cusum_overall
+control,20,2,0.1,,,,,3.657318963323802,8.70282101405878
+brightness_070,20,2,0.1,8.0,0.4,2.5,2.5,5.062698097612918,11.140248542089306
+brightness_130,20,2,0.1,11.0,0.55,2.3636363636363638,2.0,7.343709125957962,13.301948231802951
