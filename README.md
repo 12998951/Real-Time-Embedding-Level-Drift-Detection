@@ -363,6 +363,52 @@ All computed inverses contained finite values, and the inverse residuals were sm
 
 This diagnostic supports the numerical computability of the regularized inverses but does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation. Full end-to-end reproducibility from a clean runtime has not yet been independently verified.
 
+## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
+
+Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot.
+
+### Synthetic evaluation
+
+The synthetic evaluation examines detection sensitivity, false-alarm behaviour, and robustness across embedding dimensions, covariance regularization settings, and random seeds. A supplementary robustness evaluation covers 360 configurations.
+
+Results are specific to the synthetic data-generating process and tested parameter settings. They do not establish performance on real biometric recognition systems.
+
+### LFW controlled-brightness pilot
+
+A preliminary pilot uses pretrained FaceNet embeddings extracted from the Labeled Faces in the Wild (LFW) dataset. Controlled brightness transformations are applied to images to examine changes in embedding-level detector scores.
+
+The evaluation uses matched image streams and identity-disjoint reference and evaluation partitions. These experiments examine representation-score changes, not biometric recognition accuracy or naturally occurring temporal drift.
+
+### Sequential CUSUM evaluation
+
+The sequential pilot evaluates a frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
+
+| Condition | Replicates | Pre-onset alarm rate | Post-onset detection rate |
+|---|---:|---:|---:|
+| Control | 20 | 10% | Not applicable |
+| Brightness 0.70 | 20 | 10% | 40% |
+| Brightness 1.30 | 20 | 10% | 55% |
+
+The two pre-onset alarms occurred in the same resampling replicates across the control and transformed conditions. This indicates that stream variability can trigger alarms before the imposed brightness change.
+
+The resampled streams overlap and are not independent datasets. The detection rates are exploratory and do not establish reliable deployment performance.
+
+### Reports and results
+
+- Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
+- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
+- Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
+- Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
+- Identity-balanced calibration diagnostics: [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
+
+Additional sequential detector parameters, traces, and diagnostics are stored in `results/`.
+
+### Limitations
+
+These are controlled transformations of static images, not naturally occurring biometric drift. Bootstrap/resampling replicates overlap and may contain repeated identities within a window. Pre-onset alarms and modest post-onset detection rates limit the evidence for dependable sequential detection.
+
+The experiments do not establish real-world biometric recognition accuracy, fairness, bias mitigation, cyberattack detection, or deployment readiness. Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
+
 ## Author
 
 Moien Shaik
