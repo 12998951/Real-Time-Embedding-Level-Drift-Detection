@@ -1,0 +1,10 @@
+source_condition,target_condition,scenario_type,mean_euclidean_fpr,mean_mahalanobis_fpr,mean_fpr_difference
+anisotropic,anisotropic,same_condition,0.0507,0.0516,0.0009000000000000015
+anisotropic,correlated,cross_condition,0.0028,0.3538,0.35100000000000003
+anisotropic,isotropic,cross_condition,0.0002,0.3408,0.3406
+correlated,anisotropic,cross_condition,0.32839999999999997,0.9949999999999999,0.6666
+correlated,correlated,same_condition,0.048799999999999996,0.053000000000000005,0.004199999999999999
+correlated,isotropic,cross_condition,0.008400000000000001,0.9667,0.9583
+isotropic,anisotropic,cross_condition,0.5415,0.541,-0.0005000000000000004
+isotropic,correlated,cross_condition,0.121,0.12090000000000001,-0.00010000000000000009
+isotropic,isotropic,same_condition,0.057499999999999996,0.0573,-0.00019999999999999982

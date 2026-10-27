@@ -1,0 +1,16 @@
+check,passed,observed,expected
+reference_dataset_count,True,60,60
+calibration_score_count,True,24000,24000
+threshold_count,True,120,120
+control_window_count,True,180000,180000
+control_summary_count,True,360,360
+drift_window_count,True,180000,180000
+drift_summary_count,True,360,360
+scenario_count,True,9,9
+statistical_comparison_count,True,9,9
+all_calibration_scores_finite,True,True,True
+all_thresholds_finite,True,True,True
+all_control_scores_finite,True,True,True
+all_drift_scores_finite,True,True,True
+control_rates_within_bounds,True,True,True
+detection_rates_within_bounds,True,True,True

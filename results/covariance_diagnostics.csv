@@ -1,4 +1,4 @@
-condition,dimension,symmetric,finite,minimum_eigenvalue,maximum_eigenvalue,minimum_marginal_variance,maximum_marginal_variance,mean_absolute_off_diagonal
-isotropic,64,True,True,1.0,1.0,1.0,1.0,0.0
-anisotropic,64,True,True,0.25,4.0,0.25,4.0,0.0
-correlated,64,True,True,0.2501401396386758,3.968233538233252,1.0,1.0,0.04504394531250001
+condition,dimension,all_finite,symmetric,minimum_eigenvalue,maximum_eigenvalue,positive_definite,condition_number
+isotropic,64,True,True,1.0,1.0,True,1.0
+anisotropic,64,True,True,0.25,4.0,True,16.0
+correlated,64,True,True,0.2501401396386758,3.968233538233252,True,15.86404142879794

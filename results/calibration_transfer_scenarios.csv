@@ -1,0 +1,10 @@
+source_condition,target_condition,scenario_type
+isotropic,isotropic,same_condition
+isotropic,anisotropic,cross_condition
+isotropic,correlated,cross_condition
+anisotropic,isotropic,cross_condition
+anisotropic,anisotropic,same_condition
+anisotropic,correlated,cross_condition
+correlated,isotropic,cross_condition
+correlated,anisotropic,cross_condition
+correlated,correlated,same_condition
