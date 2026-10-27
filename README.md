@@ -576,6 +576,154 @@ The evidence supports continued methodological investigation, not a claim of rel
 
 **Overall status:** exploratory experiment completed; selected outputs verified; full numerical reproducibility remains incomplete.
 
+## Experiment 14: Drift Detection Under Gradual and Recurring Distribution Shifts
+
+### Objective
+
+Evaluate the behaviour of embedding-level drift detectors under abrupt, gradual, and recurring distribution shifts. The experiment examines detection rate, detection delay, stable-period false alarms, and agreement between Euclidean and Mahalanobis detectors.
+
+### Experimental Design
+
+- **Drift patterns:** abrupt, gradual, and recurring.
+- **Detectors:** Euclidean and Mahalanobis.
+- **Evaluation:** synthetic embedding distributions with controlled temporal drift patterns.
+- **Calibration:** frozen detector thresholds.
+- **Additional analysis:** independent control evaluation, recurring-shift gap analysis, and numerical-stability diagnostics.
+
+### Key Results
+
+| Metric | Result |
+|---|---:|
+| Detector alarm-decision agreement | 100% across 3,600 comparisons |
+| Abrupt-shift detection rate | 100% |
+| Gradual-shift detection rate | 95.5% |
+| Recurring-shift detection rate | 100% |
+| Mean gradual-shift detection delay | 1.45 windows |
+| Independent control false-alarm rate | 4.97% |
+| Independent control false-alarm standard deviation | 0.78 percentage points |
+
+The independent control evaluation recorded 497 alarms per detector across 10,000 control windows, corresponding to a pooled false-alarm rate of 4.97%.
+
+### Recurring-Shift Analysis
+
+Recurring-shift gap analysis showed a mean alarm rate of 6.0% during recurring-shift gaps, compared with 3.5% in the final baseline period. Nine of 20 seeds had no alarms during the recurring-shift gaps, while 13 of 20 seeds had no alarms during the final baseline period.
+
+These findings indicate that false alarms can persist during nominally stable periods and that alarm behaviour varies across random seeds.
+
+### Main Findings
+
+1. Both detectors produced matching alarm decisions in the reported 3,600 comparisons.
+2. Abrupt and recurring shifts were detected at a 100% rate in the evaluated synthetic scenarios.
+3. Gradual shifts were detected at a 95.5% rate, with a mean detection delay of 1.45 windows.
+4. Stable-period false alarms remained present despite frozen calibration thresholds.
+5. Recurring-shift results require careful interpretation because alarm persistence can affect the episode-level detection-delay definition.
+
+### Interpretation and Limitations
+
+The results provide preliminary evidence about detector behaviour under controlled synthetic temporal shifts. Matching alarm decisions do not establish that either detector is universally superior or that their decisions generalize to real biometric data.
+
+The results do not establish real-world biometric recognition accuracy, fairness, or deployment readiness. Further evaluation on real embedding datasets and additional drift conditions is required.
+
+### Reproducibility
+
+The experiment used frozen thresholds and independent control evaluation. A numerical-stability diagnostic was also performed on the regularized covariance matrices used by the Mahalanobis detectors.
+
+The evaluation remains synthetic and should be interpreted within its experimental assumptions.
+
+## Experiment 15: Detector Discrimination Under Anisotropic and Correlated Embedding Distributions
+
+### Objective
+
+Evaluate how covariance structure and drift direction affect the behaviour of Euclidean and regularized Mahalanobis embedding-level drift detectors under controlled synthetic conditions.
+
+### Experimental Design
+
+- **Covariance conditions:** isotropic, anisotropic, and correlated.
+- **Embedding dimension:** 64.
+- **Reference samples:** 1,000 per seed and condition.
+- **Independent calibration windows:** 200 per seed and condition.
+- **Independent control windows:** 500 per seed and condition.
+- **Drift evaluation windows:** 500 per seed, condition, and direction.
+- **Independent seeds:** 20.
+- **Target false-alarm rate:** 5%.
+- **Mean-shift magnitude:** 0.5 along normalized directions.
+- **Detectors:** Euclidean and Ledoit–Wolf-regularized Mahalanobis.
+- **Calibration:** detector-specific empirical 95th-percentile thresholds, frozen before independent evaluation.
+
+Drift directions were defined using covariance eigenvectors: high-variance, low-variance, and mixed directions. In the isotropic condition, these labels do not represent genuinely different population variances.
+
+### Multi-Seed Independent Control Results
+
+| Covariance condition | Euclidean FPR | Mahalanobis FPR |
+|---|---:|---:|
+| Isotropic | 4.54% | 4.54% |
+| Anisotropic | 4.86% | 4.95% |
+| Correlated | 5.23% | 4.69% |
+
+The pooled false-alarm rates were close to the 5% target. However, seed-level rates varied, with observed values ranging from 1.4% to 8.6%. Calibration performance should therefore not be assumed to remain exactly at the target on every independent sample.
+
+### Multi-Seed Drift Detection Results
+
+Mean detection rates across 20 seeds:
+
+| Condition | Direction | Euclidean | Mahalanobis |
+|---|---|---:|---:|
+| Isotropic | High variance | 10.86% | 10.86% |
+| Isotropic | Low variance | 11.19% | 11.22% |
+| Isotropic | Mixed | 10.81% | 10.78% |
+| Anisotropic | High variance | 7.97% | 6.15% |
+| Anisotropic | Low variance | 6.91% | 29.88% |
+| Anisotropic | Mixed | 7.30% | 15.87% |
+| Correlated | High variance | 9.69% | 6.24% |
+| Correlated | Low variance | 7.79% | 39.42% |
+| Correlated | Mixed | 8.15% | 19.56% |
+
+### Main Findings
+
+1. Under isotropic conditions, the detectors exhibited nearly identical detection rates.
+2. Under anisotropic conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
+3. Under correlated conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
+4. Euclidean detection was higher on average for high-variance drift under both anisotropic and correlated conditions.
+5. The across-seed 95% confidence intervals for the low-variance and mixed-direction detection-rate differences excluded zero in the anisotropic and correlated conditions. These intervals were not adjusted for multiple comparisons.
+
+### Interpretation and Limitations
+
+The results support the hypothesis that covariance structure and drift direction influence detector behaviour. Mahalanobis distance can be more sensitive to shifts in directions with low reference variance, whereas Euclidean distance does not account for the covariance geometry.
+
+These results do not establish that Mahalanobis is universally superior. Detection rates were modest in most conditions, the evaluation used synthetic Gaussian distributions and mean shifts, and independent false-alarm rates varied across seeds.
+
+The experiment does not establish real-world biometric recognition accuracy, fairness, robustness to all forms of distribution shift, or deployment readiness. Further work should investigate other drift magnitudes, covariance structures, calibration sample sizes, and real embedding datasets.
+
+### Reproducibility and Outputs
+
+The experiment used 20 seeds and independent reference, calibration, control, and evaluation streams. Frozen thresholds were retained during independent control and drift evaluation.
+
+The final integrity audit passed all 15 checks, including expected row counts, finite scores and thresholds, and threshold consistency.
+
+Primary outputs include:
+
+- `config.json`
+- `environment.json`
+- `covariance_diagnostics.csv`
+- `reference_dataset_diagnostics.csv`
+- `drift_direction_diagnostics.csv`
+- `multiseed_reference_diagnostics.csv`
+- `multiseed_calibration_scores.csv`
+- `multiseed_frozen_thresholds.csv`
+- `multiseed_independent_control_results.csv`
+- `multiseed_control_seed_summary.csv`
+- `multiseed_control_summary.csv`
+- `multiseed_drift_evaluation_results.csv`
+- `multiseed_drift_seed_summary.csv`
+- `multiseed_drift_evaluation_summary.csv`
+- `multiseed_detection_rate_differences.csv`
+- `multiseed_detection_difference_summary.csv`
+- `multiseed_detection_difference_ci95.csv`
+- `experiment_15_integrity_audit.csv`
+
+All results are synthetic experimental evidence and should be interpreted within the stated limitations.
+
+
 ## Author
 
 Moien Shaik
