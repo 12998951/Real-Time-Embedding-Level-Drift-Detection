@@ -1,0 +1,3 @@
+detector,mean_false_alarm_rate,sd_across_seeds,total_alarms,total_windows
+euclidean,0.0497,0.007794059816363525,497,10000
+mahalanobis,0.0497,0.007794059816363525,497,10000

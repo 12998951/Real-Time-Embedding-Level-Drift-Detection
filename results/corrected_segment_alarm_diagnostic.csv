@@ -1,0 +1,10 @@
+condition,segment,n_windows,mean_alarm_rate,mean_alarm_count_per_seed,alarm_free_windows,alarm_free_seeds
+abrupt,shifted,800,1.0,800,0,0
+abrupt,stable,400,0.0675,27,373,6
+gradual,shifted,800,0.955,764,36,0
+gradual,stable,400,0.0675,27,373,6
+recurring,final_stable_period,200,0.035,7,193,13
+recurring,shifted_episode_1,200,1.0,200,0,0
+recurring,shifted_episode_2,200,1.0,200,0,0
+recurring,stable,400,0.0675,27,373,6
+recurring,stable_gap,200,0.06,12,188,9

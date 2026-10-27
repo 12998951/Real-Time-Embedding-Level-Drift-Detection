@@ -1,0 +1,4 @@
+condition,episodes,detected_episodes,episode_detection_rate,mean_delay_windows,median_delay_windows
+abrupt,20,20,1.0,0.0,0.0
+gradual,20,20,1.0,1.45,1.5
+recurring,40,40,1.0,0.0,0.0

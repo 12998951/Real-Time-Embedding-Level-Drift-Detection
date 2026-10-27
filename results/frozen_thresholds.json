@@ -1,0 +1,11 @@
+{
+  "target_false_alarm_rate": 0.05,
+  "calibration_windows": 200,
+  "thresholds": {
+    "euclidean": 2.0702929416972333,
+    "mahalanobis": 2.0746417163536846
+  },
+  "method": "Empirical upper-tail quantile",
+  "reference_seed": 20261401,
+  "calibration_seed": 20261402
+}

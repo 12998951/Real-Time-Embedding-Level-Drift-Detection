@@ -1,0 +1,15 @@
+file,exists,size_bytes
+environment.json,True,267
+calibration_scores.csv,True,8215
+frozen_thresholds.json,True,272
+independent_control_results.csv,True,1362
+independent_control_summary.csv,True,172
+baseline_detector_score_comparison.csv,True,26669
+temporal_drift_evaluation.csv,True,7472
+temporal_drift_trace.csv,True,561319
+temporal_drift_summary.csv,True,550
+detector_alarm_agreement.csv,True,142
+detection_delay_by_episode.csv,True,2708
+detection_delay_summary.csv,True,180
+recurring_alarm_persistence.csv,True,720
+recurring_episode_separation_summary.csv,True,157
