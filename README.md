@@ -723,6 +723,64 @@ Primary outputs include:
 
 All results are synthetic experimental evidence and should be interpreted within the stated limitations.
 
+## Experiment 16: Cross-Condition Calibration Transfer for Embedding-Level Drift Detection
+
+### Objective
+
+Experiment 16 investigates whether thresholds calibrated on one embedding distribution remain reliable when applied to a different target distribution. It compares Euclidean distance and Ledoit–Wolf-regularized Mahalanobis distance under isotropic, anisotropic, and correlated synthetic embedding distributions.
+
+### Experimental Setup
+
+- **Random seeds:** 20
+- **Embedding dimension:** 64
+- **Window size:** 20 embeddings
+- **Reference samples:** 1,000 per seed and condition
+- **Calibration windows:** 200 per seed, source condition, and detector
+- **Control windows:** 500 per seed, source-target scenario, and detector
+- **Drift evaluation windows:** 500 per seed, source-target scenario, and detector
+- **Nominal false-alarm rate:** 5%
+- **Source-target scenarios:** 9 (3 same-condition and 6 cross-condition)
+- **Detectors:** Euclidean and Ledoit–Wolf-regularized Mahalanobis
+
+### Methodology
+
+The detectors are calibrated on source-condition data, and their thresholds are frozen before evaluation on independent target-condition control and drift windows. Same-condition scenarios provide a baseline for comparison with cross-condition transfers.
+
+Performance is assessed using independent control false-alarm rates, drift detection rates, paired detector comparisons across seeds, and unadjusted 95% confidence intervals.
+
+### Key Findings
+
+Same-condition calibration generally produced false-alarm rates near the nominal 5% target. Cross-condition transfer sometimes caused substantial false-alarm inflation or suppression.
+
+Examples include:
+
+| Source → Target | Euclidean false-alarm rate | Mahalanobis false-alarm rate |
+|---|---:|---:|
+| Anisotropic → Isotropic | 0.02% | 34.08% |
+| Correlated → Isotropic | 0.84% | 96.67% |
+| Correlated → Anisotropic | 32.84% | 99.50% |
+| Anisotropic → Correlated | 0.28% | 35.38% |
+
+These results demonstrate that a frozen threshold's behavior depends on the relationship between the calibration and target distributions. A high detection rate alone is not evidence of useful drift discrimination when the false-alarm rate is also high.
+
+### Statistical Analysis
+
+Detector detection-rate differences were calculated as Mahalanobis minus Euclidean, paired across the 20 random seeds for each source-target scenario. Confidence intervals were unadjusted for multiple comparisons.
+
+The largest apparent sensitivity advantages for Mahalanobis occurred in several transfer scenarios with substantial false-alarm inflation. These results should therefore be interpreted together with the corresponding control metrics.
+
+### Integrity and Reproducibility
+
+All 15 programmed integrity checks passed. The audit verified expected output counts, finite scores and thresholds, and valid false-alarm and detection-rate ranges.
+
+The notebook, configuration, environment information, calibration outputs, control results, drift evaluation results, statistical comparisons, and integrity audit are retained in the experiment outputs.
+
+### Limitations
+
+This experiment uses synthetic multivariate Gaussian embeddings and controlled mean shifts. It does not establish real-world biometric recognition accuracy, fairness, or deployment readiness. The reported confidence intervals are not adjusted for multiple comparisons.
+
+The findings support further investigation of calibration transfer and threshold reliability; they do not establish that either detector is universally superior.
+
 
 ## Author
 
