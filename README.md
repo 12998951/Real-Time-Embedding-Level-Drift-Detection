@@ -1,8 +1,8 @@
-Real-Time Embedding-Level Drift Detection for Trustworthy Biometric Systems
+# Real-Time Embedding-Level Drift Detection for Trustworthy Biometric Systems
 
 A research project investigating label-free distributional drift detection in embedding spaces, with the long-term goal of improving the reliability and trustworthiness of biometric identification systems under changing operating conditions.
 
-Current status: Synthetic-data prototype with preliminary evaluation. Validation using real biometric embeddings remains future work.
+**Current status:** Research prototype with preliminary synthetic evaluations and exploratory controlled LFW/FaceNet embedding experiments. The real-image pilot does not establish biometric recognition performance, dependable operational false-alarm control, fairness, or deployment readiness. Full numerical reproducibility remains incomplete because the original reference-model arrays and Stage 3 bootstrap CSVs were not recovered during the documented audit.
 
 ## Overview
 
@@ -10,9 +10,9 @@ Machine learning systems can encounter changes in their input data after deploym
 
 Such changes can alter the feature representations produced by face or voice encoders. Monitoring these representations may provide an early indication that the data distribution has changed, even when ground-truth labels or recognition accuracy measurements are unavailable.
 
-This project explores a lightweight statistical approach that compares reference and current embedding windows to produce a drift score. The current evaluation uses the Euclidean distance between window-level mean representations, with thresholds calibrated using synthetic reference data.
+This repository contains an original Euclidean-distance synthetic prototype and subsequent experiments comparing multiple statistical drift detectors. Later experiments include regularized Mahalanobis and variance-sensitive scores, plus an exploratory sequential CUSUM pilot using pretrained FaceNet embeddings extracted from controlled LFW image streams.
 
-The present implementation evaluates controlled synthetic distribution shifts. It does not yet validate a complete face or voice recognition pipeline.
+The repository therefore contains experiments at different maturity levels: synthetic evaluations, controlled transformations of static face images, and a preliminary sequential detector study. These experiments do not constitute a complete face or voice recognition pipeline and do not establish dependable real-world biometric drift detection.
 
 ## Research Objectives
 
@@ -23,6 +23,8 @@ The present implementation evaluates controlled synthetic distribution shifts. I
 - Investigate the limitations of simple statistical drift signals under noise and changing operating conditions.
 
 ## Current Implementation
+
+The initial Euclidean-only prototype and the later multi-detector/FaceNet experiments are separate stages of the project; results from one stage should not be treated as validation of another.
 
 The repository includes:
 
@@ -43,35 +45,35 @@ The implementation is a window-based statistical prototype. It does not yet esta
 
 A reference window is generated from a baseline synthetic distribution. Its mean vector represents the initial reference state.
 
-Let $R$ denote the reference window and $C$ the current window.
+Let \(R\) denote the reference window and \(C\) the current window.
 
 ### Drift scoring
 
 The prototype calculates the Euclidean distance between the two window means:
 
-$$
-s_t = |\mu_R - \mu_C|_2
-$$
+\[
+s_t = \|\mu_R - \mu_C\|_2
+\]
 
 where:
 
-- $\mu_R$ is the mean vector of the reference window.
-- $\mu_C$ is the mean vector of the current window.
-- $s_t$ is the resulting drift score.
+- \(\mu_R\) is the mean vector of the reference window.
+- \(\mu_C\) is the mean vector of the current window.
+- \(s_t\) is the resulting drift score.
 
 ### Threshold-based detection
 
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
-$$
+\[
 A_t =
 \begin{cases}
-1, & s_t > \tau \
+1, & s_t > \tau \\
 0, & s_t \leq \tau
 \end{cases}
-$$
+\]
 
-Here, $\tau$ is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
+Here, \(\tau\) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
 ### Synthetic evaluation
 
@@ -136,6 +138,7 @@ The synthetic evaluation script generates the following outputs:
 The outputs should be interpreted alongside the experimental configuration and limitations described in this README.
 
 ## Repository Structure
+
 ```text
 Real-Time-Embedding-Level-Drift-Detection/
 ├── README.md
@@ -164,6 +167,7 @@ Real-Time-Embedding-Level-Drift-Detection/
 ├── LICENSE
 └── .gitignore
 ```
+
 This tree provides a simplified overview of the repository; some subfolder contents are omitted for readability.
 
 ## Reproducing the Synthetic Evaluation
@@ -180,32 +184,38 @@ The dependencies are listed in [requirements.txt](requirements.txt).
 ### Run locally
 
 Clone the repository and enter its directory:
+
 ```bash
 git clone https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection.git
 cd Real-Time-Embedding-Level-Drift-Detection
 ```
+
 Install the dependencies:
+
 ```bash
 python -m pip install -r requirements.txt
 ```
+
 Run the evaluation script:
+
 ```bash
 python experiments/synthetic_drift_evaluation.py
 ```
-The script is intended to save the summary CSV, per-reference CSV, and detection curve under the repository's "results/" and "assets/" directories.
 
-Reproducibility note: The evaluation script was run successfully in Google Colab. The generated summary and per-reference CSV files matched the committed versions exactly in that environment. Reproducibility across other environments has not yet been established.
+The script is intended to save the summary CSV, per-reference CSV, and detection curve under the repository's `results/` and `assets/` directories.
+
+**Reproducibility note:** The evaluation script was run successfully in Google Colab. The generated summary and per-reference CSV files matched the committed versions exactly in that environment. Reproducibility across other environments has not yet been established.
 
 ### Evaluation Metrics
 
 The current evaluation reports detection rates for controlled synthetic shifts. Further work should examine:
 
-- Detection rate: Proportion of shifted test windows that trigger an alarm.
-- False-alarm rate: Proportion of stable test windows incorrectly flagged as drift.
-- Reference sensitivity: Variation in results across independently generated reference samples.
-- Detection delay: Time or observations between drift introduction and the first alarm in a sequential experiment.
-- Computational cost: Runtime and memory requirements under defined conditions.
-- Calibration quality: Whether the observed stable-window alarm rate agrees with the intended calibration level.
+- **Detection rate:** Proportion of shifted test windows that trigger an alarm.
+- **False-alarm rate:** Proportion of stable test windows incorrectly flagged as drift.
+- **Reference sensitivity:** Variation in results across independently generated reference samples.
+- **Detection delay:** Time or observations between drift introduction and the first alarm in a sequential experiment.
+- **Computational cost:** Runtime and memory requirements under defined conditions.
+- **Calibration quality:** Whether the observed stable-window alarm rate agrees with the intended calibration level.
 
 These metrics should be evaluated using clearly defined protocols and independent test data.
 
@@ -231,14 +241,23 @@ Potential extensions are research plans, not claims of completed integration.
 
 ## Planned Work
 
-### Phase 1 — Strengthen synthetic evaluation
+### Phase 1 — Reproducibility and synthetic evaluation
 
-- Reproduce the committed results from a clean environment.
-- Verify that the generated CSV files match the reported summary.
-- Compare the detector with appropriate statistical baselines.
-- Examine uncertainty and variability across independent reference samples.
-- Test different window sizes, noise levels, and drift magnitudes.
-- Evaluate calibration and false-alarm behaviour more thoroughly.
+**Completed or partially completed work:**
+
+- Run and record multiple synthetic evaluations, including multi-detector comparisons and robustness checks.
+- Compare detection behaviour across selected shifts, dimensions, regularization settings, and random seeds.
+- Preserve selected result tables, plots, and experiment reports in the repository.
+
+**Outstanding work:**
+
+- Verify all README artifact links against the live repository.
+- Recover or regenerate missing artifacts only through a documented, reproducible procedure.
+- Recover the original reference centre and regularized precision matrix, or clearly document that exact score reproduction remains unavailable.
+- Compare against appropriate statistical baselines using a pre-specified protocol.
+- Quantify uncertainty across independent evaluation streams and assess calibration and false-alarm behaviour more thoroughly.
+
+The current audit verified selected files and environment/model prerequisites, but did not establish full end-to-end reproducibility of Experiment 13.
 
 ### Phase 2 — Real biometric embeddings
 
@@ -305,6 +324,7 @@ These findings are preliminary and apply only to the specified synthetic Gaussia
 - Independent validation: [`independent_false_alarm_validation.csv`](results/corrected/independent_false_alarm_validation.csv)
 
 The original Euclidean-only evaluation and its results are retained separately. This supplementary experiment is not a replacement for the original evaluation.
+
 ## Experiment 11: Illumination Drift Detection
 
 Evaluates ResNet-18 embedding sensitivity to controlled illumination changes using LFW images, calibrated distance-based detectors, and randomized-order control tests.
@@ -363,11 +383,11 @@ All computed inverses contained finite values, and the inverse residuals were sm
 
 This diagnostic supports the numerical computability of the regularized inverses but does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation. Full end-to-end reproducibility from a clean runtime has not yet been independently verified.
 
-# Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
+## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
 Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The work progresses from synthetic robustness analysis to controlled LFW brightness transformations, sequential CUSUM evaluation, fresh-identity stream validation, and repeated bootstrap resampling.
 
-## Synthetic evaluation
+### Synthetic evaluation
 
 The synthetic evaluation examines detection sensitivity, false-alarm behaviour, and robustness across embedding dimensions, covariance regularization settings, and random seeds. A supplementary robustness evaluation covers 360 configurations.
 
@@ -386,7 +406,7 @@ Available synthetic evaluation artifacts include:
 - [`experiment13_detection_ci.png`](results/experiment13_detection_ci.png)
 - [`experiment13_robustness_detection.png`](results/experiment13_robustness_detection.png)
 
-## LFW controlled-brightness pilot
+### LFW controlled-brightness pilot
 
 A preliminary pilot uses pretrained FaceNet embeddings extracted from the Labeled Faces in the Wild (LFW) dataset. Controlled brightness transformations are applied to images to examine changes in embedding-level detector scores.
 
@@ -394,7 +414,7 @@ The evaluation uses matched image streams and identity-disjoint reference and ev
 
 The sequential detector uses Mahalanobis distances calculated from window-mean embeddings. Scores are standardized using calibration-derived statistics and passed to a one-sided cumulative sum (CUSUM) detector.
 
-### Frozen detector configuration
+#### Frozen detector configuration
 
 The saved parameter file records the following values:
 
@@ -418,7 +438,7 @@ Available pilot artifacts:
 - [`lfw_sequential_cusum_diagnostics_v2.csv`](results/lfw_sequential_cusum_diagnostics_v2.csv)
 - [`lfw_identity_balanced_calibration_diagnostics.csv`](results/lfw_identity_balanced_calibration_diagnostics.csv)
 
-## Sequential CUSUM evaluation
+### Sequential CUSUM evaluation
 
 The sequential pilot evaluates the frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
 
@@ -439,11 +459,11 @@ Reports and results:
 - Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
 - Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
 
-## Stage 3: Fresh-identity stream validation
+### Stage 3: Fresh-identity stream validation
 
 Stage 3 evaluates the previously frozen one-sided CUSUM detector on a new stream of 1,000 LFW images representing 1,000 distinct identities that were not used in the earlier 600-image matched-stream experiment.
 
-### Configuration
+#### Configuration
 
 - Embeddings: 512-dimensional pretrained FaceNet representations.
 - Window size: 50 images; 20 windows per condition.
@@ -455,7 +475,7 @@ Stage 3 evaluates the previously frozen one-sided CUSUM detector on a new stream
 - Alarm threshold: \(h=5.0\).
 - No detector retuning on the fresh evaluation streams.
 
-### Results
+#### Results
 
 | Condition | First detection window | Pre-onset alarm | Detected after onset | Delay |
 |---|---:|---|---|---|
@@ -467,17 +487,17 @@ The detector detected the brightness-1.30 stream four windows after the imposed 
 
 The fresh identities came from the same LFW dataset and evaluation partition, rather than an independent external dataset.
 
-### Stage 3 artifacts
+#### Stage 3 artifacts
 
 - Fresh-identity validation report: [`Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md`](results/Experiment_13_Stage_3_Fresh_Identity_Validation_Report.md)
 - CUSUM results: [`lfw_stage3_fresh_cusum_results.csv`](results/lfw_stage3_fresh_cusum_results.csv)
 - CUSUM trace: [`lfw_stage3_fresh_cusum_trace.csv`](results/lfw_stage3_fresh_cusum_trace.csv)
 
-## Stage 3: Repeated bootstrap resampling and paired comparison
+### Stage 3: Repeated bootstrap resampling and paired comparison
 
 A further exploratory evaluation performs 20 paired resampling replicates for each condition, using the existing 1,000-image Stage 3 embedding pool and the same frozen detector configuration. The same sampled positions are used across the control and brightness-transformed streams within each replicate.
 
-### Any alarm at or after window 10
+#### Any alarm at or after window 10
 
 | Condition | Replicates | Pre-onset alarm rate | Replicates with an alarm at/after window 10 |
 |---|---:|---:|---:|
@@ -487,7 +507,7 @@ A further exploratory evaluation performs 20 paired resampling replicates for ea
 
 These late alarms must not automatically be interpreted as successful drift detections. The unchanged control also produces late alarms, and eight of 20 replicates have pre-onset alarms in each condition.
 
-### Paired first-alarm comparison
+#### Paired first-alarm comparison
 
 | Condition | Both streams alarm | Transformed stream alarms earlier | Same first-alarm window | Transformed stream alarms later |
 |---|---:|---:|---:|---:|
@@ -498,7 +518,7 @@ Among replicates where both streams alarmed, the transformed stream never had a 
 
 The bootstrap replicates reuse the same underlying image pool and are not independent datasets. These findings measure sensitivity to resampling rather than generalisation to new identities or external datasets.
 
-### Bootstrap artifact availability
+#### Bootstrap artifact availability
 
 The following two files were not found at the checked GitHub paths or in the checked Google Drive locations during the reproducibility audit:
 
@@ -509,13 +529,13 @@ The numerical summaries above reflect previously recorded outputs, but the raw b
 
 The paired comparison report is also not linked here because its current GitHub availability has not been verified.
 
-## Visualization
+### Visualization
 
 The Stage 3 CUSUM plot shows the frozen threshold, imposed onset, and CUSUM traces for the control and both brightness conditions.
 
 [Experiment 13 Stage 3 CUSUM plot](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/blob/main/results/lfw_stage3_fresh_cusum_plot.png) ([view raw image](https://github.com/12998951/Real-Time-Embedding-Level-Drift-Detection/raw/main/results/lfw_stage3_fresh_cusum_plot.png))
 
-## Reproducibility audit
+### Reproducibility audit
 
 A separate Colab runtime was used to check selected environment and model prerequisites without rerunning the complete experiment.
 
@@ -538,7 +558,7 @@ Environment and model configuration records:
 - [`Experiment_13_FaceNet_Model_Configuration.txt`](results/Experiment_13_FaceNet_Model_Configuration.txt)
 - [`Experiment_13_LFW_Dataset_Configuration.txt`](results/Experiment_13_LFW_Dataset_Configuration.txt)
 
-## Limitations
+### Limitations
 
 These experiments use synthetic distributions and controlled transformations of static face images, not naturally occurring temporal biometric drift. Bootstrap/resampling replicates overlap and are not independent observations. Stage 3 uses one stream per condition, and the repeated-resampling control results show substantial late alarms and pre-onset alarms.
 
@@ -548,14 +568,13 @@ The fresh-identity evaluation uses the same LFW dataset and evaluation partition
 
 Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
 
-## Conclusion
+### Conclusion
 
 Experiment 13 investigates false-alarm-controlled embedding-level drift detection through synthetic evaluations and an exploratory LFW FaceNet pilot. The fresh-identity evaluation recorded a threshold crossing under the stronger controlled brightness transformation, while the repeated-stream analyses exposed important pre-onset and control-condition alarm concerns.
 
 The evidence supports continued methodological investigation, not a claim of reliable real-world biometric drift detection. The frozen detector parameters and Stage 3 fresh-identity results are available in the repository, but exact reproduction of the original Mahalanobis scores remains unverified because the reference-model artifacts were not located. The Stage 3 bootstrap CSVs also remain unavailable at the checked locations.
 
 **Overall status:** exploratory experiment completed; selected outputs verified; full numerical reproducibility remains incomplete.
-
 
 ## Author
 
