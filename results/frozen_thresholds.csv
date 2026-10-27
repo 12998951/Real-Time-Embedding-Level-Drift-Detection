@@ -1,0 +1,7 @@
+condition,detector,target_fpr,calibration_windows,threshold,calibration_alarm_count,calibration_alarm_rate
+isotropic,euclidean,0.05,200,2.089475794314292,9,0.045
+isotropic,mahalanobis,0.05,200,2.077419099241633,9,0.045
+anisotropic,euclidean,0.05,200,2.503960572015408,9,0.045
+anisotropic,mahalanobis,0.05,200,2.0550892773965925,9,0.045
+correlated,euclidean,0.05,200,2.194060597584433,9,0.045
+correlated,mahalanobis,0.05,200,2.0598848668519643,9,0.045

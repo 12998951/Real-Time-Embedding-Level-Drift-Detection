@@ -1,11 +1,14 @@
 {
-  "target_false_alarm_rate": 0.05,
-  "calibration_windows": 200,
-  "thresholds": {
-    "euclidean": 2.0702929416972333,
-    "mahalanobis": 2.0746417163536846
+  "isotropic": {
+    "euclidean": 2.089475794314292,
+    "mahalanobis": 2.077419099241633
   },
-  "method": "Empirical upper-tail quantile",
-  "reference_seed": 20261401,
-  "calibration_seed": 20261402
+  "anisotropic": {
+    "euclidean": 2.503960572015408,
+    "mahalanobis": 2.0550892773965925
+  },
+  "correlated": {
+    "euclidean": 2.194060597584433,
+    "mahalanobis": 2.0598848668519643
+  }
 }

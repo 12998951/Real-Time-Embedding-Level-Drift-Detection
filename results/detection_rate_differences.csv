@@ -1,0 +1,10 @@
+condition,direction,euclidean,mahalanobis,mahalanobis_minus_euclidean,absolute_difference
+anisotropic,high_variance,0.076,0.062,-0.013999999999999999,0.013999999999999999
+anisotropic,low_variance,0.066,0.28,0.21400000000000002,0.21400000000000002
+anisotropic,mixed,0.068,0.156,0.088,0.088
+correlated,high_variance,0.086,0.056,-0.029999999999999992,0.029999999999999992
+correlated,low_variance,0.082,0.396,0.314,0.314
+correlated,mixed,0.104,0.214,0.11,0.11
+isotropic,high_variance,0.11,0.11,0.0,0.0
+isotropic,low_variance,0.118,0.118,0.0,0.0
+isotropic,mixed,0.104,0.104,0.0,0.0

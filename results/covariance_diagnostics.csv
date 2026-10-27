@@ -1,0 +1,4 @@
+condition,dimension,symmetric,finite,minimum_eigenvalue,maximum_eigenvalue,minimum_marginal_variance,maximum_marginal_variance,mean_absolute_off_diagonal
+isotropic,64,True,True,1.0,1.0,1.0,1.0,0.0
+anisotropic,64,True,True,0.25,4.0,0.25,4.0,0.0
+correlated,64,True,True,0.2501401396386758,3.968233538233252,1.0,1.0,0.04504394531250001

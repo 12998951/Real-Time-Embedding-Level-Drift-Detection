@@ -1,0 +1,33 @@
+{
+  "experiment": 15,
+  "title": "Detector Discrimination Under Anisotropic and Correlated Embedding Distributions",
+  "base_seed": 202615,
+  "n_seeds": 20,
+  "embedding_dimension": 64,
+  "window_size": 20,
+  "n_windows": 60,
+  "reference_samples": 1000,
+  "calibration_windows": 200,
+  "control_windows_per_seed": 500,
+  "evaluation_windows_per_condition_per_seed": 500,
+  "target_false_alarm_rate": 0.05,
+  "mean_shift_strength": 0.5,
+  "variance_profile": "geometric",
+  "correlation_strength": 0.6,
+  "drift_directions": [
+    "high_variance",
+    "low_variance",
+    "mixed"
+  ],
+  "reference_conditions": [
+    "isotropic",
+    "anisotropic",
+    "correlated"
+  ],
+  "detectors": [
+    "euclidean",
+    "mahalanobis"
+  ],
+  "threshold_method": "Empirical upper-tail quantile",
+  "regularization": "LedoitWolf"
+}

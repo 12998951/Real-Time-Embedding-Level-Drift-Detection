@@ -1,0 +1,16 @@
+check,passed,detail
+Reference datasets,True,60 rows; expected 60
+Calibration scores,True,24000 rows
+Frozen thresholds,True,120 rows
+Independent control rows,True,60000 rows
+Control seed-level summaries,True,120 rows
+Drift evaluation rows,True,180000 rows
+Drift seed-level summaries,True,360 rows
+Across-seed comparison rows,True,180 rows
+Confidence interval rows,True,9 condition-direction rows
+Calibration scores finite,True,Validated
+Control scores finite,True,Validated
+Evaluation scores finite,True,Validated
+Frozen thresholds finite,True,Validated
+"Detection rates within [0, 1]",True,Validated
+Threshold consistency,True,Saved thresholds match the thresholds used by the evaluation

@@ -1,4 +1,10 @@
-condition,total_window_comparisons,matching_alarm_decisions,agreement_rate
-abrupt,1200,1200,1.0
-gradual,1200,1200,1.0
-recurring,1200,1200,1.0
+condition,direction,evaluation_windows,alarm_agreement_rate,both_alarm,euclidean_only,mahalanobis_only,neither_alarm
+isotropic,high_variance,500,1.0,55,0,0,445
+isotropic,low_variance,500,1.0,59,0,0,441
+isotropic,mixed,500,1.0,52,0,0,448
+anisotropic,high_variance,500,0.946,21,17,10,452
+anisotropic,low_variance,500,0.77,29,4,111,356
+anisotropic,mixed,500,0.88,26,8,52,414
+correlated,high_variance,500,0.922,16,27,12,445
+correlated,low_variance,500,0.666,36,5,162,297
+correlated,mixed,500,0.83,37,15,70,378

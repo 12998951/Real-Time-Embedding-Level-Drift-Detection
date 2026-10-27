@@ -1,7 +1,7 @@
 {
-  "experiment": 14,
-  "title": "Drift Detection Under Gradual and Recurring Distribution Shifts",
-  "random_seed": 202614,
+  "experiment": 15,
+  "title": "Detector Discrimination Under Anisotropic and Correlated Embedding Distributions",
+  "random_seed": 202615,
   "python_version": "3.13.16",
   "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
   "numpy_version": "2.1.3",
