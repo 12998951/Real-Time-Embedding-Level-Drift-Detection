@@ -51,9 +51,9 @@ Let \(R\) denote the reference window and \(C\) the current window.
 
 The prototype calculates the Euclidean distance between the two window means:
 
-\[
+$$
 s_t = \|\mu_R - \mu_C\|_2
-\]
+$$
 
 where:
 
@@ -65,13 +65,13 @@ where:
 
 The detector raises an alarm when the drift score exceeds a calibrated threshold:
 
-\[
+$$
 A_t =
 \begin{cases}
 1, & s_t > \tau \\
 0, & s_t \leq \tau
 \end{cases}
-\]
+$$
 
 Here, \(\tau\) is estimated from simulated stable calibration windows. It is not a universal constant and may need recalibration for different embedding models, modalities, reference distributions, and operating conditions.
 
