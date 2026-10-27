@@ -1,0 +1,31 @@
+{
+  "experiment_id": 17,
+  "experiment_name": "Target-Condition Recalibration",
+  "random_seed": 202617,
+  "n_seeds": 20,
+  "embedding_dimension": 64,
+  "window_size": 20,
+  "reference_samples": 1000,
+  "source_calibration_windows": 200,
+  "target_calibration_window_sizes": [
+    25,
+    50,
+    100,
+    200,
+    500
+  ],
+  "control_windows": 500,
+  "evaluation_windows_per_condition": 500,
+  "target_false_alarm_rate": 0.05,
+  "mean_shift_strength": 0.5,
+  "correlation_strength": 0.6,
+  "detectors": [
+    "euclidean",
+    "mahalanobis"
+  ],
+  "conditions": [
+    "isotropic",
+    "anisotropic",
+    "correlated"
+  ]
+}

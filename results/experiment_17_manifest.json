@@ -1,0 +1,52 @@
+{
+  "experiment_id": 17,
+  "experiment_name": "Target-Condition Recalibration",
+  "updated_utc": "2026-10-27T15:13:49.457995+00:00",
+  "config": {
+    "experiment_id": 17,
+    "experiment_name": "Target-Condition Recalibration",
+    "random_seed": 202617,
+    "n_seeds": 20,
+    "embedding_dimension": 64,
+    "window_size": 20,
+    "reference_samples": 1000,
+    "source_calibration_windows": 200,
+    "target_calibration_window_sizes": [
+      25,
+      50,
+      100,
+      200,
+      500
+    ],
+    "control_windows": 500,
+    "evaluation_windows_per_condition": 500,
+    "target_false_alarm_rate": 0.05,
+    "mean_shift_strength": 0.5,
+    "correlation_strength": 0.6,
+    "detectors": [
+      "euclidean",
+      "mahalanobis"
+    ],
+    "conditions": [
+      "isotropic",
+      "anisotropic",
+      "correlated"
+    ]
+  },
+  "outputs": [
+    "experiment_17_aggregated_summary.csv",
+    "experiment_17_config.json",
+    "experiment_17_integrity_audit.csv",
+    "independent_control_fpr_results.csv",
+    "independent_drift_detection_results.csv",
+    "joint_recalibration_comparison.csv",
+    "paired_recalibration_confidence_intervals.csv",
+    "source_calibration_thresholds.csv",
+    "target_recalibrated_thresholds.csv"
+  ],
+  "paired_ci_file": "paired_recalibration_confidence_intervals.csv",
+  "paired_ci_scenarios": 90,
+  "seeds_per_scenario": 20,
+  "integrity_status": "Passed structural and numerical checks",
+  "scientific_validation_status": "Not established by numerical integrity checks alone"
+}

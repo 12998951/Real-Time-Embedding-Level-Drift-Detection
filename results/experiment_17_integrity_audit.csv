@@ -1,0 +1,16 @@
+check,passed
+60_reference_datasets,True
+120_detector_configurations,True
+120_source_thresholds,True
+300_target_calibration_datasets,True
+1800_target_threshold_records,True
+1800_control_records,True
+1800_drift_records,True
+1800_joint_records,True
+90_aggregated_scenarios,True
+finite_reference_data,True
+finite_thresholds,True
+valid_control_rates,True
+valid_detection_rates,True
+matched_control_drift_rows,True
+finite_aggregated_metrics,True
