@@ -781,6 +781,124 @@ This experiment uses synthetic multivariate Gaussian embeddings and controlled m
 
 The findings support further investigation of calibration transfer and threshold reliability; they do not establish that either detector is universally superior.
 
+# Experiment 17: Target-Condition Recalibration for Embedding-Level Drift Detection
+
+## Overview
+
+This experiment evaluates whether recalibrating detection thresholds using target-condition calibration data improves false-alarm control and drift detection when embedding distributions change.
+
+The experiment compares source-condition threshold calibration against target-condition threshold recalibration while keeping the source-fitted detector fixed. It evaluates Euclidean and Mahalanobis distance detectors across isotropic, anisotropic, and correlated synthetic embedding distributions.
+
+## Research Objective
+
+To investigate how target-condition threshold recalibration affects:
+
+- False-alarm rates under no-drift conditions.
+- Drift detection rates under a controlled distribution shift.
+- Performance across different source and target distribution conditions.
+- Sensitivity to the amount of target-condition calibration data.
+
+## Experimental Configuration
+
+| Parameter | Value |
+|---|---|
+| Experiment ID | 17 |
+| Random seeds | 20 |
+| Embedding dimension | 64 |
+| Window size | 20 |
+| Reference samples | 1,000 |
+| Source calibration windows | 200 |
+| Target calibration sample sizes | 25, 50, 100, 200, 500 windows |
+| Independent control windows | 500 |
+| Evaluation windows per condition | 500 |
+| Target false-alarm rate | 0.05 |
+| Mean-shift strength | 0.5 |
+| Detectors | Euclidean, Mahalanobis |
+| Distribution conditions | Isotropic, anisotropic, correlated |
+
+## Methodology
+
+### 1. Synthetic embedding distributions
+
+Three covariance conditions are used:
+
+- **Isotropic:** identity covariance.
+- **Anisotropic:** diagonal covariance with variances spanning 0.25 to 4.
+- **Correlated:** Toeplitz covariance with correlation parameter 0.6.
+
+### 2. Source-condition detector fitting
+
+Reference data are generated for each random seed and condition. Euclidean and regularized Mahalanobis detector configurations are fitted using source-condition reference data.
+
+### 3. Source threshold calibration
+
+Source thresholds are calibrated using 200 source-condition no-drift windows at a nominal false-alarm rate of 5%.
+
+### 4. Target-condition recalibration
+
+For each source-target condition pair, the fitted source detector is kept fixed. Only its threshold is recalibrated using target-condition no-drift calibration data at five sample sizes: 25, 50, 100, 200, and 500 windows.
+
+This design evaluates threshold recalibration rather than refitting the detector to the target distribution.
+
+### 5. Independent evaluation
+
+Independent target-condition no-drift windows are used to estimate false-alarm rates. Separate drifted evaluation windows are used to estimate detection rates under a mean shift of 0.5 in the first embedding dimension.
+
+### 6. Paired statistical analysis
+
+Recalibrated results are compared with source-threshold results across 20 random seeds. Mean paired changes and unadjusted 95% t-confidence intervals are reported for false-alarm and detection rates.
+
+## Results Summary
+
+The results show that target-condition recalibration has condition-dependent effects rather than providing uniform improvement.
+
+- Recalibration can reduce false alarms when the source threshold is poorly matched to the target distribution.
+- Recalibration can also increase false alarms, particularly with limited target calibration data.
+- Changes in detection rate do not always follow changes in false-alarm rate.
+- In some scenarios, improved false-alarm control is accompanied by reduced drift detection.
+- The observed effects vary with detector type, source-target condition pair, and calibration sample size.
+
+The paired confidence intervals quantify uncertainty across simulated seeds. Since 90 scenario comparisons are reported and the intervals are not adjusted for multiple comparisons, individual results should be interpreted as exploratory.
+
+Consult `experiment_17_aggregated_summary.csv` and `paired_recalibration_confidence_intervals.csv` for the numerical results.
+
+## Integrity and Reproducibility
+
+The experiment's recorded integrity audit passed 15 of 15 checks. These checks cover expected data structures, finite values, valid rates, matched evaluation records, and aggregated results.
+
+Passing these checks confirms numerical and structural consistency; it does not independently establish scientific validity.
+
+The reproducibility manifest records the experiment configuration and package information. The output archive contains the experiment's recorded CSV and JSON result files.
+
+## Output Files
+
+| File | Description |
+|---|---|
+| `experiment_17_config.json` | Experiment configuration |
+| `source_calibration_thresholds.csv` | Source-condition calibrated thresholds |
+| `target_recalibrated_thresholds.csv` | Target-condition recalibrated thresholds |
+| `independent_control_fpr_results.csv` | Independent no-drift false-alarm results |
+| `independent_drift_detection_results.csv` | Independent drift-detection results |
+| `joint_recalibration_comparison.csv` | Combined paired recalibration comparisons |
+| `experiment_17_aggregated_summary.csv` | Aggregated scenario-level metrics |
+| `paired_recalibration_confidence_intervals.csv` | Paired mean changes and 95% confidence intervals |
+| `experiment_17_integrity_audit.csv` | Recorded integrity checks |
+| `experiment_17_manifest.json` | Reproducibility metadata |
+
+## Limitations
+
+- The data are synthetic and do not establish performance on real biometric datasets.
+- Only three covariance conditions and one specified mean-shift strength are evaluated.
+- Target recalibration assumes access to representative target-condition no-drift calibration data.
+- Small calibration samples can produce unstable empirical thresholds.
+- Confidence intervals are unadjusted for multiple comparisons.
+- Numerical integrity checks do not establish robustness, fairness, real-world biometric accuracy, or deployment readiness.
+
+## Conclusion
+
+Experiment 17 evaluates the trade-off between false-alarm control and drift detection when recalibrating thresholds for a fixed source-fitted detector. The findings indicate that recalibration should be evaluated jointly on false-alarm and detection rates, across relevant condition pairs and calibration sample sizes, rather than treated as a universally beneficial operation.
+
+**Status:** Synthetic experimental evaluation completed; real-world validation has not been established.
 
 ## Author
 
