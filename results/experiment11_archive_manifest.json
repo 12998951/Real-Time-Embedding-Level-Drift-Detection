@@ -24,5 +24,16 @@
     "results/experiment11_randomized_order_results.csv",
     "figures/experiment11_detector_score_timeline.png",
     "figures/experiment11_illumination_preview.png"
-  ]
+  ],
+  "audit_update_utc": "2026-11-03T14:04:40.690311+00:00",
+  "historical_manifest_preserved": true,
+  "embedding_archive_audit": {
+    "file": "data/experiment11_resnet18_embeddings.npz",
+    "listed_in_original_manifest": true,
+    "currently_available": false,
+    "independently_validated": false,
+    "status": "MISSING_NOT_RECOVERED"
+  },
+  "reproducibility_status": "PARTIAL_REPRODUCIBILITY",
+  "audit_note": "The original manifest is preserved as a historical record. The embedding archive was listed in that manifest but was not recovered during the November 2026 audit. The original manifest does not independently establish that the archive is currently available."
 }

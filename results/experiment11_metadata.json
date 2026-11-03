@@ -28,8 +28,10 @@
     "drift_start_window_index": 9,
     "calibration_quantile": 0.95,
     "thresholds_fixed_before_evaluation": true,
-    "randomized_order_sensitivity_seed": 2026,
-    "randomized_order_permutations": 20
+    "single_randomized_order_seed": 2026,
+    "single_randomized_order_permutations": 1,
+    "multi_permutation_control_seed": 20261024,
+    "multi_permutation_control_permutations": 20
   },
   "limitations": [
     "Controlled pixel-brightness transformation, not captured illumination variation",
