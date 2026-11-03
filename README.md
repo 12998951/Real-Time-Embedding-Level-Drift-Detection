@@ -347,7 +347,7 @@ The older [`experiment11_controlled_detection_results.csv`](results/experiment11
 
 Post-drift detection percentage represents the proportion of post-drift windows that triggered an alarm. A detected distribution shift does not, by itself, establish a biometric recognition failure, fairness degradation, or security incident.
 
-## Experiment 12: Cross-Condition Generalisation of Embedding-Level Drift Detectors
+## Experiment 12 V1 (Historical): Original Synthetic Embedding-Shift Evaluation
 
 This experiment compares Euclidean and ridge-regularized Mahalanobis detectors under controlled additive shifts to embedding windows.
 
@@ -382,6 +382,73 @@ A numerical diagnostic was performed on the regularized covariance matrices used
 All computed inverses contained finite values, and the inverse residuals were small. Increasing the ridge regularization reduced the condition number under the tested configuration.
 
 This diagnostic supports the numerical computability of the regularized inverses but does not establish statistical calibration quality, optimal ridge selection, or generalisation to real biometric data. The calibration set contains only 30 windows, so threshold uncertainty remains a limitation. Full end-to-end reproducibility from a clean runtime has not yet been independently verified.
+
+## Experiment 12 V2: Synthetic Embedding-Shift Sensitivity Analysis under Identity-Disjoint Evaluation
+
+This revised evaluation examines Euclidean and regularised Mahalanobis
+embedding-level anomaly detectors under controlled synthetic shifts.
+Reference, calibration, and evaluation partitions are identity-disjoint.
+The dataset does not provide verified acquisition timestamps, so this
+experiment does not claim temporal drift detection.
+
+- **Detailed methodology and report:** [README_experiment12_v2.md](results/experiment12/README_experiment12_v2.md)
+- **Results directory:** [results/experiment12/](results/experiment12/)
+
+### Dataset and evaluation design
+
+- 3,023 LFW-derived embedding rows, 62 identities, and 768 dimensions.
+- Identity-disjoint partitions: reference 1,492 samples / 37 identities;
+  calibration 1,071 / 12 identities; evaluation 460 / 13 identities.
+- Window size: 20 samples; 74 reference, 53 calibration, and 23 evaluation windows.
+- Standardisation parameters were estimated from reference data only.
+- Twenty random unit directions and five shift magnitudes
+  (0.00, 0.25, 0.50, 0.75, 1.00) were used.
+- Calibration thresholds were frozen at the 90th, 95th, and 97.5th percentiles.
+
+### Preliminary findings
+
+At zero synthetic shift, the identity-disjoint evaluation partition already
+showed elevated alarm rates:
+
+| Detector | 90th percentile | 95th percentile | 97.5th percentile |
+|---|---:|---:|---:|
+| Euclidean | 39.13% | 34.78% | 21.74% |
+| Mahalanobis | 82.61% | 47.83% | 39.13% |
+
+At shift magnitude 1.00, Mahalanobis showed stronger additional alarm
+crossings than Euclidean. For example, at the 95th-percentile threshold,
+the mean additional crossings were 8.90 per direction for Mahalanobis
+and zero for Euclidean. Mahalanobis produced positive net alarm-count
+changes in all 20 tested directions at all three thresholds.
+
+However, the elevated baseline alarm rates show that calibration thresholds
+did not transfer cleanly to the identity-disjoint evaluation partition.
+The evaluation data is not independently established as drift-free, so
+baseline alarms cannot automatically be classified as false positives.
+
+### V2 output files
+
+- **Detailed report:** [README_experiment12_v2.md](results/experiment12/README_experiment12_v2.md)
+- **Raw sensitivity results:** [exp12_v2_raw_sensitivity.csv](results/experiment12/exp12_v2_raw_sensitivity.csv)
+- **Baseline-adjusted sensitivity:** [exp12_v2_baseline_adjusted_sensitivity.csv](results/experiment12/exp12_v2_baseline_adjusted_sensitivity.csv)
+- **Alarm transitions:** [exp12_v2_alarm_transitions.csv](results/experiment12/exp12_v2_alarm_transitions.csv)
+- **Direction robustness:** [exp12_v2_direction_robustness.csv](results/experiment12/exp12_v2_direction_robustness.csv)
+- **Raw sensitivity plot:** [exp12_v2_raw_sensitivity.png](results/experiment12/exp12_v2_raw_sensitivity.png)
+- **Baseline-adjusted sensitivity plot:** [exp12_v2_baseline_adjusted_sensitivity.png](results/experiment12/exp12_v2_baseline_adjusted_sensitivity.png)
+
+### Limitations and interpretation
+
+These are controlled synthetic perturbation results, not conventional
+recall or validated real-world detection accuracy. The evaluation contains
+only 23 windows, the same windows are reused across shift directions, and
+there are no ground-truth drift-event labels. The results do not establish
+real-world biometric recognition accuracy, fairness, temporal drift
+detection, or deployment readiness.
+
+Mahalanobis was more responsive to the tested synthetic shifts, but its
+baseline alarm behaviour remains a significant unresolved limitation.
+These findings should be treated as preliminary evidence about
+embedding-level detector sensitivity.
 
 ## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
