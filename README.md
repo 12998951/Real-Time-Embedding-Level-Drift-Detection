@@ -522,7 +522,8 @@ The resampled streams overlap and are not independent datasets. These detection 
 Reports and results:
 
 - Sequential pilot report: [`Experiment_13_Phase_5_Sequential_Pilot_Report.md`](results/Experiment_13_Phase_5_Sequential_Pilot_Report.md)
-- Repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
+- Corrected repeated-stream report: [`Experiment_13_Phase_5B_Repeated_Stream_Report_CORRECTED.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report_CORRECTED.md)
+- Original report retained for historical reference: [`Experiment_13_Phase_5B_Repeated_Stream_Report.md`](results/Experiment_13_Phase_5B_Repeated_Stream_Report.md)
 - Repeated-stream results: [`lfw_repeated_stream_cusum_results.csv`](results/lfw_repeated_stream_cusum_results.csv)
 - Repeated-stream summary: [`lfw_repeated_stream_cusum_summary.csv`](results/lfw_repeated_stream_cusum_summary.csv)
 
@@ -572,29 +573,41 @@ A further exploratory evaluation performs 20 paired resampling replicates for ea
 | Brightness 0.70 | 20 | 40% | 90% |
 | Brightness 1.30 | 20 | 40% | 100% |
 
-These late alarms must not automatically be interpreted as successful drift detections. The unchanged control also produces late alarms, and eight of 20 replicates have pre-onset alarms in each condition.
+These figures count any alarm at or after window 10, including alarms that occurred after an earlier pre-onset alarm. They must not be interpreted as valid first post-onset detection rates.
 
-#### Paired first-alarm comparison
+#### Mutually exclusive first-alarm classification
 
-| Condition | Both streams alarm | Transformed stream alarms earlier | Same first-alarm window | Transformed stream alarms later |
+| Condition | First alarm after onset | No alarm | Pre-onset only | Pre-onset then post-onset |
 |---|---:|---:|---:|---:|
-| Brightness 0.70 vs control | 16 | 6 | 10 | 0 |
-| Brightness 1.30 vs control | 16 | 8 | 8 | 0 |
+| Control | 8 | 4 | 1 | 7 |
+| Brightness 0.70 | 10 | 2 | 0 | 8 |
+| Brightness 1.30 | 12 | 0 | 0 | 8 |
 
-Among replicates where both streams alarmed, the transformed stream never had a later first alarm than its paired control in this run. However, this comparison does not eliminate the false-alarm problem: pre-onset alarms and late alarms on the unchanged control indicate that normal stream variability can trigger the detector.
+Eight of 20 replicates in each condition produced a pre-onset alarm. The unchanged control also produced first alarms after onset in eight replicates. These results show that normal stream variability can trigger the detector and that a later alarm cannot automatically be attributed to the imposed brightness transformation.
+
+#### Paired first-post-onset comparison
+
+The following comparison is restricted to replicates in which both the transformed stream and its paired control had their first alarm at or after the imposed onset. This excludes pairs affected by pre-onset first alarms.
+
+| Condition | Both streams with valid first post-onset alarms | Transformed stream alarms earlier | Same first-alarm window | Transformed stream alarms later |
+|---|---:|---:|---:|---:|
+| Brightness 0.70 vs control | 8 | 6 | 2 | 0 |
+| Brightness 1.30 vs control | 8 | 8 | 0 | 0 |
+
+This is an exploratory paired timing comparison, not evidence of dependable drift detection. The number of eligible pairs is small, and the control condition itself produces post-onset first alarms.
 
 The bootstrap replicates reuse the same underlying image pool and are not independent datasets. These findings measure sensitivity to resampling rather than generalisation to new identities or external datasets.
 
-#### Bootstrap artifact availability
+#### Bootstrap artifacts
 
-The following two files were not found at the checked GitHub paths or in the checked Google Drive locations during the reproducibility audit:
+The following artifacts have been recovered and verified in the repository:
 
-- `lfw_stage3_bootstrap_cusum_results.csv`
-- `lfw_stage3_bootstrap_cusum_trace.csv`
+- Bootstrap results: [`lfw_stage3_bootstrap_cusum_results.csv`](results/lfw_stage3_bootstrap_cusum_results.csv)
+- Bootstrap trace: [`lfw_stage3_bootstrap_cusum_trace.csv`](results/lfw_stage3_bootstrap_cusum_trace.csv)
+- Paired comparison: [`lfw_stage3_bootstrap_paired_comparison.csv`](results/lfw_stage3_bootstrap_paired_comparison.csv)
+- Corrected bootstrap report: [`Experiment_13_Stage_3_Bootstrap_Comparison_Report_CORRECTED.md`](results/Experiment_13_Stage_3_Bootstrap_Comparison_Report_CORRECTED.md)
 
-The numerical summaries above reflect previously recorded outputs, but the raw bootstrap CSVs were not independently recovered. They should not be treated as independently reproducible from the currently available artifacts alone.
-
-The paired comparison report is also not linked here because its current GitHub availability has not been verified.
+The original bootstrap report is retained as a historical record. The corrected report and audited trace-derived classifications should be used when interpreting these results.
 
 ### Visualization
 
@@ -617,7 +630,7 @@ The audit verified that:
 
 However, the original reference centre and precision matrix were not located among the artifacts checked. Consequently, exact reproduction of the original Mahalanobis scores has not been independently verified.
 
-The bootstrap result and trace CSVs were also not recovered from the checked GitHub paths and Google Drive locations. The fresh-runtime smoke test verifies selected prerequisites, not the complete end-to-end experiment.
+The Stage 3 bootstrap results, trace, and paired-comparison CSVs have since been recovered and verified in the repository. Their presence and structure have been checked, and the trace-derived first-alarm classifications have been audited. The fresh-runtime smoke test verifies selected prerequisites, not the complete end-to-end experiment.
 
 Environment and model configuration records:
 
@@ -631,7 +644,7 @@ These experiments use synthetic distributions and controlled transformations of 
 
 The detector has not demonstrated dependable operational false-alarm control. The experiments do not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, cyberattack detection, or deployment readiness. The CUSUM configuration is provisional and does not guarantee a specified operational false-alarm rate.
 
-The fresh-identity evaluation uses the same LFW dataset and evaluation partition rather than an independent external dataset. The original reference centre and precision matrix have not been recovered, so exact score reproduction remains unverified. The Stage 3 bootstrap CSVs also remain unavailable at the locations checked during the audit.
+The fresh-identity evaluation uses the same LFW dataset and evaluation partition rather than an independent external dataset. The original reference centre and precision matrix have not been recovered, so exact reproduction of the original Mahalanobis scores remains unverified. Although the Stage 3 bootstrap CSVs have been recovered and verified, this does not resolve the original reference-model reproducibility limitation.
 
 Raw face images, embedding arrays, and identity-level metadata should not be published without appropriate licensing, privacy, and consent review.
 
@@ -639,7 +652,7 @@ Raw face images, embedding arrays, and identity-level metadata should not be pub
 
 Experiment 13 investigates false-alarm-controlled embedding-level drift detection through synthetic evaluations and an exploratory LFW FaceNet pilot. The fresh-identity evaluation recorded a threshold crossing under the stronger controlled brightness transformation, while the repeated-stream analyses exposed important pre-onset and control-condition alarm concerns.
 
-The evidence supports continued methodological investigation, not a claim of reliable real-world biometric drift detection. The frozen detector parameters and Stage 3 fresh-identity results are available in the repository, but exact reproduction of the original Mahalanobis scores remains unverified because the reference-model artifacts were not located. The Stage 3 bootstrap CSVs also remain unavailable at the checked locations.
+The evidence supports continued methodological investigation, not a claim of reliable real-world biometric drift detection. The frozen detector parameters, Stage 3 fresh-identity results, and Stage 3 bootstrap results and trace are available in the repository. The corrected bootstrap analysis identifies substantial pre-onset and control-condition alarm concerns. Exact reproduction of the original Mahalanobis scores remains unverified because the original reference-model artifacts were not recovered.
 
 **Overall status:** exploratory experiment completed; selected outputs verified; full numerical reproducibility remains incomplete.
 
