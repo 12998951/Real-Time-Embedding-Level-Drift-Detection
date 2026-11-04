@@ -2,7 +2,7 @@
 
 A research project investigating label-free distributional drift detection in embedding spaces, with the long-term goal of improving the reliability and trustworthiness of biometric identification systems under changing operating conditions.
 
-**Current status:** Research prototype with preliminary synthetic evaluations and exploratory controlled LFW/FaceNet embedding experiments. The real-image pilot does not establish biometric recognition performance, dependable operational false-alarm control, fairness, or deployment readiness. Full numerical reproducibility remains incomplete because the original reference-model arrays and Stage 3 bootstrap CSVs were not recovered during the documented audit.
+**Current status:** Research prototype with preliminary synthetic evaluations and exploratory controlled LFW/FaceNet embedding experiments. The real-image pilot does not establish biometric recognition performance, dependable operational false-alarm control, fairness, or deployment readiness. Experiment 13's Stage 3 bootstrap results, trace, and paired-comparison artifacts have now been verified in the repository. Exact reproduction of the original Mahalanobis scores remains unverified because the original reference-model artifacts have not been recovered.
 
 ## Overview
 
