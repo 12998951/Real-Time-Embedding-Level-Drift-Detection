@@ -1,0 +1,109 @@
+{
+    "experiment": 11,
+    "title": "Illumination Drift Detection",
+    "audit_type": "Independent Numerical Reproducibility Audit",
+    "audit_date_utc": "2026-11-04T09:48:35.095714+00:00",
+    "overall_status": "INDEPENDENT_NUMERICAL_REPRODUCIBILITY_PASSED",
+    "source_artifact": {
+        "archive": "data/experiment11_resnet18_embeddings.npz",
+        "archive_status": "REGENERATED_AND_VALIDATED",
+        "original_binary_recovered": false,
+        "exact_original_binary_equivalence_verified": false
+    },
+    "verification_checks": [
+        {
+            "check": "Embedding archive structural validation",
+            "status": "PASS",
+            "details": "Expected arrays, shapes, dtypes and finite values validated."
+        },
+        {
+            "check": "Identity partition reconstruction",
+            "status": "PASS",
+            "details": "Reconstructed reference, calibration and evaluation image and identity counts match recorded counts. Exact original identity membership was not independently preserved."
+        },
+        {
+            "check": "Embedding shift statistics",
+            "status": "PASS",
+            "maximum_absolute_difference": 2.099266e-07,
+            "tolerance": 1e-06
+        },
+        {
+            "check": "Image-level threshold reproduction",
+            "status": "PASS",
+            "maximum_absolute_difference": 3.552713678800501e-15,
+            "tolerance": 1e-06
+        },
+        {
+            "check": "Consistent window-level threshold reproduction",
+            "status": "PASS",
+            "maximum_absolute_difference": 2.6645352591003757e-15,
+            "tolerance": 1e-06
+        },
+        {
+            "check": "Controlled detection",
+            "status": "PASS",
+            "original_rows": 12,
+            "regenerated_rows": 12,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Randomized-order detection",
+            "status": "PASS",
+            "original_rows": 12,
+            "regenerated_rows": 12,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Control-order comparison",
+            "status": "PASS",
+            "original_rows": 8,
+            "regenerated_rows": 8,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Multi-permutation summary",
+            "status": "PASS",
+            "original_rows": 4,
+            "regenerated_rows": 4,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Original controlled detection",
+            "status": "PASS",
+            "original_rows": 12,
+            "regenerated_rows": 12,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Detector score diagnostics",
+            "status": "PASS",
+            "original_rows": 12,
+            "regenerated_rows": 12,
+            "mismatched_fields": []
+        },
+        {
+            "check": "Individual permutation-level control results",
+            "status": "PASS",
+            "original_rows": 80,
+            "regenerated_rows": 80,
+            "compared_fields": 5,
+            "mismatched_fields": [],
+            "permutation_seed": 20261024
+        }
+    ],
+    "comparison_policy": {
+        "numeric_absolute_tolerance": 1e-06,
+        "relative_tolerance": 0,
+        "nan_values": "Compared as equal where both original and regenerated values are NaN",
+        "original_result_files_modified": false
+    },
+    "remaining_limitations": [
+        "The original NPZ binary was not recovered.",
+        "Byte-for-byte equivalence with the original NPZ cannot be established.",
+        "Exact element-for-element equivalence with the original NPZ cannot be established.",
+        "Exact original identity partition membership cannot be independently confirmed without the original partition index or identity lists.",
+        "The regenerated archive reproduces the recorded numerical statistics, thresholds and detection results within the stated tolerances.",
+        "These results do not establish real-world biometric recognition accuracy, fairness, bias mitigation or production readiness."
+    ],
+    "final_interpretation": "The recorded Experiment 11 numerical results were independently reproduced from the regenerated embedding archive. All audited statistics, thresholds, detection analyses, diagnostics and individual permutation-level results passed their comparisons. The regenerated archive must not be represented as the recovered original binary."
+}

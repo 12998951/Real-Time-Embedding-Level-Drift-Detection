@@ -184,3 +184,42 @@ The findings justify further methodological investigation but do not establish d
 ### Archive audit update
 
 The original archive manifest is preserved as a historical record. It listed `data/experiment11_resnet18_embeddings.npz`, but the original binary was not recovered during the November 2026 audit. A replacement archive was subsequently regenerated and validated using the documented experimental configuration. The regeneration audit and final archive manifest record this distinction. Exact numerical equivalence with the original embeddings remains unverified.
+
+## Independent Reproducibility Audit
+
+**Status: PASSED — independent numerical reproducibility**
+
+An independent reproducibility audit was completed on 4 November 2026 using the regenerated embedding archive.
+
+The audit reproduced the recorded numerical results, including:
+
+- Embedding-shift statistics.
+- Image-level and consistent window-level calibration thresholds.
+- Controlled detection results.
+- Randomized-order detection results.
+- Control-order comparisons.
+- Multi-permutation control summary.
+- Original controlled detection results.
+- Detector score diagnostics.
+- All 80 individual permutation-level control results.
+
+All audited comparisons passed. Numerical comparisons used an absolute tolerance of 1e-6 and relative tolerance of zero, where applicable.
+
+The original result CSV files were not modified during verification.
+
+### Artifact provenance and remaining limitations
+
+The embedding archive was regenerated using the documented Experiment 11 configuration. The original NPZ binary was not recovered.
+
+Therefore:
+
+- The regenerated archive is not claimed to be the original binary.
+- Byte-for-byte and element-for-element equivalence with the missing original archive have not been established.
+- Exact original identity partition membership cannot be independently confirmed without the original partition indices or identity lists.
+- The recorded numerical statistics, thresholds and detection results were independently reproduced from the regenerated archive.
+
+The audit report is available at:
+
+`results/experiment11_independent_reproducibility_audit.json`
+
+These findings do not establish real-world biometric recognition accuracy, fairness, bias mitigation or production readiness.
