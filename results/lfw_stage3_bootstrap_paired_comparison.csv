@@ -1,0 +1,3 @@
+condition,total_replicates,both_streams_alarm,transformed_alarms_earlier,same_first_alarm_window,transformed_alarms_later,transformed_no_alarm,control_no_alarm,pre_onset_alarm_replicates
+brightness_070,20,16,6,10,0,2,4,8
+brightness_130,20,16,8,8,0,0,4,8
