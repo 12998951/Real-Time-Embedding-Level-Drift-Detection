@@ -138,13 +138,15 @@ Consequently, detection sensitivity must be interpreted jointly with false-alarm
 5. The 20 randomized permutations reuse the same evaluation images and are not independent datasets.
 6. The evaluation does not establish biometric recognition accuracy, fairness, bias mitigation, spoofing detection, or production readiness.
 7. A detected embedding distribution shift does not necessarily indicate a recognition failure or security incident.
-8. Full from-scratch numerical reproducibility remains incomplete because the original embedding archive was not recovered during the audit.
+8. The original embedding archive was not recovered. A replacement archive was regenerated using the documented configuration, but exact numerical equivalence with the original embeddings has not been established.
 
 ## 9. Reproducibility and Artifact Status
 
-The recovered experiment artifacts include:
+The Experiment 11 artifacts are published in the GitHub repository:
 
-- Notebook: `notebooks/11_Illumination_Drift_Detection.ipynb`
+- Notebook: `experiments/11_Illumination_Drift_Detection.ipynb`
+- README: `experiments/README_Experiment_11.md`
+- Regenerated embedding archive: `data/experiment11_resnet18_embeddings.npz`
 - Corrected detection results: `results/experiment11_corrected_detection_results.csv`
 - Randomized-order results: `results/experiment11_randomized_order_results.csv`
 - Multi-permutation control results: `results/experiment11_multi_permutation_control.csv`
@@ -152,13 +154,21 @@ The recovered experiment artifacts include:
 - Corrected calibration thresholds: `results/experiment11_consistent_window_thresholds.csv`
 - Combined evaluation: `results/experiment11_combined_evaluation_results.csv`
 - Metadata: `results/experiment11_metadata.json`
-- Archive manifest: `results/experiment11_archive_manifest.json`
+- Regeneration audit: `results/experiment11_embedding_regeneration_audit.json`
+- Final archive: `results/Experiment_11_Final_Archive.zip`
+- Final archive manifest: `results/experiment11_final_archive_manifest.json`
 
-Figures are stored in `figures/`.
+Figures are stored in `assets/`.
 
-**Missing artifact:** `data/experiment11_resnet18_embeddings.npz` was not recovered from the checked Colab runtime, mounted Drive locations, or fetched Git repository history. The original notebook's archive-generation step therefore cannot be assumed to be reproducible from the recovered files alone.
+**Embedding archive regeneration:** The original `experiment11_resnet18_embeddings.npz` binary was not recovered from the checked Colab runtime, Drive locations, or Git history. A replacement archive was regenerated using the documented LFW configuration, seed 42, ImageNet-pretrained ResNet-18 and the original illumination factors.
 
-The original notebook also contains an archive-packaging step that expects this embedding file. That step must be adjusted to handle the missing file explicitly rather than failing or silently claiming a complete archive.
+The regenerated archive contains 3,023 samples, 62 identities and 512-dimensional embeddings for Dim, Original and Bright conditions. All numeric arrays passed finite-value checks, and the saved archive was successfully reopened and validated.
+
+Regenerated archive SHA-256:
+
+`faeffff69dbfc3eaa55c3d2fdddef03ef28c3b3c2c6b30cdefb8b60a72a188e6`
+
+The regenerated archive is not claimed to be byte-for-byte or numerically identical to the original. Exact equivalence has not been established. See `results/experiment11_embedding_regeneration_audit.json` for regeneration details.
 
 ## 10. Overall Conclusion
 
@@ -168,9 +178,9 @@ The results also expose false-alarm behaviour, sensitivity to image ordering, an
 
 The findings justify further methodological investigation but do not establish dependable real-world biometric drift detection.
 
-**Status:** Controlled experiment completed; selected numerical outputs recovered and checked; full from-scratch reproducibility remains incomplete.
+**Status:** Controlled experiment completed; results and regenerated embedding archive validated; archive packaging and GitHub publication completed. Exact numerical equivalence with the original embedding archive has not been established.
 
 
 ### Archive audit update
 
-The original archive manifest is preserved as a historical record. It listed `data/experiment11_resnet18_embeddings.npz`, but this embedding archive was not recovered during the November 2026 audit. The corrected manifest records this discrepancy. The original embedding archive remains unavailable, so full from-scratch numerical reproducibility has not been established.
+The original archive manifest is preserved as a historical record. It listed `data/experiment11_resnet18_embeddings.npz`, but the original binary was not recovered during the November 2026 audit. A replacement archive was subsequently regenerated and validated using the documented experimental configuration. The regeneration audit and final archive manifest record this distinction. Exact numerical equivalence with the original embeddings remains unverified.

@@ -1,0 +1,30 @@
+{
+  "experiment": "Experiment 11 \u2014 Illumination Drift Detection",
+  "artifact": "experiment11_resnet18_embeddings.npz",
+  "status": "REGENERATED_AND_VALIDATED",
+  "original_binary_recovered": false,
+  "regeneration_date_utc": "2026-11-04T09:17:38.173810+00:00",
+  "dataset": "LFW",
+  "images": 3023,
+  "identities": 62,
+  "embedding_dimension": 512,
+  "illumination_factors": {
+    "Dim": 0.6,
+    "Original": 1.0,
+    "Bright": 1.4
+  },
+  "model": "ImageNet-pretrained ResNet-18",
+  "seed": 42,
+  "device": "CPU",
+  "pytorch_version": "2.11.0+cpu",
+  "torchvision_version": "0.26.0+cpu",
+  "numpy_version": "2.4.6",
+  "archive_size_bytes": 16642966,
+  "sha256": "faeffff69dbfc3eaa55c3d2fdddef03ef28c3b3c2c6b30cdefb8b60a72a188e6",
+  "validation": {
+    "archive_reopened": true,
+    "all_embedding_arrays_finite": true,
+    "expected_shapes_verified": true
+  },
+  "reproducibility_note": "Regenerated using the documented Experiment 11 configuration. This is not the original binary. Exact numerical equivalence with the original embeddings has not been established."
+}

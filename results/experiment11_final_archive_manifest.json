@@ -1,21 +1,27 @@
 {
-  "project": "Experiment 11 \u2014 Illumination Drift Detection",
-  "manifest_type": "Final archive audit",
-  "created_utc": "2026-11-04T08:47:53.426564+00:00",
-  "archive": "results/Experiment_11_Final_Archive.zip",
-  "archive_size_bytes": 747707,
-  "archive_sha256": "cd69430dd54c3038ea35511de26a7d5613fe086a2b35ebd4c2714bda3e24f37f",
-  "archived_file_count": 21,
+  "experiment": "Experiment 11 - Illumination Drift Detection",
+  "manifest_created_utc": "2026-11-04T09:24:32.656507+00:00",
+  "archive_path": "results/Experiment_11_Final_Archive.zip",
+  "archive_file_count": 24,
+  "archive_size_bytes": 17397579,
+  "archive_sha256": "67066ee4c8d439df72fe36e9cde8662f27b6dcb7b25b6a0e6766aa0d7b17baff",
   "zip_integrity": "PASS",
   "notebook_included": true,
   "readme_included": true,
-  "embedding_archive_included": false,
-  "embedding_archive_status": "MISSING_NOT_RECOVERED",
-  "reproducibility_status": "PARTIAL_REPRODUCIBILITY",
-  "historical_manifest_preserved": true,
-  "files": [
+  "embedding_archive_included": true,
+  "embedding_archive_path": "data/experiment11_resnet18_embeddings.npz",
+  "embedding_archive_size_bytes": 16642966,
+  "embedding_archive_sha256": "faeffff69dbfc3eaa55c3d2fdddef03ef28c3b3c2c6b30cdefb8b60a72a188e6",
+  "embedding_archive_status": "REGENERATED_AND_VALIDATED_NOT_ORIGINAL",
+  "original_binary_recovered": false,
+  "regeneration_audit_included": true,
+  "regeneration_audit_path": "results/experiment11_embedding_regeneration_audit.json",
+  "historical_manifests_preserved": true,
+  "reproducibility_status": "REGENERATED_ARTIFACT_VALIDATED_ORIGINAL_NUMERICAL_EQUIVALENCE_UNVERIFIED",
+  "archive_files": [
     "assets/experiment11_detector_score_timeline.png",
     "assets/experiment11_illumination_preview.png",
+    "data/experiment11_resnet18_embeddings.npz",
     "experiments/11_Illumination_Drift_Detection.ipynb",
     "experiments/README_Experiment_11.md",
     "results/experiment11_alarm_rate_metrics.csv",
@@ -26,7 +32,9 @@
     "results/experiment11_control_order_comparison.csv",
     "results/experiment11_controlled_detection_results.csv",
     "results/experiment11_corrected_detection_results.csv",
+    "results/experiment11_embedding_regeneration_audit.json",
     "results/experiment11_embedding_shift_audit.csv",
+    "results/experiment11_final_archive_manifest.json",
     "results/experiment11_identity_split_summary.csv",
     "results/experiment11_metadata.json",
     "results/experiment11_missing_value_audit.csv",
@@ -36,5 +44,11 @@
     "results/experiment11_score_diagnostics.csv",
     "results/experiment11_thresholds.csv"
   ],
-  "audit_note": "The final archive contains the available Experiment 11 notebook, README, results and assets. The original embedding archive was not recovered and is not included. The original historical manifest has been preserved."
+  "notes": [
+    "The original embedding archive binary was not recovered.",
+    "A replacement archive was regenerated using the documented Experiment 11 configuration.",
+    "The regenerated archive passed structural and finite-value validation.",
+    "Exact numerical equivalence between the regenerated and original embedding archives has not been established.",
+    "Historical manifests are preserved as audit records."
+  ]
 }
