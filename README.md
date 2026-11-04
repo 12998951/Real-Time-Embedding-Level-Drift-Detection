@@ -509,7 +509,7 @@ Available pilot artifacts:
 
 The sequential pilot evaluates the frozen CUSUM configuration on controlled streams, with brightness transformations introduced at window 6. A repeated-stream sensitivity analysis uses 20 bootstrap/resampling replicates drawn from the same 600-image pool.
 
-| Condition | Replicates | Pre-onset alarm rate | Post-onset detection rate |
+| Condition | Replicates | Pre-onset alarm rate | Post-onset alarm rate (all replicates) |
 |---|---:|---:|---:|
 | Control | 20 | 10% | Not applicable |
 | Brightness 0.70 | 20 | 10% | 40% |
@@ -573,7 +573,7 @@ A further exploratory evaluation performs 20 paired resampling replicates for ea
 | Brightness 0.70 | 20 | 40% | 90% |
 | Brightness 1.30 | 20 | 40% | 100% |
 
-These figures count any alarm at or after window 10, including alarms that occurred after an earlier pre-onset alarm. They must not be interpreted as valid first post-onset detection rates.
+These figures count any alarm at or after window 10, including alarms that occurred after an earlier pre-onset alarm. They must not be interpreted as valid first Post-onset alarm rate (all replicates).
 
 #### Mutually exclusive first-alarm classification
 
