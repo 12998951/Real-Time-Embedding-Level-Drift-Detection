@@ -28,3 +28,62 @@ The model details and checksum were observed in the Colab runtime on
 verify the file's provenance or authenticity.
 
 Fresh-runtime reproducibility has not yet been demonstrated.
+
+
+## Verified image preprocessing
+
+Implementation verified from the installed keras-facenet==0.3.2 package.
+
+- Verification date: 2026-11-04
+- Embedding method: FaceNet.embeddings()
+- Image resizing: OpenCV cv2.resize()
+- Target image dimensions: 160 x 160 pixels
+- Input channels: 3
+- Normalization mode: fixed_image_standardization=True
+- Input conversion: NumPy float32
+- Model inference: model.predict()
+- Embedding output dimension: 512
+
+### Exact normalization formula
+
+The package implements:
+
+    (np.float32(image) - 127.5) / 127.5
+
+This maps the original 0-255 pixel intensity range to approximately
+-1 to +1.
+
+### Verified embedding pipeline
+
+1. Each input image is resized to 160 x 160 using cv2.resize().
+2. Fixed image standardization is applied.
+3. The normalized image batch is converted to float32.
+4. The batch is passed to the FaceNet model using model.predict().
+5. The model returns 512-dimensional embeddings.
+
+### Face detection and alignment scope
+
+The experiment uses FaceNet.embeddings(), not FaceNet.extract().
+The extract() method invokes the package's face extraction pathway,
+but that pathway is not used by this experiment's embedding call.
+Therefore, MTCNN face detection and cropping are not part of the
+verified embedding-generation pathway.
+
+### Model metadata verification
+
+- Model metadata image_size: 160
+- Model metadata dimensions: 512
+- fixed_image_standardization: True
+- Model input shape: (None, None, None, 3)
+- Model output shape: (None, 512)
+- Model parameters: 23,497,424
+- Pretrained weights SHA-256:
+  8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
+
+The model input shape is dynamically declared. The 160 x 160
+input dimensions are enforced by the package's embeddings()
+preprocessing implementation before model inference.
+
+This verification documents the installed package implementation
+and runtime configuration. It does not, by itself, establish a
+fresh-runtime end-to-end reproduction of the complete experiment.
