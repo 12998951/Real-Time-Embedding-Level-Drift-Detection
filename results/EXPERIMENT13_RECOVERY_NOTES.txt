@@ -1,0 +1,143 @@
+EXPERIMENT 13 — ARTIFACT REGENERATION AND PROVENANCE NOTES
+==========================================================
+
+1. PURPOSE
+----------
+This document records the regeneration of ten missing raw artifacts
+from Experiment 13: Final Reproducibility Audit.
+
+The artifacts were regenerated because the original output files
+were unavailable.
+
+These files are regenerated outputs, not recovered copies of
+the original files.
+
+
+2. SOURCE DATA AND MODEL
+------------------------
+Dataset: Labeled Faces in the Wild (LFW)
+Source archive: lfw_original_source.tgz
+
+Archive SHA-256:
+055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0
+
+Extracted images: 13,233
+Identity folders: 5,749
+
+Embedding model: FaceNet (InceptionResNetV1)
+Embedding dimension: 512
+
+Package: keras-facenet==0.3.2
+
+FaceNet weights SHA-256:
+8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
+
+
+3. REGENERATED ARTIFACTS
+------------------------
+01. lfw_facenet_embeddings.npy
+02. lfw_embedding_metadata.csv
+03. lfw_identity_split_indices.npz
+04. lfw_matched_stream_embeddings.npz
+05. lfw_matched_stream_manifest_aligned.csv
+06. lfw_identity_balanced_calibration_windows.npz
+07. lfw_stage3_fresh_original_embeddings.npy
+08. lfw_stage3_fresh_brightness_070_embeddings.npy
+09. lfw_stage3_fresh_brightness_130_embeddings.npy
+10. lfw_stage3_fresh_stream_manifest.csv
+
+All ten files are listed in:
+experiment13_recovery_manifest.csv
+
+The manifest records file sizes, SHA-256 checksums,
+regeneration status, and validation status.
+
+
+4. REGENERATION LOGIC
+---------------------
+The original experiment notebook was inspected to reconstruct
+the relevant selection, sampling, embedding, and transformation logic.
+
+The regeneration used:
+- The checksum-verified LFW source archive.
+- The verified FaceNet model weights.
+- The original notebook's documented random seeds and selection logic.
+- The reconstructed dataset path ordering.
+- The original brightness transformation logic.
+
+Stage 3 brightness transformations:
+- Brightness factor 0.70.
+- Brightness factor 1.30.
+- Transformation begins at window_id 10.
+- First 500 embeddings remain unchanged.
+- Final 500 embeddings are regenerated from transformed images.
+
+
+5. VALIDATION RESULTS
+---------------------
+Required artifacts: 10
+Present artifacts: 10
+Missing artifacts: 0
+
+Base embeddings: 13,233 x 512
+Reference images: 9,083
+Evaluation images: 4,150
+Matched stream: 600 x 512
+Calibration windows: 100
+Stage 3 stream: 1,000 images
+
+Validation checks passed:
+- File existence.
+- Embedding dimensions.
+- Numerical finiteness.
+- Metadata consistency.
+- Identity split disjointness.
+- Matched-stream structure.
+- Calibration-window dimensions.
+- Stage 3 manifest consistency.
+- Unchanged pre-onset embeddings.
+- Transformed post-onset embeddings.
+
+Final audit status: PASSED.
+
+
+6. PROVENANCE LIMITATIONS
+-------------------------
+The original TFDS filesystem enumeration order was not independently
+verified against the original execution environment.
+
+The regenerated dataset ordering was reconstructed using the
+available TFDS path-making logic and checked for identity alignment.
+
+However, this does not establish that every dataset index maps
+to exactly the same original image as in the original execution.
+
+Consequently:
+- These files must be described as regenerated artifacts.
+- They must not be described as exact original-file recoveries.
+- Byte-for-byte equivalence with the original outputs is not established.
+- Exact row-by-row equivalence with the original dataset ordering
+  is not established.
+
+The SHA-256 checksums in the recovery manifest identify the
+regenerated files created in this recovery run. They do not prove
+equivalence to missing original files.
+
+
+7. REPRODUCIBILITY RECORD
+-------------------------
+Original notebook:
+Experiment_13_Final_Reproducibility_Audit.ipynb
+
+Regenerated artifact directory:
+/content/experiment13_lfw_regenerated
+
+Recovery manifest:
+experiment13_recovery_manifest.csv
+
+Status:
+TEN ARTIFACTS REGENERATED AND VALIDATED.
+
+This document is a provenance record for the regenerated
+working dataset. It does not replace the original experiment
+notebook or constitute proof of exact original recovery.
