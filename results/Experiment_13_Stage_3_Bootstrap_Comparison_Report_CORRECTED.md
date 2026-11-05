@@ -38,6 +38,19 @@ The first alarm occurred at or after the imposed change onset in 8/20
 control streams, 10/20 brightness-0.70 streams, and 12/20
 brightness-1.30 streams.
 
+### Detection-delay interpretation
+
+Detection delay is calculated as the first detection window minus the
+imposed change-onset window (10). The reported mean delays are conditional
+on the first alarm occurring at or after onset. Therefore, the delay
+summaries include 8/20 control streams, 10/20 brightness-0.70 streams,
+and 12/20 brightness-1.30 streams. Streams whose first alarm occurred
+before onset are excluded from this calculation, even when a subsequent
+post-onset alarm occurred. The conditional mean delays were 4.375,
+3.000, and 2.083 windows, respectively. These values should not be
+interpreted independently of the pre-onset alarm rates.
+
+
 All three conditions also had 8/20 streams with pre-onset alarms.
 Among transformed streams, eight replicates in each condition had a
 pre-onset alarm followed by at least one later alarm.
