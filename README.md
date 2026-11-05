@@ -980,6 +980,135 @@ Experiment 17 evaluates the trade-off between false-alarm control and drift dete
 
 **Status:** Synthetic experimental evaluation completed; real-world validation has not been established.
 
+## Experiment 13 – Embedding Provenance and Reproducibility Audit
+
+### 1. Audit Objective
+
+A provenance audit was conducted to investigate the correspondence between the regenerated embedding matrix, its associated metadata, and the original Labeled Faces in the Wild (LFW) images.
+
+The original embedding-generation pipeline preserved identity labels and sequential dataset indices but did not record the corresponding image filenames or paths. Therefore, direct verification of the original image-to-embedding mapping was not possible from the saved metadata alone.
+
+### 2. Verified Dataset and Model Configuration
+
+| Property | Verified result |
+|---|---|
+| Dataset | Labeled Faces in the Wild (LFW) |
+| Total images | 13,233 |
+| Total identities | 5,749 |
+| Embedding dimension | 512 |
+| Embedding data type | float32 |
+| Embedding model | FaceNet / Inception-ResNet-v1 |
+| `keras-facenet` version | 0.3.2 |
+
+The LFW source archive was verified using SHA-256:
+
+```text
+055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0
+```
+
+The pretrained FaceNet weights were verified using SHA-256:
+
+```text
+8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
+```
+
+### 3. Reconstruction and Matching Method
+
+Fresh FaceNet embeddings were independently generated from the verified LFW image archive.
+
+The regenerated embedding matrix was compared against the independently recomputed embedding matrix using identity-constrained cosine similarity matching. A one-to-one Hungarian assignment was performed within each identity group to establish image-level correspondence.
+
+### 4. Image-Level Correspondence Results
+
+| Validation metric | Result |
+|---|---:|
+| Total embedding rows matched | 13,233 |
+| Unmatched rows | 0 |
+| Unique image assignments | True |
+| Identity consistency | 13,233 / 13,233 |
+| Minimum cosine similarity | 0.997429 |
+| Median cosine similarity | 0.999820 |
+| Mean cosine similarity | 0.999795 |
+| Maximum cosine similarity | 0.999970 |
+
+All 13,233 embedding rows were assigned to unique images, with identity consistency maintained throughout the matching process.
+
+### 5. Numerical Similarity Analysis
+
+After aligning the independently generated embeddings with their assigned image positions, numerical differences were evaluated.
+
+| Metric | Result |
+|---|---:|
+| Median L2 difference | 0.018968 |
+| Mean L2 difference | 0.019624 |
+| Maximum L2 difference | 0.071707 |
+| Mean absolute element-wise difference | 0.000696 |
+| Median cosine similarity | 0.999820 |
+| Minimum cosine similarity | 0.997429 |
+
+The regenerated and independently recomputed embedding matrices exhibited nearly identical vector norm distributions, with norms approximately equal to 1.
+
+Despite the high cosine similarity, the embedding vectors were not numerically identical. Exact numerical reproducibility has therefore not been established.
+
+### 6. Dataset and Metadata Verification
+
+The regenerated metadata contained 13,233 unique, consecutive dataset indices ranging from 0 to 13,232.
+
+Additional checks established that:
+
+- All 5,749 identities were represented.
+- Identity counts matched the reconstructed LFW dataset for all 5,749 identities.
+- The total image count matched 13,233.
+- Direct positional alignment with the reconstructed archive ordering was not established.
+
+The original pipeline did not preserve image paths, and its exact TFDS enumeration order could not be independently reconstructed with sufficient certainty.
+
+### 7. Diagnostic Image Mapping Artifact
+
+A separate diagnostic CSV was generated to preserve the reconstructed image-level correspondence.
+
+**Filename:** `lfw_embedding_image_mapping_diagnostic.csv`
+
+**Location:** Generated in the Google Colab runtime; not committed to the repository.
+
+The CSV contains 13,233 records and seven columns:
+
+| Column | Description |
+|---|---|
+| `recovered_row` | Row position in the regenerated embedding matrix |
+| `dataset_index` | Original metadata dataset index |
+| `metadata_identity` | Identity recorded in the metadata |
+| `matched_identity` | Identity associated with the matched image |
+| `matched_image_path` | Reconstructed LFW image path |
+| `cosine_similarity` | Similarity score for the assigned correspondence |
+| `identity_match` | Boolean identity consistency indicator |
+
+The saved CSV was reloaded and verified. All checks passed, including identity consistency, unique image paths, finite similarity values, and preservation of dataset indices, image paths, and similarity scores.
+
+This CSV is a diagnostic provenance artifact. It does not replace or modify the existing embedding or metadata artifacts.
+
+### 8. Reproducibility Limitations
+
+The audit identified the following limitations:
+
+1. The original extraction pipeline did not preserve image filenames or image paths alongside embedding vectors.
+2. Exact original TFDS enumeration order could not be independently established.
+3. The regenerated embeddings were not numerically identical to the independently recomputed embeddings.
+4. The precise cause of the remaining numerical differences has not been isolated.
+5. High cosine similarity does not independently establish real-world biometric recognition accuracy, fairness, or deployment readiness.
+
+### 9. Audit Conclusion
+
+The provenance audit established one-to-one image-level correspondence for all 13,233 regenerated embedding rows against the verified LFW source images.
+
+The reconstructed embeddings demonstrated consistently high cosine similarity, with a mean of 0.999795 and a minimum of 0.997429.
+
+These findings provide strong evidence of embedding-level correspondence. However, exact reproduction of the original dataset enumeration order and numerical embedding values has not been demonstrated.
+
+The regenerated artifacts and diagnostic mapping CSV should therefore be treated as reconstructed research artifacts rather than exact recovered copies of the original pipeline outputs.
+
+**Audit status:** Image-level correspondence verified; exact numerical and ordering reproducibility not established.
+
 ## Author
 
 Moien Shaik
