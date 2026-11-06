@@ -13,3 +13,7 @@ detection_delay_by_episode.csv,True,2708
 detection_delay_summary.csv,True,180
 recurring_alarm_persistence.csv,True,720
 recurring_episode_separation_summary.csv,True,157
+stable_false_alarm_by_seed.csv,True,5311
+stable_false_alarm_seed_summary.csv,True,440
+corrected_segment_alarm_diagnostic.csv,True,454
+confidence_intervals.csv,True,1207
