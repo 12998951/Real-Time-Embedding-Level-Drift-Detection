@@ -664,11 +664,27 @@ Evaluate the behaviour of embedding-level drift detectors under abrupt, gradual,
 
 ### Experimental Design
 
-- **Drift patterns:** abrupt, gradual, and recurring.
+- **Drift patterns:** Abrupt, gradual, and recurring.
 - **Detectors:** Euclidean and Mahalanobis.
-- **Evaluation:** synthetic embedding distributions with controlled temporal drift patterns.
-- **Calibration:** frozen detector thresholds.
-- **Additional analysis:** independent control evaluation, recurring-shift gap analysis, and numerical-stability diagnostics.
+- **Evaluation:** Synthetic embedding distributions with controlled temporal drift patterns.
+- **Independent seeds:** 20.
+- **Calibration:** Frozen detector thresholds.
+- **Target false-alarm rate:** 5%.
+- **Additional analysis:** Independent control evaluation, recurring-shift gap analysis, seed-level bootstrap confidence intervals, and numerical-stability diagnostics.
+
+### Frozen Threshold Configuration
+
+| Parameter | Value |
+|---|---:|
+| Target false-alarm rate | 5% |
+| Calibration windows | 200 |
+| Euclidean threshold | 2.0702929416972333 |
+| Mahalanobis threshold | 2.0746417163536846 |
+| Calibration method | Empirical upper-tail quantile |
+| Reference seed | 20261401 |
+| Calibration seed | 20261402 |
+
+The thresholds were frozen before independent evaluation. The confidence-interval analysis did not modify the original experiment data or thresholds.
 
 ### Key Results
 
@@ -678,37 +694,134 @@ Evaluate the behaviour of embedding-level drift detectors under abrupt, gradual,
 | Abrupt-shift detection rate | 100% |
 | Gradual-shift detection rate | 95.5% |
 | Recurring-shift detection rate | 100% |
+| Mean abrupt-shift detection delay | 0 windows |
 | Mean gradual-shift detection delay | 1.45 windows |
+| Mean recurring-shift detection delay | 0 windows per episode |
 | Independent control false-alarm rate | 4.97% |
 | Independent control false-alarm standard deviation | 0.78 percentage points |
 
 The independent control evaluation recorded 497 alarms per detector across 10,000 control windows, corresponding to a pooled false-alarm rate of 4.97%.
 
+### 95% Confidence Interval Analysis
+
+Seed-level percentile bootstrap confidence intervals were calculated using 20,000 bootstrap repetitions and 20 independent seeds. The independent evaluation unit was the seed.
+
+| Metric | Condition | Mean | 95% CI |
+|---|---|---:|---:|
+| Detection rate | Abrupt | 100.00% | 100.00–100.00% |
+| Detection rate | Gradual | 95.50% | 94.75–96.25% |
+| Detection rate | Recurring | 100.00% | 100.00–100.00% |
+| Stable false-alarm rate | Abrupt | 6.75% | 4.25–9.25% |
+| Stable false-alarm rate | Gradual | 6.75% | 4.25–9.25% |
+| Stable false-alarm rate | Recurring | 5.75% | 4.25–7.125% |
+| Independent control false-alarm rate | Independent control | 4.97% | 4.65–5.32% |
+| Detection delay | Abrupt | 0.00 windows | 0.00–0.00 |
+| Detection delay | Gradual | 1.45 windows | 1.05–1.80 |
+| Detection delay | Recurring | 0.00 windows | 0.00–0.00 |
+
+The confidence intervals were calculated across independent seeds rather than treating individual windows as independent observations.
+
+For recurring detection delay, the episode-level delays were first averaged within each seed before calculating the seed-level bootstrap interval.
+
+The zero-width intervals for 100% detection rates and zero-window delays reflect identical observations across the evaluated seeds. They do not establish guaranteed performance outside the tested synthetic configuration.
+
 ### Recurring-Shift Analysis
 
-Recurring-shift gap analysis showed a mean alarm rate of 6.0% during recurring-shift gaps, compared with 3.5% in the final baseline period. Nine of 20 seeds had no alarms during the recurring-shift gaps, while 13 of 20 seeds had no alarms during the final baseline period.
+Recurring-shift gap analysis showed:
+
+| Stable period | Mean false-alarm rate |
+|---|---:|
+| Recurring-shift gaps | 6.0% |
+| Final baseline period | 3.5% |
+
+Nine of 20 seeds had no alarms during recurring-shift gaps, while 13 of 20 seeds had no alarms during the final baseline period.
+
+The recurring aggregate stable false-alarm rate was 5.75%. This aggregate includes the initial baseline, stable gaps, and final stable period.
 
 These findings indicate that false alarms can persist during nominally stable periods and that alarm behaviour varies across random seeds.
 
 ### Main Findings
 
-1. Both detectors produced matching alarm decisions in the reported 3,600 comparisons.
+1. Both detectors produced matching alarm decisions in all 3,600 reported comparisons.
 2. Abrupt and recurring shifts were detected at a 100% rate in the evaluated synthetic scenarios.
 3. Gradual shifts were detected at a 95.5% rate, with a mean detection delay of 1.45 windows.
-4. Stable-period false alarms remained present despite frozen calibration thresholds.
-5. Recurring-shift results require careful interpretation because alarm persistence can affect the episode-level detection-delay definition.
+4. The gradual detection-rate confidence interval was 94.75–96.25%.
+5. Independent control false-alarm performance was close to the nominal 5% target, with a mean of 4.97%.
+6. Stable-period false alarms remained present despite frozen calibration thresholds.
+7. Seed-level confidence intervals quantify variation across the 20 simulated seeds but do not establish generalisation to real biometric data.
 
 ### Interpretation and Limitations
 
-The results provide preliminary evidence about detector behaviour under controlled synthetic temporal shifts. Matching alarm decisions do not establish that either detector is universally superior or that their decisions generalize to real biometric data.
+The results provide preliminary evidence about detector behaviour under controlled synthetic temporal shifts.
 
-The results do not establish real-world biometric recognition accuracy, fairness, or deployment readiness. Further evaluation on real embedding datasets and additional drift conditions is required.
+Matching alarm decisions do not establish that either detector is universally superior. Both detectors produced identical decisions under the tested configuration.
 
-### Reproducibility
+The independent control false-alarm rate was close to the nominal target. However, the stable-period false-alarm rates observed during temporal evaluation were higher in some conditions. This distinction matters when interpreting the operational behaviour of the detectors.
 
-The experiment used frozen thresholds and independent control evaluation. A numerical-stability diagnostic was also performed on the regularized covariance matrices used by the Mahalanobis detectors.
+The zero-width confidence intervals for some metrics arise because all 20 seeds produced the same measured result. They should not be interpreted as proof of zero uncertainty under other data-generating processes.
 
-The evaluation remains synthetic and should be interpreted within its experimental assumptions.
+The experiment uses synthetic embedding distributions and controlled drift patterns. It does not establish:
+
+- Real-world biometric recognition accuracy.
+- Fairness or successful bias mitigation.
+- Dependable drift detection on real face or voice embeddings.
+- Detection of spoofing attempts or cyberattacks.
+- Production deployment readiness.
+
+Further evaluation on real embedding datasets, independent acquisition conditions, and additional drift scenarios is required.
+
+### Reproducibility and Integrity Verification
+
+The final experiment audit verified all 18 expected result artifacts.
+
+- **Expected artifacts:** 18.
+- **Artifacts present:** 18.
+- **Missing artifacts:** 0.
+- **SHA-256 hashes:** Generated for all 18 expected artifacts.
+- **Frozen threshold validation:** Passed.
+- **Confidence interval output:** Verified, 10 rows and 8 columns.
+- **Artifact inventory:** Saved.
+- **Integrity manifest:** Saved successfully.
+
+The experiment data and frozen thresholds were not modified during the confidence-interval calculation or final integrity audit.
+
+#### Expected Result Artifacts
+
+1. `environment.json`
+2. `calibration_scores.csv`
+3. `frozen_thresholds.json`
+4. `independent_control_results.csv`
+5. `independent_control_summary.csv`
+6. `baseline_detector_score_comparison.csv`
+7. `temporal_drift_evaluation.csv`
+8. `temporal_drift_trace.csv`
+9. `temporal_drift_summary.csv`
+10. `detector_alarm_agreement.csv`
+11. `detection_delay_by_episode.csv`
+12. `detection_delay_summary.csv`
+13. `recurring_alarm_persistence.csv`
+14. `recurring_episode_separation_summary.csv`
+15. `stable_false_alarm_by_seed.csv`
+16. `stable_false_alarm_seed_summary.csv`
+17. `corrected_segment_alarm_diagnostic.csv`
+18. `confidence_intervals.csv`
+
+The separate audit outputs are:
+
+- `artifact_inventory.csv`
+- `experiment_14_integrity_manifest.csv`
+
+The integrity manifest records file sizes and SHA-256 hashes. Passing the integrity checks establishes file presence and recorded hash consistency, not scientific validity or independent reproduction of the experiment.
+
+### Conclusion
+
+Experiment 14 evaluates embedding-level drift detection under abrupt, gradual, and recurring synthetic distribution shifts.
+
+Both detectors achieved identical alarm decisions in the tested scenarios. Detection rates were high, and the independent control false-alarm rate was close to the nominal 5% target. However, stable-period false alarms and the synthetic nature of the evaluation remain important limitations.
+
+The seed-level confidence intervals provide additional information about variability across the 20 independent seeds.
+
+**Overall status:** Synthetic experiment completed; confidence intervals calculated; all 18 expected artifacts verified; real-world biometric validation remains outstanding.
 
 ## Experiment 15: Detector Discrimination Under Anisotropic and Correlated Embedding Distributions
 
