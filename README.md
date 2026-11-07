@@ -1006,59 +1006,191 @@ All results are synthetic experimental evidence and should be interpreted within
 
 ### Objective
 
-Experiment 16 investigates whether thresholds calibrated on one embedding distribution remain reliable when applied to a different target distribution. It compares Euclidean distance and Ledoit–Wolf-regularized Mahalanobis distance under isotropic, anisotropic, and correlated synthetic embedding distributions.
+Experiment 16 investigates whether thresholds calibrated on one embedding distribution remain reliable when applied to a different target distribution.
+
+It evaluates Euclidean distance and Ledoit–Wolf-regularized Mahalanobis distance under three synthetic covariance conditions: isotropic, anisotropic, and correlated.
+
+The experiment also compares frozen source-condition calibration against target-condition threshold recalibration and target-condition detector adaptation.
 
 ### Experimental Setup
 
-- **Random seeds:** 20
-- **Embedding dimension:** 64
-- **Window size:** 20 embeddings
-- **Reference samples:** 1,000 per seed and condition
-- **Calibration windows:** 200 per seed, source condition, and detector
-- **Control windows:** 500 per seed, source-target scenario, and detector
-- **Drift evaluation windows:** 500 per seed, source-target scenario, and detector
-- **Nominal false-alarm rate:** 5%
-- **Source-target scenarios:** 9 (3 same-condition and 6 cross-condition)
-- **Detectors:** Euclidean and Ledoit–Wolf-regularized Mahalanobis
+| Parameter | Configuration |
+|---|---:|
+| Independent random seeds | 20 |
+| Random seed range | 202616–202635 |
+| Embedding dimension | 64 |
+| Window size | 20 |
+| Reference samples | 1,000 per seed and condition |
+| Source calibration windows | 200 |
+| Independent control windows | 500 |
+| Drift evaluation windows | 500 |
+| Nominal false-alarm rate | 5% |
+| Mean-shift strength | 0.5 |
+| Covariance conditions | Isotropic, anisotropic, correlated |
+| Source-target scenarios | 9 |
+| Detectors | Euclidean, Ledoit–Wolf-regularized Mahalanobis |
 
 ### Methodology
 
-The detectors are calibrated on source-condition data, and their thresholds are frozen before evaluation on independent target-condition control and drift windows. Same-condition scenarios provide a baseline for comparison with cross-condition transfers.
+Three covariance conditions were evaluated:
 
-Performance is assessed using independent control false-alarm rates, drift detection rates, paired detector comparisons across seeds, and unadjusted 95% confidence intervals.
+- **Isotropic:** Identity covariance.
+- **Anisotropic:** Diagonal covariance with unequal variances.
+- **Correlated:** Correlated covariance structure.
 
-### Key Findings
+All nine source-target combinations were evaluated, including three same-condition and six cross-condition scenarios.
+
+#### Original frozen-threshold evaluation
+
+Detector parameters and thresholds were calibrated using source-condition data. The thresholds were frozen before evaluation on independent target-condition control and drift windows.
+
+This stage examined whether source-condition calibration transfers reliably to different target distributions.
+
+#### Three-method comparative evaluation
+
+A further benchmark compared three calibration strategies using shared independent evaluation datasets.
+
+| Method | Detector fitting | Threshold calibration | Interpretation |
+|---|---|---|---|
+| A | Source condition | Frozen source threshold | Zero-shot calibration transfer |
+| B | Source condition | Target-specific threshold | Target threshold recalibration |
+| C | Target condition | Target-specific threshold | Target-adapted detector and threshold |
+
+Method B keeps the source-fitted detector unchanged and recalibrates only its threshold using target-condition calibration data.
+
+Method C fits the detector using target-condition reference data and calibrates its threshold using target-condition calibration data. It is a target-adapted approach, not zero-shot transfer.
+
+The three methods were evaluated on the same control and drift windows for each seed and target condition, enabling paired comparisons.
+
+### Original Frozen-Threshold Findings
 
 Same-condition calibration generally produced false-alarm rates near the nominal 5% target. Cross-condition transfer sometimes caused substantial false-alarm inflation or suppression.
 
-Examples include:
+Selected results from the original frozen-threshold evaluation:
 
-| Source → Target | Euclidean false-alarm rate | Mahalanobis false-alarm rate |
+| Source → Target | Euclidean FPR | Mahalanobis FPR |
 |---|---:|---:|
 | Anisotropic → Isotropic | 0.02% | 34.08% |
 | Correlated → Isotropic | 0.84% | 96.67% |
 | Correlated → Anisotropic | 32.84% | 99.50% |
 | Anisotropic → Correlated | 0.28% | 35.38% |
 
-These results demonstrate that a frozen threshold's behavior depends on the relationship between the calibration and target distributions. A high detection rate alone is not evidence of useful drift discrimination when the false-alarm rate is also high.
+These results demonstrate that a frozen threshold's behaviour depends on the relationship between the calibration and target distributions.
+
+A high detection rate alone is not evidence of useful drift discrimination when the false-alarm rate is also high.
+
+### Three-Method Comparative Findings
+
+The shared-window benchmark showed that target-specific recalibration substantially improved false-alarm control in several cross-condition scenarios.
+
+Selected comparative results:
+
+| Source → Target | Detector | Method A FPR | Method B FPR | Method C FPR |
+|---|---|---:|---:|---:|
+| Anisotropic → Correlated | Euclidean | 0.26% | 5.29% | 5.15% |
+| Anisotropic → Correlated | Mahalanobis | 35.52% | 5.04% | 5.57% |
+| Correlated → Anisotropic | Mahalanobis | 99.59% | 5.91% | 4.95% |
+| Correlated → Isotropic | Mahalanobis | 96.31% | 5.55% | 5.70% |
+| Isotropic → Anisotropic | Euclidean | 55.03% | 5.31% | 5.05% |
+
+Method A sometimes produced extremely high false-alarm rates under cross-condition transfer.
+
+Methods B and C brought false-alarm rates much closer to the nominal 5% target in these examples.
+
+However, target recalibration did not produce uniform improvements in detection sensitivity.
+
+For example, in the anisotropic-to-correlated Mahalanobis scenario:
+
+- Method A detection rate: 46.13%.
+- Method B detection rate: 7.69%.
+- Method C detection rate: 22.01%.
+
+The higher detection rate of Method A must be interpreted alongside its 35.52% false-alarm rate. It does not demonstrate better drift discrimination.
 
 ### Statistical Analysis
 
-Detector detection-rate differences were calculated as Mahalanobis minus Euclidean, paired across the 20 random seeds for each source-target scenario. Confidence intervals were unadjusted for multiple comparisons.
+The comparative statistical analysis evaluated:
 
-The largest apparent sensitivity advantages for Mahalanobis occurred in several transfer scenarios with substantial false-alarm inflation. These results should therefore be interpreted together with the corresponding control metrics.
+- False-alarm-rate differences.
+- Detection-rate differences.
+- Method A versus Method B.
+- Method A versus Method C.
+- Method B versus Method C.
+
+Paired comparisons were conducted across 20 independent random seeds.
+
+The analysis used:
+
+- Wilcoxon signed-rank tests.
+- 95% bootstrap confidence intervals for paired mean differences, using 10,000 resamples.
+- Holm multiple-comparison correction, applied separately within each metric family.
+
+A total of 108 pairwise statistical comparisons were performed:
+
+- 54 false-alarm-rate comparisons.
+- 54 detection-rate comparisons.
+- 20 paired seed-level observations per comparison.
+
+**51 of the 108 comparisons were statistically significant after Holm correction.**
+
+This count includes both same-condition and cross-condition comparisons. Same-condition methods produced identical results in the tested design.
+
+The correction was applied separately to the false-alarm and detection-rate families, not globally across all 108 comparisons.
+
+Statistical significance does not automatically establish practical superiority. The results must be interpreted alongside false-alarm control, detection sensitivity, and the experimental limitations.
 
 ### Integrity and Reproducibility
 
-All 15 programmed integrity checks passed. The audit verified expected output counts, finite scores and thresholds, and valid false-alarm and detection-rate ranges.
+The original experiment integrity audit passed all 15 programmed checks.
 
-The notebook, configuration, environment information, calibration outputs, control results, drift evaluation results, statistical comparisons, and integrity audit are retained in the experiment outputs.
+The comparative benchmark additionally verified:
+
+- 1,080 control evaluation records.
+- 1,080 drift evaluation records.
+- 54 aggregated comparative result groups.
+- 108 paired statistical comparisons.
+- Finite evaluation rates and valid rate ranges.
+- Complete comparative evaluation groups.
+
+The shared evaluation design ensured that Methods A, B, and C were assessed using the same independent control and drift windows for each seed and target condition.
+
+These checks establish structural and numerical consistency of the recorded outputs. They do not independently establish scientific validity or real-world generalisability.
+
+### Primary Output Files
+
+The Experiment 16 results are stored in the repository's `results/` directory.
+
+| File | Description |
+|---|---|
+| `frozen_thresholds.csv` | Original source-condition calibration thresholds |
+| `comparative_control_evaluation.csv` | Comparative independent control evaluation |
+| `comparative_drift_evaluation.csv` | Comparative drift evaluation |
+| `paired_statistical_comparisons.csv` | Paired statistical comparisons and corrected p-values |
+| `experiment_16_integrity_audit.csv` | Original experiment integrity audit |
+
+The complete experiment outputs are also retained in the downloaded `experiment_16_results.zip` archive.
 
 ### Limitations
 
-This experiment uses synthetic multivariate Gaussian embeddings and controlled mean shifts. It does not establish real-world biometric recognition accuracy, fairness, or deployment readiness. The reported confidence intervals are not adjusted for multiple comparisons.
+- The experiment uses synthetic multivariate Gaussian embeddings rather than real biometric embeddings.
+- Drift is introduced through controlled mean shifts.
+- Only three covariance conditions and two detector types are evaluated.
+- Results depend on the selected covariance structures, random seeds, calibration procedure, and shift magnitude.
+- Method B and Method C require target-condition calibration data.
+- Method C additionally requires target-condition reference data to fit the detector.
+- Bootstrap confidence intervals are based on 20 seed-level paired differences.
+- Holm correction was applied separately by metric family rather than across all 108 comparisons.
+- The experiment does not establish real-world biometric recognition accuracy, demographic fairness, successful bias mitigation, or production deployment readiness.
 
-The findings support further investigation of calibration transfer and threshold reliability; they do not establish that either detector is universally superior.
+### Conclusion
+
+Experiment 16 demonstrates that calibration thresholds may not transfer reliably between embedding distributions with different covariance structures.
+
+The comparative benchmark shows that target-condition threshold recalibration can substantially improve false-alarm control in several cross-condition scenarios. Target-adapted detector fitting also provides an alternative, although it requires additional target-condition data and does not consistently outperform threshold recalibration.
+
+The findings highlight the importance of evaluating false-alarm control and detection sensitivity together rather than ranking detectors using detection rates alone.
+
+**Overall status:** Synthetic cross-condition calibration-transfer experiment completed; three-method comparative evaluation completed; paired statistical analysis completed; integrity checks passed; real-world biometric validation remains outstanding.
 
 # Experiment 17: Target-Condition Recalibration for Embedding-Level Drift Detection
 
