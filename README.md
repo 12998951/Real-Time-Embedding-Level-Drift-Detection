@@ -823,15 +823,15 @@ The seed-level confidence intervals provide additional information about variabi
 
 **Overall status:** Synthetic experiment completed; confidence intervals calculated; all 18 expected artifacts verified; real-world biometric validation remains outstanding.
 
-## Experiment 15: Detector Discrimination Under Anisotropic and Correlated Embedding Distributions
+# Experiment 15: Detector Discrimination Under Anisotropic and Correlated Embedding Distributions
 
-### Objective
+## Objective
 
 Evaluate how covariance structure and drift direction affect the behaviour of Euclidean and regularized Mahalanobis embedding-level drift detectors under controlled synthetic conditions.
 
-### Experimental Design
+## Experimental Design
 
-- **Covariance conditions:** isotropic, anisotropic, and correlated.
+- **Covariance conditions:** Isotropic, anisotropic, and correlated.
 - **Embedding dimension:** 64.
 - **Reference samples:** 1,000 per seed and condition.
 - **Independent calibration windows:** 200 per seed and condition.
@@ -841,59 +841,122 @@ Evaluate how covariance structure and drift direction affect the behaviour of Eu
 - **Target false-alarm rate:** 5%.
 - **Mean-shift magnitude:** 0.5 along normalized directions.
 - **Detectors:** Euclidean and Ledoit–Wolf-regularized Mahalanobis.
-- **Calibration:** detector-specific empirical 95th-percentile thresholds, frozen before independent evaluation.
+- **Calibration:** Detector-specific empirical 95th-percentile thresholds, frozen before independent evaluation.
 
 Drift directions were defined using covariance eigenvectors: high-variance, low-variance, and mixed directions. In the isotropic condition, these labels do not represent genuinely different population variances.
 
-### Multi-Seed Independent Control Results
+## Multi-Seed Independent Control Results
 
-| Covariance condition | Euclidean FPR | Mahalanobis FPR |
-|---|---:|---:|
-| Isotropic | 4.54% | 4.54% |
-| Anisotropic | 4.86% | 4.95% |
-| Correlated | 5.23% | 4.69% |
+| **Covariance condition** | **Euclidean FPR** | **Mahalanobis FPR** |
+| ------------------------ | ----------------- | ------------------- |
+| Isotropic                | 4.54%             | 4.54%               |
+| Anisotropic              | 4.86%             | 4.95%               |
+| Correlated                | 5.23%             | 4.69%               |
 
 The pooled false-alarm rates were close to the 5% target. However, seed-level rates varied, with observed values ranging from 1.4% to 8.6%. Calibration performance should therefore not be assumed to remain exactly at the target on every independent sample.
 
-### Multi-Seed Drift Detection Results
+## Multi-Seed Drift Detection Results
 
 Mean detection rates across 20 seeds:
 
-| Condition | Direction | Euclidean | Mahalanobis |
-|---|---|---:|---:|
-| Isotropic | High variance | 10.86% | 10.86% |
-| Isotropic | Low variance | 11.19% | 11.22% |
-| Isotropic | Mixed | 10.81% | 10.78% |
-| Anisotropic | High variance | 7.97% | 6.15% |
-| Anisotropic | Low variance | 6.91% | 29.88% |
-| Anisotropic | Mixed | 7.30% | 15.87% |
-| Correlated | High variance | 9.69% | 6.24% |
-| Correlated | Low variance | 7.79% | 39.42% |
-| Correlated | Mixed | 8.15% | 19.56% |
+| **Condition** | **Direction** | **Euclidean** | **Mahalanobis** |
+| ------------- | ------------- | ------------- | --------------- |
+| Isotropic     | High variance | 10.86%        | 10.86%          |
+| Isotropic     | Low variance  | 11.19%        | 11.22%          |
+| Isotropic     | Mixed         | 10.81%        | 10.78%          |
+| Anisotropic   | High variance | 7.97%         | 6.15%           |
+| Anisotropic   | Low variance  | 6.91%         | 29.88%          |
+| Anisotropic   | Mixed         | 7.30%         | 15.87%          |
+| Correlated    | High variance | 9.69%         | 6.24%           |
+| Correlated    | Low variance  | 7.79%         | 39.42%          |
+| Correlated    | Mixed         | 8.15%         | 19.56%          |
 
-### Main Findings
+## Across-Seed Detector Comparison
+
+Paired detector comparisons were performed using the 20 seed-level detection rates for each of the nine condition-direction combinations.
+
+The difference was defined as:
+
+**Mahalanobis detection rate − Euclidean detection rate.**
+
+| **Condition** | **Direction** | **Mean difference** | **95% confidence interval** |
+| ------------- | ------------- | ------------------- | --------------------------- |
+| Anisotropic   | High variance | −1.82 pp             | [−2.80, −0.84]              |
+| Anisotropic   | Low variance  | +22.97 pp            | [+20.66, +25.28]             |
+| Anisotropic   | Mixed         | +8.57 pp             | [+6.98, +10.16]              |
+| Correlated    | High variance | −3.45 pp             | [−4.65, −2.25]               |
+| Correlated    | Low variance  | +31.63 pp            | [+28.24, +35.02]             |
+| Correlated    | Mixed         | +11.41 pp            | [+9.22, +13.60]              |
+| Isotropic     | High variance | 0.00 pp              | [−0.06, +0.06]               |
+| Isotropic     | Low variance  | +0.03 pp             | [−0.02, +0.08]               |
+| Isotropic     | Mixed         | −0.03 pp             | [−0.08, +0.02]               |
+
+These are the original, unadjusted 95% confidence intervals.
+
+## Statistical Significance Analysis
+
+Paired one-sample t-tests were conducted on the seed-level differences across the nine condition-direction combinations.
+
+- **Independent seeds per comparison:** 20.
+- **Statistical test:** Paired one-sample t-test on Mahalanobis-minus-Euclidean differences.
+- **Multiple-comparison correction:** Holm correction across nine comparisons.
+- **Simultaneous confidence intervals:** Bonferroni-adjusted 95% confidence intervals.
+- **Effect size:** Cohen's dz.
+
+### Multiple-Comparison Results
+
+| **Condition** | **Direction** | **Cohen's dz** | **Holm-adjusted result** |
+| ------------- | ------------- | ------------- | ------------------------ |
+| Anisotropic   | High variance | −0.872        | Significant              |
+| Anisotropic   | Low variance  | +4.653        | Significant              |
+| Anisotropic   | Mixed         | +2.528        | Significant              |
+| Correlated    | High variance | −1.345        | Significant              |
+| Correlated    | Low variance  | +4.368        | Significant              |
+| Correlated    | Mixed         | +2.437        | Significant              |
+| Isotropic     | High variance | 0.000         | Not significant           |
+| Isotropic     | Low variance  | +0.307        | Not significant           |
+| Isotropic     | Mixed         | −0.307        | Not significant           |
+
+**Six of the nine comparisons remained statistically significant after Holm correction at the 0.05 significance level.**
+
+The six significant comparisons also had Bonferroni-adjusted simultaneous 95% confidence intervals that excluded zero.
+
+The three isotropic comparisons did not show statistically significant differences. This is not proof that the detectors are equivalent.
+
+### Main Statistical Findings
+
+1. Under anisotropic conditions, Mahalanobis detection was significantly higher for low-variance and mixed-direction drift, while Euclidean detection was significantly higher for high-variance drift.
+2. Under correlated conditions, Mahalanobis detection was significantly higher for low-variance and mixed-direction drift, while Euclidean detection was significantly higher for high-variance drift.
+3. Under isotropic conditions, no statistically significant detector differences were observed.
+4. The largest standardized paired effects occurred for low-variance drift under anisotropic and correlated conditions.
+5. The results indicate that detector performance depends on the covariance structure and direction of distribution shift rather than one detector universally outperforming the other.
+
+## Main Findings
 
 1. Under isotropic conditions, the detectors exhibited nearly identical detection rates.
 2. Under anisotropic conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
 3. Under correlated conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
 4. Euclidean detection was higher on average for high-variance drift under both anisotropic and correlated conditions.
-5. The across-seed 95% confidence intervals for the low-variance and mixed-direction detection-rate differences excluded zero in the anisotropic and correlated conditions. These intervals were not adjusted for multiple comparisons.
+5. The paired statistical analysis confirmed that six of the nine detector differences remained significant after Holm correction.
+6. The Bonferroni-adjusted simultaneous confidence intervals supported the same six comparisons.
 
-### Interpretation and Limitations
+## Interpretation and Limitations
 
-The results support the hypothesis that covariance structure and drift direction influence detector behaviour. Mahalanobis distance can be more sensitive to shifts in directions with low reference variance, whereas Euclidean distance does not account for the covariance geometry.
+The results support the hypothesis that covariance structure and drift direction influence detector behaviour. Mahalanobis distance accounts for covariance geometry and can be more sensitive to shifts in directions with low reference variance, whereas Euclidean distance does not explicitly account for covariance geometry.
 
 These results do not establish that Mahalanobis is universally superior. Detection rates were modest in most conditions, the evaluation used synthetic Gaussian distributions and mean shifts, and independent false-alarm rates varied across seeds.
 
+The statistical analysis uses 20 independent seeds per comparison. The reported effect sizes and significance tests should be interpreted within this experimental design.
+
 The experiment does not establish real-world biometric recognition accuracy, fairness, robustness to all forms of distribution shift, or deployment readiness. Further work should investigate other drift magnitudes, covariance structures, calibration sample sizes, and real embedding datasets.
 
-### Reproducibility and Outputs
+## Reproducibility and Outputs
 
 The experiment used 20 seeds and independent reference, calibration, control, and evaluation streams. Frozen thresholds were retained during independent control and drift evaluation.
 
-The final integrity audit passed all 15 checks, including expected row counts, finite scores and thresholds, and threshold consistency.
+The final saved-data integrity audit passed all 24 checks, including expected row counts, finite scores and thresholds, alarm consistency, confidence interval validation, and threshold consistency across calibration, control, and evaluation records.
 
-Primary outputs include:
+### Primary Outputs
 
 - `config.json`
 - `environment.json`
@@ -912,9 +975,24 @@ Primary outputs include:
 - `multiseed_detection_rate_differences.csv`
 - `multiseed_detection_difference_summary.csv`
 - `multiseed_detection_difference_ci95.csv`
+- `multiseed_detection_difference_inference.csv`
 - `experiment_15_integrity_audit.csv`
 
 All results are synthetic experimental evidence and should be interpreted within the stated limitations.
+
+## Final Experiment Status
+
+- Multi-seed evaluation: Completed.
+- Independent control evaluation: Completed.
+- Across-seed detector comparison: Completed.
+- Unadjusted 95% confidence intervals: Completed.
+- Paired statistical significance analysis: Completed.
+- Holm multiple-comparison correction: Completed.
+- Bonferroni simultaneous confidence intervals: Completed.
+- Final integrity audit: 24/24 checks passed.
+
+**Experiment 15 is complete with respect to the implemented synthetic experimental workflow and saved-data integrity validation.**
+
 
 ## Experiment 16: Cross-Condition Calibration Transfer for Embedding-Level Drift Detection
 
