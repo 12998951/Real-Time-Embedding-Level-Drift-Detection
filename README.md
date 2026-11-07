@@ -1268,7 +1268,7 @@ A separate diagnostic CSV was generated to preserve the reconstructed image-leve
 
 **Filename:** `lfw_embedding_image_mapping_diagnostic.csv`
 
-**Location:** Generated in the Google Colab runtime; not committed to the repository.
+**Repository location:** `experiments/lfw_embedding_image_mapping_diagnostic.csv`
 
 The CSV contains 13,233 records and seven columns:
 
