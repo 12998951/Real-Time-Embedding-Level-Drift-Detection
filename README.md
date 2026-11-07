@@ -1266,7 +1266,7 @@ The original pipeline did not preserve image paths, and its exact TFDS enumerati
 
 A separate diagnostic CSV was generated to preserve the reconstructed image-level correspondence.
 
-**Filename:** `lfw_embedding_image_mapping_diagnostic.csv`
+**Diagnostic CSV:** [lfw_embedding_image_mapping_diagnostic.csv](experiments/lfw_embedding_image_mapping_diagnostic.csv)
 
 **Repository location:** `experiments/lfw_embedding_image_mapping_diagnostic.csv`
 
