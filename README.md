@@ -2,7 +2,7 @@
 
 A research project investigating label-free distributional drift detection in embedding spaces, with the long-term goal of improving the reliability and trustworthiness of biometric identification systems under changing operating conditions.
 
-**Current status:** Research prototype with preliminary synthetic evaluations and exploratory controlled LFW/FaceNet embedding experiments. The real-image pilot does not establish biometric recognition performance, dependable operational false-alarm control, fairness, or deployment readiness. Experiment 13's Stage 3 bootstrap results, trace, and paired-comparison artifacts have now been verified in the repository. Exact reproduction of the original Mahalanobis scores remains unverified because the original reference-model artifacts have not been recovered.
+**Current status:** Research prototype with completed synthetic evaluations across Experiments 11–17 and exploratory controlled LFW/FaceNet embedding experiments. Experiments 14–17 investigate temporal drift patterns, covariance-sensitive detector behaviour, cross-condition calibration transfer, and target-condition threshold recalibration. Experiment 15 includes paired statistical comparisons with Holm correction and Bonferroni-adjusted confidence intervals. Experiment 13 includes exploratory sequential CUSUM evaluations and recovered bootstrap artifacts. The real-image experiments do not establish biometric recognition performance, dependable operational false-alarm control, fairness, or deployment readiness. Exact reproduction of the original Experiment 13 Mahalanobis scores remains unverified because the original reference-model artifacts have not been recovered.
 
 ## Overview
 
@@ -898,30 +898,46 @@ These are the original, unadjusted 95% confidence intervals.
 Paired one-sample t-tests were conducted on the seed-level differences across the nine condition-direction combinations.
 
 - **Independent seeds per comparison:** 20.
-- **Statistical test:** Paired one-sample t-test on Mahalanobis-minus-Euclidean differences.
+- **Statistical test:** One-sample t-test on paired Mahalanobis-minus-Euclidean detection-rate differences across seeds.
 - **Multiple-comparison correction:** Holm correction across nine comparisons.
 - **Simultaneous confidence intervals:** Bonferroni-adjusted 95% confidence intervals.
-- **Effect size:** Cohen's dz.
+- **Effect size:** Cohen's \(d_z\).
+
+A positive mean difference indicates a higher detection rate for Mahalanobis, while a negative mean difference indicates a higher detection rate for Euclidean.
 
 ### Multiple-Comparison Results
 
-| **Condition** | **Direction** | **Cohen's dz** | **Holm-adjusted result** |
-| ------------- | ------------- | ------------- | ------------------------ |
-| Anisotropic   | High variance | −0.872        | Significant              |
-| Anisotropic   | Low variance  | +4.653        | Significant              |
-| Anisotropic   | Mixed         | +2.528        | Significant              |
-| Correlated    | High variance | −1.345        | Significant              |
-| Correlated    | Low variance  | +4.368        | Significant              |
-| Correlated    | Mixed         | +2.437        | Significant              |
-| Isotropic     | High variance | 0.000         | Not significant           |
-| Isotropic     | Low variance  | +0.307        | Not significant           |
-| Isotropic     | Mixed         | −0.307        | Not significant           |
+| Condition | Direction | Mean Difference | Holm-Adjusted p-value | Cohen's dz | Result |
+|---|---|---:|---:|---:|---|
+| Anisotropic | High variance | -0.0182 | 0.003842 | -0.872 | Significant |
+| Anisotropic | Low variance | +0.2297 | 1.39 × 10⁻¹³ | +4.653 | Significant |
+| Anisotropic | Mixed | +0.0857 | 4.93 × 10⁻⁹ | +2.528 | Significant |
+| Correlated | High variance | -0.0345 | 0.0000435 | -1.345 | Significant |
+| Correlated | Low variance | +0.3163 | 3.91 × 10⁻¹³ | +4.368 | Significant |
+| Correlated | Mixed | +0.1141 | 7.76 × 10⁻⁹ | +2.437 | Significant |
+| Isotropic | High variance | 0.0000 | 1.000000 | 0.000 | Not significant |
+| Isotropic | Low variance | +0.0003 | 0.559234 | +0.307 | Not significant |
+| Isotropic | Mixed | -0.0003 | 0.559234 | -0.307 | Not significant |
 
 **Six of the nine comparisons remained statistically significant after Holm correction at the 0.05 significance level.**
 
-The six significant comparisons also had Bonferroni-adjusted simultaneous 95% confidence intervals that excluded zero.
+### Bonferroni-Adjusted 95% Confidence Intervals
 
-The three isotropic comparisons did not show statistically significant differences. This is not proof that the detectors are equivalent.
+| Condition | Direction | Lower Bound | Upper Bound | Excludes Zero |
+|---|---|---:|---:|---|
+| Anisotropic | High variance | -0.032787 | -0.003613 | Yes |
+| Anisotropic | Low variance | 0.195186 | 0.264214 | Yes |
+| Anisotropic | Mixed | 0.062000 | 0.109400 | Yes |
+| Correlated | High variance | -0.052434 | -0.016566 | Yes |
+| Correlated | Low variance | 0.265673 | 0.366927 | Yes |
+| Correlated | Mixed | 0.081366 | 0.146834 | Yes |
+| Isotropic | High variance | -0.000907 | 0.000907 | No |
+| Isotropic | Low variance | -0.000384 | 0.000984 | No |
+| Isotropic | Mixed | -0.000984 | 0.000384 | No |
+
+The six statistically significant comparisons also had Bonferroni-adjusted simultaneous 95% confidence intervals that excluded zero.
+
+The three isotropic comparisons did not show statistically significant differences. This does not establish statistical equivalence between the detectors.
 
 ### Main Statistical Findings
 
@@ -929,16 +945,7 @@ The three isotropic comparisons did not show statistically significant differenc
 2. Under correlated conditions, Mahalanobis detection was significantly higher for low-variance and mixed-direction drift, while Euclidean detection was significantly higher for high-variance drift.
 3. Under isotropic conditions, no statistically significant detector differences were observed.
 4. The largest standardized paired effects occurred for low-variance drift under anisotropic and correlated conditions.
-5. The results indicate that detector performance depends on the covariance structure and direction of distribution shift rather than one detector universally outperforming the other.
-
-## Main Findings
-
-1. Under isotropic conditions, the detectors exhibited nearly identical detection rates.
-2. Under anisotropic conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
-3. Under correlated conditions, Mahalanobis detection was substantially higher for low-variance and mixed-direction drift.
-4. Euclidean detection was higher on average for high-variance drift under both anisotropic and correlated conditions.
-5. The paired statistical analysis confirmed that six of the nine detector differences remained significant after Holm correction.
-6. The Bonferroni-adjusted simultaneous confidence intervals supported the same six comparisons.
+5. Detector performance depended on the covariance structure and direction of distribution shift. Neither detector universally outperformed the other.
 
 ## Interpretation and Limitations
 
@@ -955,6 +962,8 @@ The experiment does not establish real-world biometric recognition accuracy, fai
 The experiment used 20 seeds and independent reference, calibration, control, and evaluation streams. Frozen thresholds were retained during independent control and drift evaluation.
 
 The final saved-data integrity audit passed all 24 checks, including expected row counts, finite scores and thresholds, alarm consistency, confidence interval validation, and threshold consistency across calibration, control, and evaluation records.
+
+This audit verifies the structural and numerical consistency of the saved experimental outputs. It does not constitute independent reproduction of the complete experiment from a clean runtime.
 
 ### Primary Outputs
 
@@ -989,10 +998,9 @@ All results are synthetic experimental evidence and should be interpreted within
 - Paired statistical significance analysis: Completed.
 - Holm multiple-comparison correction: Completed.
 - Bonferroni simultaneous confidence intervals: Completed.
-- Final integrity audit: 24/24 checks passed.
+- Final saved-data integrity audit: 24/24 checks passed.
 
 **Experiment 15 is complete with respect to the implemented synthetic experimental workflow and saved-data integrity validation.**
-
 
 ## Experiment 16: Cross-Condition Calibration Transfer for Embedding-Level Drift Detection
 
