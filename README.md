@@ -1401,7 +1401,7 @@ These checks establish consistency of the recorded outputs; they do not independ
 
 **Notebook:**
 
-[`Experiment_18_Illumination_Drift_Analysis.ipynb`](experiments/Experiment_18_Illumination_Drift_Analysis.ipynb)
+[Experiment_18_Genuine_Face_Recognition_Embedding_Validation.ipynb](experiments/Experiment_18_Genuine_Face_Recognition_Embedding_Validation.ipynb)
 
 **Results:**
 
