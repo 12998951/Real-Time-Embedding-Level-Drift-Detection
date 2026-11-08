@@ -1311,6 +1311,127 @@ Experiment 17 evaluates the trade-off between false-alarm control and drift dete
 
 **Status:** Synthetic experimental evaluation completed; real-world validation has not been established.
 
+## Experiment 18: Controlled Illumination Drift Analysis Using FaceNet Embeddings
+
+### Objective
+
+Experiment 18 investigates how controlled illumination changes affect face embeddings and embedding-level drift detector responses using the Labeled Faces in the Wild (LFW) dataset.
+
+The experiment evaluates Euclidean and Mahalanobis distance-based detectors under low- and high-illumination conditions. It also examines historical paired illumination displacement across identities.
+
+### Dataset and Evaluation Cohorts
+
+The experiment uses three distinct data cohorts for different analytical purposes:
+
+| Cohort | Images / Embeddings | Dimensions | Purpose |
+|---|---:|---:|---|
+| Full original evaluation archive | 956 | — | Original evaluation archive |
+| Historical paired illumination analysis | 889 | 512 | Illumination displacement analysis |
+| Corrected identity-level detector evaluation | 229 | 512 | Paired detector-response analysis |
+
+The historical displacement analysis and corrected detector evaluation must be interpreted separately. Both involve 13 identities, but they use different image cohorts.
+
+### Methodology
+
+- Use FaceNet embeddings to represent LFW face images.
+- Examine embedding displacement under controlled low- and high-illumination conditions.
+- Evaluate Euclidean and Mahalanobis detector responses.
+- Perform paired identity-level statistical comparisons.
+- Independently recalculate displacement statistics and verify saved experimental artifacts.
+- Conduct data-integrity and numerical consistency audits.
+
+### Corrected Detector Evaluation: 229-Image Cohort
+
+The corrected identity-level evaluation compares paired detector responses under low- and high-illumination conditions.
+
+| Metric | Euclidean | Mahalanobis |
+|---|---:|---:|
+| Low-illumination mean | 0.126002 | 2.389304 |
+| High-illumination mean | 0.156053 | 3.111986 |
+| Mean paired difference (High − Low) | 0.030051 | 0.722682 |
+| Wilcoxon signed-rank p-value | 0.021484 | 0.002441 |
+| Positive identities | 10 | 11 |
+| Negative identities | 3 | 2 |
+
+Both detectors showed higher mean responses under high illumination in this corrected evaluation.
+
+The paired statistical comparisons are exploratory and based on only 13 identities.
+
+### Historical Illumination Displacement Analysis: 889-Image Cohort
+
+The separate historical analysis examined paired embedding displacement across 889 images.
+
+| Metric | Result |
+|---|---:|
+| Low-illumination mean displacement | 0.234665 |
+| High-illumination mean displacement | 0.318514 |
+| Mean difference (High − Low) | 0.083849 |
+| Image-level Wilcoxon p-value | 4.708938 × 10⁻⁸⁰ |
+| Identity-level mean displacement p-value | 0.001221 |
+| Identities with positive displacement difference | 11 |
+| Identities with negative displacement difference | 2 |
+
+The 889 image observations are clustered within 13 identities. They must not be interpreted as 889 independent subjects. Identity 14 contributes 504 of the 889 images, making identity-level interpretation particularly important.
+
+### Statistical Interpretation
+
+The corrected detector evaluation found statistically significant paired differences for both Euclidean and Mahalanobis responses at the nominal 0.05 level.
+
+The historical displacement analysis also found higher displacement under high illumination.
+
+These findings indicate sensitivity of the evaluated embedding representations and detector scores to the controlled illumination conditions. They do not demonstrate that the detectors can reliably identify real-world biometric failures.
+
+### Reproducibility and Integrity Verification
+
+The final research package includes:
+
+- FaceNet embedding data.
+- Illumination evaluation results.
+- Identity-level summary statistics.
+- Illumination metadata.
+- Consolidated Markdown research evidence.
+- Structured JSON research evidence.
+- A ZIP archive containing the research artifacts.
+
+The recorded validation checks covered saved data consistency, independent displacement recalculation, statistical result reproduction, and artifact integrity.
+
+These checks establish consistency of the recorded outputs; they do not independently establish complete end-to-end reproduction of the image-processing and embedding-extraction pipeline.
+
+### Research Artifacts
+
+**Notebook:**
+
+[`Experiment_18_Illumination_Drift_Analysis.ipynb`](experiments/Experiment_18_Illumination_Drift_Analysis.ipynb)
+
+**Results:**
+
+- [`experiment18_facenet_lfw_embeddings.npz`](results/experiment18_facenet_lfw_embeddings.npz)
+- [`experiment18_illumination_results.npz`](results/experiment18_illumination_results.npz)
+- [`illumination_identity_summary.csv`](results/illumination_identity_summary.csv)
+- [`illumination_metadata.json`](results/illumination_metadata.json)
+- [`experiment18_final_research_evidence.md`](results/experiment18_final_research_evidence.md)
+- [`experiment18_final_research_evidence.json`](results/experiment18_final_research_evidence.json)
+- [`Experiment_18_Final_Research_Package.zip`](results/Experiment_18_Final_Research_Package.zip)
+
+### Limitations
+
+- The corrected detector evaluation covers only 13 identities.
+- The historical displacement analysis contains repeated observations from the same identities.
+- Identity 14 contributes a substantial proportion of the historical image cohort.
+- The illumination transformations are controlled experimental conditions, not naturally occurring environmental changes.
+- Statistical significance does not establish generalisation to unseen identities.
+- The experiment does not establish real-world biometric recognition accuracy, fairness, successful bias mitigation, or deployment readiness.
+
+### Conclusion
+
+Experiment 18 provides an exploratory evaluation of illumination-related embedding displacement and Euclidean and Mahalanobis detector responses.
+
+The corrected 229-image detector evaluation and historical 889-image displacement analysis provide separate evidence of sensitivity to the tested illumination conditions.
+
+Further evaluation across more identities, independent datasets, and naturally occurring acquisition conditions is required.
+
+**Overall status:** Controlled illumination experiment completed; statistical analyses and saved-artifact verification completed; real-world biometric validation remains outstanding.
+
 ## Experiment 13 – Embedding Provenance and Reproducibility Audit
 
 ### 1. Audit Objective
