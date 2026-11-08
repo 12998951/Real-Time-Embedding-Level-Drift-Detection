@@ -1,0 +1,524 @@
+{
+  "experiment": {
+    "title": "Experiment 18 - Controlled Illumination",
+    "dataset": "LFW filtered subset",
+    "model": "InceptionResnetV1",
+    "pretrained_weights": "VGGFace2",
+    "embedding_dimension": 512,
+    "brightness_factors": {
+      "low": 0.5,
+      "original": 1.0,
+      "high": 1.5
+    }
+  },
+  "dataset_summary": {
+    "paired_images": 889,
+    "evaluation_identities": 13,
+    "identity_distribution": [
+      {
+        "identity": 1,
+        "paired_image_count": 33
+      },
+      {
+        "identity": 2,
+        "paired_image_count": 21
+      },
+      {
+        "identity": 8,
+        "paired_image_count": 24
+      },
+      {
+        "identity": 12,
+        "paired_image_count": 114
+      },
+      {
+        "identity": 13,
+        "paired_image_count": 21
+      },
+      {
+        "identity": 14,
+        "paired_image_count": 504
+      },
+      {
+        "identity": 33,
+        "paired_image_count": 22
+      },
+      {
+        "identity": 36,
+        "paired_image_count": 19
+      },
+      {
+        "identity": 43,
+        "paired_image_count": 18
+      },
+      {
+        "identity": 45,
+        "paired_image_count": 29
+      },
+      {
+        "identity": 47,
+        "paired_image_count": 22
+      },
+      {
+        "identity": 49,
+        "paired_image_count": 22
+      },
+      {
+        "identity": 60,
+        "paired_image_count": 40
+      }
+    ],
+    "largest_identity": 14,
+    "largest_identity_image_count": 504,
+    "largest_identity_share": 0.5669291338582677,
+    "corrected_detector_evaluation_images": 229
+  },
+  "original_embedding_archive_shapes": {
+    "reference_embeddings": [
+      1460,
+      512
+    ],
+    "reference_labels": [
+      1460
+    ],
+    "calibration_embeddings": [
+      568,
+      512
+    ],
+    "calibration_labels": [
+      568
+    ],
+    "evaluation_embeddings": [
+      956,
+      512
+    ],
+    "evaluation_labels": [
+      956
+    ],
+    "reference_failures": [
+      17
+    ],
+    "calibration_failures": [
+      10
+    ],
+    "evaluation_failures": [
+      12
+    ],
+    "random_seed": [],
+    "model": [],
+    "pretrained_weights": [],
+    "dataset": [],
+    "embedding_dimension": []
+  },
+  "illumination_archive_shapes": {
+    "original_embeddings": [
+      889,
+      512
+    ],
+    "low_illumination_embeddings": [
+      889,
+      512
+    ],
+    "high_illumination_embeddings": [
+      889,
+      512
+    ],
+    "paired_labels": [
+      889
+    ],
+    "common_positions": [
+      889
+    ],
+    "low_displacement": [
+      889
+    ],
+    "high_displacement": [
+      889
+    ],
+    "low_success": [
+      943
+    ],
+    "high_success": [
+      897
+    ],
+    "low_failures": [
+      13
+    ],
+    "high_failures": [
+      59
+    ]
+  },
+  "illumination_displacement": {
+    "low_illumination": {
+      "mean": 0.23466530442237854,
+      "median": 0.2226751744747162,
+      "standard_deviation": 0.06485740840435028
+    },
+    "high_illumination": {
+      "mean": 0.3185139298439026,
+      "median": 0.30673372745513916,
+      "standard_deviation": 0.11903649568557739
+    },
+    "high_minus_low_mean": 0.08384862542152405,
+    "high_minus_low_median": 0.07552137970924377,
+    "reproduction_max_absolute_error": {
+      "low": 0.0,
+      "high": 0.0
+    }
+  },
+  "displacement_statistical_tests": {
+    "image_level": {
+      "unit_of_analysis": "paired images",
+      "sample_size": 889,
+      "wilcoxon_statistic": 52705.0,
+      "p_value": 4.708938281282196e-80
+    },
+    "identity_level_mean_displacement": {
+      "unit_of_analysis": "identity-level means",
+      "sample_size": 13,
+      "wilcoxon_statistic": 3.0,
+      "p_value": 0.001220703125
+    },
+    "identity_level_median_displacement": {
+      "unit_of_analysis": "identity-level medians",
+      "sample_size": 13,
+      "wilcoxon_statistic": 3.0,
+      "p_value": 0.001220703125
+    }
+  },
+  "aggregate_detector_results": [
+    {
+      "Condition": "Original",
+      "Euclidean": 0.05311398208141327,
+      "Mahalanobis": 0.7979202472955629
+    },
+    {
+      "Condition": "Low illumination",
+      "Euclidean": 0.09477133303880692,
+      "Mahalanobis": 1.7358507674263186
+    },
+    {
+      "Condition": "High illumination",
+      "Euclidean": 0.08299633115530014,
+      "Mahalanobis": 1.871539787385579
+    }
+  ],
+  "identity_level_detector_results": [
+    {
+      "Identity": 1,
+      "Condition": "Low illumination",
+      "Sample Count": 9,
+      "Euclidean": 0.1545463651418686,
+      "Mahalanobis": 2.8018723779959562
+    },
+    {
+      "Identity": 1,
+      "Condition": "High illumination",
+      "Sample Count": 9,
+      "Euclidean": 0.2162446230649948,
+      "Mahalanobis": 3.7903117288515955
+    },
+    {
+      "Identity": 2,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.1268199384212494,
+      "Mahalanobis": 2.4450427589125203
+    },
+    {
+      "Identity": 2,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.1575511395931244,
+      "Mahalanobis": 3.1275154166682166
+    },
+    {
+      "Identity": 8,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.1164160966873169,
+      "Mahalanobis": 2.1804742141185223
+    },
+    {
+      "Identity": 8,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.1818263679742813,
+      "Mahalanobis": 4.464460753082332
+    },
+    {
+      "Identity": 12,
+      "Condition": "Low illumination",
+      "Sample Count": 29,
+      "Euclidean": 0.10373536497354507,
+      "Mahalanobis": 2.1256102279971767
+    },
+    {
+      "Identity": 12,
+      "Condition": "High illumination",
+      "Sample Count": 29,
+      "Euclidean": 0.16470694541931152,
+      "Mahalanobis": 2.937518606775282
+    },
+    {
+      "Identity": 13,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.10762503743171692,
+      "Mahalanobis": 2.0403830746229494
+    },
+    {
+      "Identity": 13,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.14959430694580078,
+      "Mahalanobis": 2.8577271226062897
+    },
+    {
+      "Identity": 14,
+      "Condition": "Low illumination",
+      "Sample Count": 126,
+      "Euclidean": 0.11538832634687424,
+      "Mahalanobis": 2.2799564213536256
+    },
+    {
+      "Identity": 14,
+      "Condition": "High illumination",
+      "Sample Count": 126,
+      "Euclidean": 0.1389494389295578,
+      "Mahalanobis": 2.5465913785836047
+    },
+    {
+      "Identity": 33,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.152134969830513,
+      "Mahalanobis": 2.8543307707012935
+    },
+    {
+      "Identity": 33,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.13697806000709534,
+      "Mahalanobis": 3.066313510708533
+    },
+    {
+      "Identity": 36,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.10894499719142914,
+      "Mahalanobis": 1.9014307370912344
+    },
+    {
+      "Identity": 36,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.09311287850141525,
+      "Mahalanobis": 1.708181683516798
+    },
+    {
+      "Identity": 43,
+      "Condition": "Low illumination",
+      "Sample Count": 5,
+      "Euclidean": 0.15929406881332397,
+      "Mahalanobis": 2.6862440085475865
+    },
+    {
+      "Identity": 43,
+      "Condition": "High illumination",
+      "Sample Count": 5,
+      "Euclidean": 0.1645909547805786,
+      "Mahalanobis": 3.098066312756152
+    },
+    {
+      "Identity": 45,
+      "Condition": "Low illumination",
+      "Sample Count": 8,
+      "Euclidean": 0.12011843919754028,
+      "Mahalanobis": 2.495525588716799
+    },
+    {
+      "Identity": 45,
+      "Condition": "High illumination",
+      "Sample Count": 8,
+      "Euclidean": 0.2395731657743454,
+      "Mahalanobis": 4.814946817678438
+    },
+    {
+      "Identity": 47,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.16655346751213074,
+      "Mahalanobis": 2.991858651281236
+    },
+    {
+      "Identity": 47,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.12645521759986877,
+      "Mahalanobis": 2.6503891521550487
+    },
+    {
+      "Identity": 49,
+      "Condition": "Low illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.10561703145503998,
+      "Mahalanobis": 2.1147369531805293
+    },
+    {
+      "Identity": 49,
+      "Condition": "High illumination",
+      "Sample Count": 6,
+      "Euclidean": 0.12685994803905487,
+      "Mahalanobis": 2.7377649340573926
+    },
+    {
+      "Identity": 60,
+      "Condition": "Low illumination",
+      "Sample Count": 10,
+      "Euclidean": 0.10083059221506119,
+      "Mahalanobis": 2.1434823082949737
+    },
+    {
+      "Identity": 60,
+      "Condition": "High illumination",
+      "Sample Count": 10,
+      "Euclidean": 0.13224861025810242,
+      "Mahalanobis": 2.6560325108013094
+    }
+  ],
+  "detector_effect_sizes": [
+    {
+      "Detector": "Euclidean",
+      "Identities": 13,
+      "Mean Difference": 0.030051304027438164,
+      "Median Difference": 0.030731201171875,
+      "SD of Differences": 0.041979867964982986,
+      "Cohen's dz": 0.7158503532409668,
+      "Rank-Biserial Correlation": 0.7142857142857143,
+      "Mean CI Lower": 0.009059477597475054,
+      "Mean CI Upper": 0.05236320700496435,
+      "Median CI Lower": 0.005296885967254639,
+      "Median CI Upper": 0.06097158044576645
+    },
+    {
+      "Detector": "Mahalanobis",
+      "Identities": 13,
+      "Mean Difference": 0.7226824488789684,
+      "Median Difference": 0.6230279808768633,
+      "SD of Differences": 0.7993369561242069,
+      "Cohen's dz": 0.904102385535985,
+      "Rank-Biserial Correlation": 0.8901098901098901,
+      "Mean CI Lower": 0.33422849066221033,
+      "Mean CI Upper": 1.1703853714524501,
+      "Median CI Lower": 0.2666349572299791,
+      "Median CI Upper": 0.8173440479833403
+    }
+  ],
+  "detector_statistical_tests": [
+    {
+      "Detector": "Euclidean",
+      "Wilcoxon Statistic": 13.0,
+      "P-value": 0.021484375,
+      "Identities": 13,
+      "Mean Difference": 0.030051304027438164,
+      "Median Difference": 0.030731201171875,
+      "SD of Differences": 0.041979867964982986,
+      "Cohen's dz": 0.7158503532409668,
+      "Rank-Biserial Correlation": 0.7142857142857143,
+      "Mean CI Lower": 0.009059477597475054,
+      "Mean CI Upper": 0.05236320700496435,
+      "Median CI Lower": 0.005296885967254639,
+      "Median CI Upper": 0.06097158044576645
+    },
+    {
+      "Detector": "Mahalanobis",
+      "Wilcoxon Statistic": 5.0,
+      "P-value": 0.00244140625,
+      "Identities": 13,
+      "Mean Difference": 0.7226824488789684,
+      "Median Difference": 0.6230279808768633,
+      "SD of Differences": 0.7993369561242069,
+      "Cohen's dz": 0.904102385535985,
+      "Rank-Biserial Correlation": 0.8901098901098901,
+      "Mean CI Lower": 0.33422849066221033,
+      "Mean CI Upper": 1.1703853714524501,
+      "Median CI Lower": 0.2666349572299791,
+      "Median CI Upper": 0.8173440479833403
+    }
+  ],
+  "identity_level_detector_directions": {
+    "euclidean": {
+      "increased": 10,
+      "decreased": 3,
+      "unchanged": 0,
+      "identities": 13
+    },
+    "mahalanobis": {
+      "increased": 11,
+      "decreased": 2,
+      "unchanged": 0,
+      "identities": 13
+    }
+  },
+  "reproducibility_audit": {
+    "step": "17.10.6.4",
+    "checks": 54,
+    "passed": 54,
+    "failed": 0,
+    "scope": "Verified saved outputs, array integrity, displacement reproduction, statistical summaries, CSV consistency, metadata consistency, and detector-table availability.",
+    "limitation": "The audit did not independently rerun original image detection, preprocessing, embedding extraction, or detector calibration."
+  },
+  "software_environment": {
+    "python": "3.13.18",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3",
+    "pytorch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "scikit_learn": "1.6.1",
+    "pillow": "11.3.0",
+    "facenet_pytorch": "2.6.0"
+  },
+  "source_files": [
+    "experiment18_facenet_lfw_embeddings.npz",
+    "experiment18_illumination_results.npz",
+    "illumination_metadata.json",
+    "illumination_identity_summary.csv"
+  ],
+  "evidence_interpretation": {
+    "validated": [
+      "Saved embedding arrays and dimensions were verified.",
+      "Saved low- and high-illumination displacement arrays were reproduced exactly.",
+      "Saved displacement summary statistics were reproduced.",
+      "Historical image-level and identity-level displacement tests were reproduced.",
+      "Saved identity summary CSV was checked for consistency.",
+      "The reproducibility audit passed 54 checks."
+    ],
+    "exploratory": [
+      "Aggregate Euclidean and Mahalanobis detector responses varied across illumination conditions.",
+      "Identity-level detector responses varied across identities.",
+      "Corrected Euclidean and Mahalanobis detector-response tests were below the nominal 0.05 threshold.",
+      "Detector-response findings are based on only 13 identity-level observations."
+    ],
+    "not_established": [
+      "Real-world biometric recognition accuracy.",
+      "Generalisation to other biometric datasets or models.",
+      "Demographic fairness.",
+      "Deployment readiness.",
+      "Causal explanation of detector-response differences."
+    ]
+  },
+  "limitations": [
+    "The corrected detector evaluation cohort contains 229 images from 13 identities.",
+    "The historical paired illumination cohort contains 889 images from 13 identities.",
+    "Identity 14 contributes 56.7% of the historical paired images.",
+    "Image observations are clustered within identities and must not be treated as independent subjects.",
+    "Identity-level detector analyses have only 13 identity-level units.",
+    "The illumination changes were controlled brightness transformations.",
+    "Corrected detector-response p-values are nominal and have not been adjusted for multiple comparisons.",
+    "Detector-response findings rely on previously validated tables and were not recalibrated in this documentation step."
+  ],
+  "documentation_created_utc": "2026-11-08T13:34:09.840308+00:00"
+}

@@ -1,0 +1,20 @@
+{
+    "experiment": "Experiment 18 - Controlled Illumination",
+    "dataset": "LFW filtered subset",
+    "model": "InceptionResnetV1",
+    "pretrained_weights": "VGGFace2",
+    "embedding_dimension": 512,
+    "brightness_factors": {
+        "low": 0.5,
+        "original": 1.0,
+        "high": 1.5
+    },
+    "paired_images": 889,
+    "evaluation_identities": 13,
+    "low_detection_failures": 13,
+    "high_detection_failures": 59,
+    "image_level_wilcoxon_p": 4.708938281282196e-80,
+    "identity_level_wilcoxon_p": 0.001220703125,
+    "mean_low_displacement": 0.23466530442237854,
+    "mean_high_displacement": 0.3185139298439026
+}
