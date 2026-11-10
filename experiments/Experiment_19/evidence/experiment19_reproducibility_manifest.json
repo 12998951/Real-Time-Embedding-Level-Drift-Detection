@@ -1,0 +1,42 @@
+[
+  {
+    "file": "data/experiment19_controlled_scenarios.npz",
+    "size_bytes": 3193930,
+    "sha256": "61e5f695a444366d7587d0db9b0cad9672ffc2f616b2b316d6c5dea956df915f"
+  },
+  {
+    "file": "data/experiment19_reference_evaluation_indices.npz",
+    "size_bytes": 3557,
+    "sha256": "0144abb24a67909f8e406cdf91ed15fdf143348bc9bece53f1c9dd21ee139917"
+  },
+  {
+    "file": "data/experiment19_model_calibration_indices.npz",
+    "size_bytes": 2692,
+    "sha256": "afd46f9cec404ca480e49b8413cf621ef35737fade43941079e767ecffb9ecb2"
+  },
+  {
+    "file": "configuration/experiment19_calibrated_thresholds.npz",
+    "size_bytes": 1890,
+    "sha256": "959cd7931ec22d01de2012c35056d30367166fe38997720bc9874194006835c4"
+  },
+  {
+    "file": "results/experiment19_identity_level_statistical_tests.csv",
+    "size_bytes": 841,
+    "sha256": "fa8211f0cc1ece55e07f1b0ca1469cd22c040c5a0c34e6882ff683dda8b7754d"
+  },
+  {
+    "file": "plots/experiment19_figure1_drift_attribution.png",
+    "size_bytes": 113174,
+    "sha256": "c60e7ac6a0c8b17936760f5825c82db7d3de91fc1fe6db6cee6af4cdcc2f20af"
+  },
+  {
+    "file": "plots/experiment19_figure2_identity_displacement.png",
+    "size_bytes": 340740,
+    "sha256": "46fa3c8d791e81ec2f866fccb24813a60dcbedc259536650e9ebbfbce98538bd"
+  },
+  {
+    "file": "plots/experiment19_figure3_statistical_significance.png",
+    "size_bytes": 146619,
+    "sha256": "1e029bf52e734626ea270361c64037bf822a9fbed31efacb8ce4dec4aae48e19"
+  }
+]

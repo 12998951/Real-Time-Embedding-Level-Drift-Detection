@@ -1,0 +1,204 @@
+{
+    "experiment": "Experiment 19",
+    "step": 6,
+    "validation_status": "PASS",
+    "scenario_shape": [
+        4,
+        440,
+        512
+    ],
+    "label_shape": [
+        4,
+        440
+    ],
+    "source_index_shape": [
+        4,
+        440
+    ],
+    "window_size": 20,
+    "baseline_observations": 220,
+    "post_change_observations": 220,
+    "checks": {
+        "array_dimensions": "PASS",
+        "finite_embeddings": "PASS",
+        "evaluation_partition_provenance": "PASS",
+        "identity_label_provenance": "PASS",
+        "embedding_source_provenance": "PASS",
+        "shared_baseline": "PASS",
+        "composition_conditions": "PASS",
+        "within_identity_perturbation": "PASS"
+    },
+    "composition_results": {
+        "C0_no_drift": {
+            "baseline_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "post_change_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "total_variation_distance": 0.0
+        },
+        "C1_composition_drift": {
+            "baseline_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "post_change_counts": [
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                16
+            ],
+            "total_variation_distance": 0.5863636363636364
+        },
+        "C2_within_identity_drift": {
+            "baseline_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "post_change_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "total_variation_distance": 0.0
+        },
+        "C3_combined_drift": {
+            "baseline_counts": [
+                4,
+                4,
+                4,
+                35,
+                3,
+                128,
+                4,
+                6,
+                3,
+                10,
+                8,
+                6,
+                5
+            ],
+            "post_change_counts": [
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                17,
+                16
+            ],
+            "total_variation_distance": 0.5863636363636364
+        }
+    },
+    "bootstrap_repetition_audit": {
+        "C0_no_drift": {
+            "sampled_observations": 440,
+            "unique_source_observations": 260,
+            "repeated_draws": 180,
+            "unique_source_fraction": 0.5909090909090909
+        },
+        "C1_composition_drift": {
+            "sampled_observations": 440,
+            "unique_source_observations": 256,
+            "repeated_draws": 184,
+            "unique_source_fraction": 0.5818181818181818
+        },
+        "C2_within_identity_drift": {
+            "sampled_observations": 440,
+            "unique_source_observations": 273,
+            "repeated_draws": 167,
+            "unique_source_fraction": 0.6204545454545455
+        },
+        "C3_combined_drift": {
+            "sampled_observations": 440,
+            "unique_source_observations": 261,
+            "repeated_draws": 179,
+            "unique_source_fraction": 0.5931818181818181
+        }
+    },
+    "low_illumination_paired_distance": {
+        "mean": 0.22191197933121162,
+        "median": 0.21098188310861588,
+        "standard_deviation": 0.05700160488914727,
+        "minimum": 0.11126043647527695,
+        "maximum": 0.5011320114135742
+    },
+    "interpretation": [
+        "C0 and C2 preserve sampled identity composition.",
+        "C1 and C3 use balanced post-change identity composition.",
+        "C2 and C3 use low-illumination embeddings after the change point.",
+        "Bootstrap repetitions are recorded and must be considered in inference."
+    ]
+}

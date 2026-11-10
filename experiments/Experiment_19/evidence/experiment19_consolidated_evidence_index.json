@@ -1,0 +1,213 @@
+{
+  "experiment_id": 19,
+  "title": "Disentangling Identity-Composition Drift from Within-Identity Embedding Drift in Biometric Representation Systems",
+  "generated_utc": "2026-11-10T19:54:02.731550+00:00",
+  "research_questions": [
+    "How do changes in identity composition affect global embedding distributions?",
+    "Can within-identity embedding distribution changes be detected independently of identity-composition changes?",
+    "How effectively can global and identity-conditioned monitoring distinguish mechanisms?",
+    "How do detection performance and false alarms change when both mechanisms occur simultaneously?"
+  ],
+  "scenario_design": [
+    {
+      "scenario": "C0_no_drift",
+      "description": "Stable identity composition and conditional distributions."
+    },
+    {
+      "scenario": "C1_composition_drift",
+      "description": "Changed identity proportions with original embeddings."
+    },
+    {
+      "scenario": "C2_within_identity_drift",
+      "description": "Stable identity proportions with low-illumination embedding variants."
+    },
+    {
+      "scenario": "C3_combined_drift",
+      "description": "Changed identity proportions and low-illumination embedding variants."
+    }
+  ],
+  "key_findings": [
+    {
+      "finding": "Global composition drift",
+      "evidence": "Global Euclidean and Mahalanobis detectors detected all 11 post-change windows in C1 and C3 at the 5% threshold.",
+      "interpretation": "The global embedding distribution was sensitive to the constructed identity-composition changes."
+    },
+    {
+      "finding": "Within-identity drift",
+      "evidence": "C2 produced greater identity-level displacement than C0, with a mean paired difference of 0.091008 and Holm-adjusted p-value of 0.001953.",
+      "interpretation": "The low-illumination condition produced measurable within-identity embedding displacement."
+    },
+    {
+      "finding": "Combined drift",
+      "evidence": "C3 versus C1 had a positive mean paired difference of 0.036232, but its Holm-adjusted p-value was 0.064453.",
+      "interpretation": "The additional within-identity effect under the combined condition was not statistically significant after Holm correction."
+    },
+    {
+      "finding": "Mathematical attribution",
+      "evidence": "The vector decomposition reconstructed the total mean shift with maximum numerical error 8.85e-17.",
+      "interpretation": "The decomposition is numerically consistent, but its estimated components include sampling noise."
+    }
+  ],
+  "limitations": [
+    "The experiment uses a filtered LFW-derived subset containing 13 identities.",
+    "Identity 14 accounts for approximately 56.69% of the original paired cohort.",
+    "Bootstrap sampling with replacement means repeated draws are not independent images.",
+    "The evaluation contains only 22 windows per scenario.",
+    "Calibration thresholds are based on 181 calibration observations and bootstrap windows.",
+    "Identity-conditioned monitoring requires identity labels.",
+    "The within-identity drift scenario uses low-illumination embedding variants.",
+    "The post-change samples are independently resampled rather than strictly paired image observations.",
+    "The statistical analysis uses only 13 identity-level paired observations.",
+    "The results do not establish real-world biometric recognition accuracy.",
+    "The results do not establish operational fairness or deployment readiness.",
+    "The experiment does not establish causal isolation of drift mechanisms."
+  ],
+  "reproducibility": {
+    "total_checks": 55,
+    "passed_checks": 55,
+    "failed_checks_count": 0,
+    "failed_check_names": [],
+    "missing_artifacts": [],
+    "scenario_archive_structure_valid": true,
+    "audit_status": "PASS",
+    "manifest_file": "evidence/experiment19_reproducibility_manifest.json"
+  },
+  "evidence_inventory": [
+    {
+      "path": "configuration/experiment19_environment.json",
+      "exists": true,
+      "size_bytes": 324
+    },
+    {
+      "path": "configuration/experiment19_sampling_protocol_final.json",
+      "exists": true,
+      "size_bytes": 356
+    },
+    {
+      "path": "configuration/experiment19_scenario_generation.json",
+      "exists": true,
+      "size_bytes": 1108
+    },
+    {
+      "path": "configuration/experiment19_detector_configuration.json",
+      "exists": true,
+      "size_bytes": 693
+    },
+    {
+      "path": "configuration/experiment19_calibration_thresholds.json",
+      "exists": true,
+      "size_bytes": 1067
+    },
+    {
+      "path": "data/experiment19_controlled_scenarios.npz",
+      "exists": true,
+      "size_bytes": 3193930
+    },
+    {
+      "path": "data/experiment19_reference_evaluation_indices.npz",
+      "exists": true,
+      "size_bytes": 3557
+    },
+    {
+      "path": "data/experiment19_model_calibration_indices.npz",
+      "exists": true,
+      "size_bytes": 2692
+    },
+    {
+      "path": "results/experiment19_scenario_validation.csv",
+      "exists": true,
+      "size_bytes": 481
+    },
+    {
+      "path": "results/experiment19_no_drift_control_summary.csv",
+      "exists": true,
+      "size_bytes": 767
+    },
+    {
+      "path": "results/experiment19_drift_detection_summary.csv",
+      "exists": true,
+      "size_bytes": 3825
+    },
+    {
+      "path": "results/experiment19_drift_attribution_summary.csv",
+      "exists": true,
+      "size_bytes": 828
+    },
+    {
+      "path": "results/experiment19_drift_attribution_by_identity.csv",
+      "exists": true,
+      "size_bytes": 4623
+    },
+    {
+      "path": "results/experiment19_identity_level_statistical_tests.csv",
+      "exists": true,
+      "size_bytes": 841
+    },
+    {
+      "path": "results/experiment19_identity_level_paired_differences.csv",
+      "exists": true,
+      "size_bytes": 3731
+    },
+    {
+      "path": "results/experiment19_reproducibility_audit.csv",
+      "exists": true,
+      "size_bytes": 4717
+    },
+    {
+      "path": "evidence/experiment19_scenario_validation.json",
+      "exists": true,
+      "size_bytes": 5051
+    },
+    {
+      "path": "evidence/experiment19_no_drift_control.json",
+      "exists": true,
+      "size_bytes": 2613
+    },
+    {
+      "path": "evidence/experiment19_drift_detection.json",
+      "exists": true,
+      "size_bytes": 10883
+    },
+    {
+      "path": "evidence/experiment19_drift_attribution.json",
+      "exists": true,
+      "size_bytes": 21458
+    },
+    {
+      "path": "evidence/experiment19_identity_level_statistics.json",
+      "exists": true,
+      "size_bytes": 3177
+    },
+    {
+      "path": "evidence/experiment19_findings_and_limitations.json",
+      "exists": true,
+      "size_bytes": 2597
+    },
+    {
+      "path": "evidence/experiment19_reproducibility_audit.json",
+      "exists": true,
+      "size_bytes": 274
+    },
+    {
+      "path": "evidence/experiment19_reproducibility_manifest.json",
+      "exists": true,
+      "size_bytes": 1453
+    },
+    {
+      "path": "plots/experiment19_figure1_drift_attribution.png",
+      "exists": true,
+      "size_bytes": 113174
+    },
+    {
+      "path": "plots/experiment19_figure2_identity_displacement.png",
+      "exists": true,
+      "size_bytes": 340740
+    },
+    {
+      "path": "plots/experiment19_figure3_statistical_significance.png",
+      "exists": true,
+      "size_bytes": 146619
+    }
+  ],
+  "missing_evidence_files": []
+}
