@@ -1,0 +1,46 @@
+{
+  "experiment": 19,
+  "title": "Disentangling Identity-Composition Drift from Within-Identity Embedding Drift in Biometric Representation Systems",
+  "research_findings": [
+    {
+      "finding": "Global composition drift",
+      "evidence": "Global Euclidean and Mahalanobis detectors detected all 11 post-change windows in C1 and C3 at the 5% threshold.",
+      "interpretation": "The global embedding distribution was sensitive to the constructed identity-composition changes."
+    },
+    {
+      "finding": "Within-identity drift",
+      "evidence": "C2 produced greater identity-level displacement than C0, with a mean paired difference of 0.091008 and Holm-adjusted p-value of 0.001953.",
+      "interpretation": "The low-illumination condition produced measurable within-identity embedding displacement."
+    },
+    {
+      "finding": "Combined drift",
+      "evidence": "C3 versus C1 had a positive mean paired difference of 0.036232, but its Holm-adjusted p-value was 0.064453.",
+      "interpretation": "The additional within-identity effect under the combined condition was not statistically significant after Holm correction."
+    },
+    {
+      "finding": "Mathematical attribution",
+      "evidence": "The vector decomposition reconstructed the total mean shift with maximum numerical error 8.85e-17.",
+      "interpretation": "The decomposition is numerically consistent, but its estimated components include sampling noise."
+    }
+  ],
+  "limitations": [
+    "The experiment uses a filtered LFW-derived subset containing 13 identities.",
+    "Identity 14 accounts for approximately 56.69% of the original paired cohort.",
+    "Bootstrap sampling with replacement means repeated draws are not independent images.",
+    "The evaluation contains only 22 windows per scenario.",
+    "Calibration thresholds are based on 181 calibration observations and bootstrap windows.",
+    "Identity-conditioned monitoring requires identity labels.",
+    "The within-identity drift scenario uses low-illumination embedding variants.",
+    "The post-change samples are independently resampled rather than strictly paired image observations.",
+    "The statistical analysis uses only 13 identity-level paired observations.",
+    "The results do not establish real-world biometric recognition accuracy.",
+    "The results do not establish operational fairness or deployment readiness.",
+    "The experiment does not establish causal isolation of drift mechanisms."
+  ],
+  "reproducibility_audit": {
+    "status": "PASS",
+    "total_checks": 55,
+    "passed_checks": 55,
+    "failed_checks": 0
+  }
+}

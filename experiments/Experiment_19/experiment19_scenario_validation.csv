@@ -1,0 +1,5 @@
+scenario,baseline_observations,post_change_observations,baseline_unique_identities,post_unique_identities,composition_TV_distance,unique_source_observations,repeated_draws,unique_source_fraction
+C0_no_drift,220,220,13,13,0.0,260,180,0.5909090909090909
+C1_composition_drift,220,220,13,13,0.5863636363636364,256,184,0.5818181818181818
+C2_within_identity_drift,220,220,13,13,0.0,273,167,0.6204545454545455
+C3_combined_drift,220,220,13,13,0.5863636363636364,261,179,0.5931818181818181

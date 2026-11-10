@@ -1,0 +1,10 @@
+detector,target_false_alarm_rate,threshold,baseline_alarms,post_change_alarms,total_alarms,baseline_empirical_alarm_rate,post_empirical_alarm_rate,overall_empirical_alarm_rate
+global_euclidean,0.1,1.0578353611025602,1,1,2,0.09090909090909091,0.09090909090909091,0.09090909090909091
+global_euclidean,0.05,1.0814856863504763,0,0,0,0.0,0.0,0.0
+global_euclidean,0.01,1.1258910069089159,0,0,0,0.0,0.0,0.0
+global_mahalanobis,0.1,8.239521998106259,0,0,0,0.0,0.0,0.0
+global_mahalanobis,0.05,8.376298753919086,0,0,0,0.0,0.0,0.0
+global_mahalanobis,0.01,8.650617746509415,0,0,0,0.0,0.0,0.0
+identity_conditioned,0.1,1.0707083890301912,0,0,0,0.0,0.0,0.0
+identity_conditioned,0.05,1.0854110692006773,0,0,0,0.0,0.0,0.0
+identity_conditioned,0.01,1.1165454604553577,0,0,0,0.0,0.0,0.0
