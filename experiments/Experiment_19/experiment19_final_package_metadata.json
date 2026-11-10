@@ -1,0 +1,17 @@
+{
+  "experiment": 19,
+  "package_name": "Experiment_19_Final_Research_Package.zip",
+  "package_size_bytes": 22554996,
+  "file_count": 49,
+  "zip_integrity": true,
+  "missing_files": [],
+  "unexpected_files": [],
+  "sha256": "90604e0fc7c5c02fd9929a56b35a6a026e1a28b3199b7b17f0a6476c5f1dc117",
+  "archive_structure": [
+    "configuration",
+    "data",
+    "results",
+    "plots",
+    "evidence"
+  ]
+}
