@@ -1,0 +1,10 @@
+{
+    "experiment": "Experiment 19",
+    "random_seed": 202619,
+    "python_version": "3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "numpy_version": "2.4.6",
+    "pandas_version": "2.2.3",
+    "scipy_version": "1.16.3",
+    "matplotlib_version": "3.10.0"
+}

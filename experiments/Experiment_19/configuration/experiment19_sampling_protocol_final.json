@@ -1,0 +1,14 @@
+{
+    "experiment": "Experiment 19",
+    "random_seed": 202619,
+    "reference_count": 442,
+    "evaluation_count": 447,
+    "window_size": 20,
+    "reference_windows": 22,
+    "evaluation_windows": 22,
+    "reference_unused": 2,
+    "evaluation_unused": 7,
+    "paired_observation_split": true,
+    "stratified_by_identity": true,
+    "overlap_count": 0
+}

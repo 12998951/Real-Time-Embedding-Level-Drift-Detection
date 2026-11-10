@@ -1,0 +1,18 @@
+{
+    "experiment": "Experiment 19",
+    "step": 7,
+    "detectors": [
+        "global_euclidean",
+        "global_mahalanobis",
+        "identity_conditioned_standardized_euclidean"
+    ],
+    "reference_observations": 442,
+    "embedding_dimension": 512,
+    "identity_count": 13,
+    "covariance_shrinkage": 0.1,
+    "global_euclidean_normalization": "Root mean squared reference distance from global centroid",
+    "identity_conditioned_normalization": "Identity-specific root mean squared reference distance from identity centroid",
+    "thresholds_calibrated": false,
+    "identity_labels_required": true,
+    "identity_conditioned_detector_type": "Label-informed diagnostic benchmark"
+}

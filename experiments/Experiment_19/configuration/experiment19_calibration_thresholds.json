@@ -1,0 +1,33 @@
+{
+    "experiment": "Experiment 19",
+    "step": "8C",
+    "calibration_observations": 181,
+    "window_size": 20,
+    "bootstrap_windows": 10000,
+    "bootstrap_seed": 202621,
+    "target_false_alarm_rates": [
+        0.1,
+        0.05,
+        0.01
+    ],
+    "threshold_method": "Upper quantiles of bootstrap window-mean score distributions",
+    "bootstrap_sampling": "20 individual calibration scores sampled with replacement",
+    "thresholds": {
+        "global_euclidean": {
+            "0.1": 1.0578353611025602,
+            "0.05": 1.0814856863504763,
+            "0.01": 1.1258910069089159
+        },
+        "global_mahalanobis": {
+            "0.1": 8.239521998106259,
+            "0.05": 8.376298753919086,
+            "0.01": 8.650617746509415
+        },
+        "identity_conditioned": {
+            "0.1": 1.0707083890301912,
+            "0.05": 1.0854110692006773,
+            "0.01": 1.1165454604553577
+        }
+    },
+    "interpretation": "Conditional bootstrap calibration estimates; not independently verified operational false-alarm rates."
+}

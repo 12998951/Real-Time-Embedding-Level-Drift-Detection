@@ -1,0 +1,30 @@
+{
+    "experiment": "Experiment 19",
+    "step": 5,
+    "random_seed": 202619,
+    "scenario_names": [
+        "C0_no_drift",
+        "C1_composition_drift",
+        "C2_within_identity_drift",
+        "C3_combined_drift"
+    ],
+    "window_size": 20,
+    "windows_per_scenario": 22,
+    "baseline_windows": 11,
+    "post_change_windows": 11,
+    "observations_per_regime": 220,
+    "observations_per_scenario": 440,
+    "sampling_method": "Bootstrap resampling within identity",
+    "baseline_composition": "Empirical evaluation identity proportions",
+    "composition_drift": "Balanced identity composition",
+    "within_identity_drift": "Low-illumination embedding substitution",
+    "source_observation_replacement": true,
+    "source_indices_retained": true,
+    "paired_observation_mapping_retained": true,
+    "limitations": [
+        "Bootstrap samples may repeat source observations.",
+        "Generated observations are not independent new biometric samples.",
+        "Low illumination is a specific controlled perturbation.",
+        "Identity labels are used for scenario construction."
+    ]
+}
