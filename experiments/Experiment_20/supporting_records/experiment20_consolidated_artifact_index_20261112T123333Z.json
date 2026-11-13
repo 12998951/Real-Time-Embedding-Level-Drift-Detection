@@ -1,0 +1,1920 @@
+[
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3327/experiment20_step3327_holm_audit_closure.json",
+    "relative_path": "step_3_3/step_3327/experiment20_step3327_holm_audit_closure.json",
+    "category": "closure_report",
+    "size_bytes": 4298,
+    "sha256": "fda42bbea0d1746aba6167528efb54fb5881458c726affd27d8aa1271dc8d6e9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3336/experiment20_step3336_final_integrity_and_closure_report.json",
+    "relative_path": "step_3_3/step_3336/experiment20_step3336_final_integrity_and_closure_report.json",
+    "category": "closure_report",
+    "size_bytes": 8405,
+    "sha256": "b41f8899cef4aed09d53eb615bb995eeec088545e548a9ac09d2d090ce9af66b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3_3_final_closure/experiment20_section_3_3_final_closure_record.json",
+    "relative_path": "step_3_3/step_3_3_final_closure/experiment20_section_3_3_final_closure_record.json",
+    "category": "closure_report",
+    "size_bytes": 3988,
+    "sha256": "771b887bebdd7320d8e2c8365749c869d35af4bb82627420c7793ec2d10a185f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_phase45_final_closure_record.json",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_phase45_final_closure_record.json",
+    "category": "closure_report",
+    "size_bytes": 2476,
+    "sha256": "e22bcc2dbb84eb7ac892dc07d8f2c80fc258a749156903ea847600985e13f4ec"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_closure_verification_20261112T120017Z.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_closure_verification_20261112T120017Z.json",
+    "category": "closure_report",
+    "size_bytes": 5435,
+    "sha256": "28549246db304f28d57a1eb6ab21bafc2f504f1233ba722befe535752b2f5617"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_closure_verification_20261112T120017Z.md",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_closure_verification_20261112T120017Z.md",
+    "category": "closure_report",
+    "size_bytes": 1677,
+    "sha256": "abd9d4e95418dd9ca13ab5dc8337869428a598484bf0b59c5c184cfa543aa392"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_table_caption_closure_20261112T120331Z.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_table_caption_closure_20261112T120331Z.json",
+    "category": "closure_report",
+    "size_bytes": 4218,
+    "sha256": "cd0a45fba2fa64f2d0d51529c46a9e8c65330dab75a082847b825556f205635e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_table_caption_closure_20261112T120331Z.md",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_table_caption_closure_20261112T120331Z.md",
+    "category": "closure_report",
+    "size_bytes": 1110,
+    "sha256": "42640778ffc9c90f787f243febad9b5bd12f8ddbeffc7951af29ec874fdb700d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_embedding_quality_completeness_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_embedding_quality_completeness_audit.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4770,
+    "sha256": "88a85fa5cba6b144fbd064a42663c4c308acd49edec02a9cce4422e77d50868b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/configuration/experiment20_embedding_generation_config.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/configuration/experiment20_embedding_generation_config.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 527,
+    "sha256": "4f1f8be698695bbba026d2188a951635fad44a4e70a48fc4721d99a3f530933a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_croppedyale_embedding_metadata.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_croppedyale_embedding_metadata.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4250,
+    "sha256": "5efe5026210728e333ac5cd1fb0bcba093504e5214c0f72fbef931101a5d0888"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_croppedyale_facenet_embeddings.npz",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_croppedyale_facenet_embeddings.npz",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4597741,
+    "sha256": "127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_embedding_checkpoint.npz",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_embedding_checkpoint.npz",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4597741,
+    "sha256": "127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_embedding_checkpoint_metadata.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/embeddings/experiment20_embedding_checkpoint_metadata.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 125908,
+    "sha256": "d598268ad676ae651443548b61047e83a1d9053911c3110d6d944e6193e6fb58"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_embedding_quality_completeness_audit.json",
+    "relative_path": "dataset_audit/experiment20_embedding_quality_completeness_audit.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4770,
+    "sha256": "88a85fa5cba6b144fbd064a42663c4c308acd49edec02a9cce4422e77d50868b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/checkpoints/experiment20_embedding_checkpoint.npz",
+    "relative_path": "embeddings/checkpoints/experiment20_embedding_checkpoint.npz",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4597741,
+    "sha256": "127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/checkpoints/experiment20_embedding_checkpoint_metadata.json",
+    "relative_path": "embeddings/checkpoints/experiment20_embedding_checkpoint_metadata.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 125908,
+    "sha256": "d598268ad676ae651443548b61047e83a1d9053911c3110d6d944e6193e6fb58"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/experiment20_croppedyale_embedding_metadata.json",
+    "relative_path": "embeddings/experiment20_croppedyale_embedding_metadata.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4250,
+    "sha256": "5efe5026210728e333ac5cd1fb0bcba093504e5214c0f72fbef931101a5d0888"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/experiment20_croppedyale_facenet_embeddings.npz",
+    "relative_path": "embeddings/experiment20_croppedyale_facenet_embeddings.npz",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 4597741,
+    "sha256": "127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/experiment20_embedding_generation_config.json",
+    "relative_path": "embeddings/experiment20_embedding_generation_config.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 527,
+    "sha256": "4f1f8be698695bbba026d2188a951635fad44a4e70a48fc4721d99a3f530933a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3396/experiment20_methodology_3_5_facenet_embedding_extraction.md",
+    "relative_path": "step_3_3/step_3396/experiment20_methodology_3_5_facenet_embedding_extraction.md",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 1914,
+    "sha256": "021eea8c03769d4ed6f3d471ab351d5537a2b8986b17b6b155cf5fb99ed40088"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3396/experiment20_step3396_facenet_embedding_extraction.json",
+    "relative_path": "step_3_3/step_3396/experiment20_step3396_facenet_embedding_extraction.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 3690,
+    "sha256": "01e20a7ccfcbdbb2dd78a487181300938c9dd6ab8b51b856712af09a6c3b5864"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3396/experiment20_step3396_facenet_embedding_extraction_audit.json",
+    "relative_path": "step_3_3/step_3396/experiment20_step3396_facenet_embedding_extraction_audit.json",
+    "category": "embedding_or_data_archive",
+    "size_bytes": 1170,
+    "sha256": "c28ec81fd9319a35e5e06a3166b964f5f927c70bc6c668b1e771817e5139c835"
+  },
+  {
+    "path": "/content/drive/MyDrive/Colab Notebooks/Experiment 20: Paired Identity-Level Evaluation of Within-Identity Embedding Drift Detection Under Multiple Controlled Biometric Acquisition Changes.ipynb",
+    "relative_path": "/content/drive/MyDrive/Colab Notebooks/Experiment 20: Paired Identity-Level Evaluation of Within-Identity Embedding Drift Detection Under Multiple Controlled Biometric Acquisition Changes.ipynb",
+    "category": "experiment_notebook",
+    "size_bytes": 5957903,
+    "sha256": "fac385ae71c69d6f69a07afb1b1dabf08ff5aa872340261f669ba6fe695bc893"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset.zip",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset.zip",
+    "category": "frozen_dataset_archive",
+    "size_bytes": 67496777,
+    "sha256": "d65c657861e093c50f54666deb63185e5ac72af65ef450610f2ea98502b26339"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/source/CroppedYale.zip",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/source/CroppedYale.zip",
+    "category": "frozen_dataset_archive",
+    "size_bytes": 58493820,
+    "sha256": "8bbabf3836d077d60626c9ee3c54c2d2851a8d2c15c8b7e13b9bc162e86ea573"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step331_manuscript_research_framing.json",
+    "relative_path": "step_3_3/experiment20_step331_manuscript_research_framing.json",
+    "category": "manuscript",
+    "size_bytes": 2826,
+    "sha256": "a20c4cb9e3dec31680b96c1d97fdfb53b737b9c31e6c70cfb4d059b3b478b045"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step335_manuscript_keywords.json",
+    "relative_path": "step_3_3/experiment20_step335_manuscript_keywords.json",
+    "category": "manuscript",
+    "size_bytes": 1042,
+    "sha256": "b093da2deead6553ab3cc86dd79ba62e3c7d8d5da624937ab9959a51b6ee4e59"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33103/experiment20_manuscript_six_test_holm_results.csv",
+    "relative_path": "step_3_3/step_33103/experiment20_manuscript_six_test_holm_results.csv",
+    "category": "manuscript",
+    "size_bytes": 2372,
+    "sha256": "48502691934cbc87bc87acae65e38c93dc88bf10604bf8ca863b122ed8daa74a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3312/experiment20_integrated_manuscript_v1.md",
+    "relative_path": "step_3_3/step_3312/experiment20_integrated_manuscript_v1.md",
+    "category": "manuscript",
+    "size_bytes": 53460,
+    "sha256": "9c28be661b5136baecc9a583d1702a2d1f1a2d3045598722d3d55c649e5b8357"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_full_manuscript_review_report.md",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_full_manuscript_review_report.md",
+    "category": "manuscript",
+    "size_bytes": 7078,
+    "sha256": "996dfa51f2761846ceeea5d143e994cdaa9a56f811105c47c152b7552f55afd3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_manuscript_review_copy.md",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_manuscript_review_copy.md",
+    "category": "manuscript",
+    "size_bytes": 53460,
+    "sha256": "9c28be661b5136baecc9a583d1702a2d1f1a2d3045598722d3d55c649e5b8357"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3323/experiment20_step3323_correction_artifact_manuscript_inspection.json",
+    "relative_path": "step_3_3/step_3323/experiment20_step3323_correction_artifact_manuscript_inspection.json",
+    "category": "manuscript",
+    "size_bytes": 20684,
+    "sha256": "7caf0a69f277263fadb4db0e6b65e72ef7080b8578f70e234260d844cd0c8040"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/experiment20_integrated_manuscript_v2.md",
+    "relative_path": "step_3_3/step_3330/experiment20_integrated_manuscript_v2.md",
+    "category": "manuscript",
+    "size_bytes": 55248,
+    "sha256": "2cc4156af63987fae717c37e997e6478e4253d81f584854fb5fab9f18da5e752"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3331/experiment20_step3331_integrated_manuscript_audit.json",
+    "relative_path": "step_3_3/step_3331/experiment20_step3331_integrated_manuscript_audit.json",
+    "category": "manuscript",
+    "size_bytes": 3236,
+    "sha256": "b502bb48a0853b00c328199aa269de35ed45035d6e1845033f2b93e8f61d7795"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_integrated_manuscript_v2_phase45_amended.md",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_integrated_manuscript_v2_phase45_amended.md",
+    "category": "manuscript",
+    "size_bytes": 57531,
+    "sha256": "d4690d2c2a006733c7ddd71fecfa9a070277aa78402acc360fe9393c47fae7c0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_integrated_manuscript_v2_phase45_final.md",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_integrated_manuscript_v2_phase45_final.md",
+    "category": "manuscript",
+    "size_bytes": 57535,
+    "sha256": "eb175d98a9018797a712e90614ace8972d2589bc1ecfd54fb59b76bdebf203e3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_phase45_manuscript_amendment_record.json",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_phase45_manuscript_amendment_record.json",
+    "category": "manuscript",
+    "size_bytes": 1680,
+    "sha256": "dc3fc95a04ea9a704a63d1d64d9af29add07b21a8f40ccd92695e51570f56311"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_phase45_manuscript_methodology_review.json",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_phase45_manuscript_methodology_review.json",
+    "category": "manuscript",
+    "size_bytes": 90085,
+    "sha256": "d1f3550434c0158e9e6566891b0e8192ab82a716b54d2ece31c54dc0fc816d76"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_6_manuscript_reporting_audit/experiment20_integrated_manuscript_v2_phase46_final.md",
+    "relative_path": "step_4_6_manuscript_reporting_audit/experiment20_integrated_manuscript_v2_phase46_final.md",
+    "category": "manuscript",
+    "size_bytes": 57955,
+    "sha256": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_6_manuscript_reporting_audit/experiment20_phase46_manuscript_correction_verification.json",
+    "relative_path": "step_4_6_manuscript_reporting_audit/experiment20_phase46_manuscript_correction_verification.json",
+    "category": "manuscript",
+    "size_bytes": 2788,
+    "sha256": "219dba462680deeb27f9ca24f91ad91c6c9774864cacc751ea2e917eca1fed25"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_6_manuscript_reporting_audit/experiment20_phase46_manuscript_reporting_audit.json",
+    "relative_path": "step_4_6_manuscript_reporting_audit/experiment20_phase46_manuscript_reporting_audit.json",
+    "category": "manuscript",
+    "size_bytes": 12674,
+    "sha256": "4cbbe7154633ab364d98f29dbf583a0e6b9de86509d07b84042981eb20369b80"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_7_final_manuscript_audit/experiment20_integrated_manuscript_v2_phase47_final.md",
+    "relative_path": "step_4_7_final_manuscript_audit/experiment20_integrated_manuscript_v2_phase47_final.md",
+    "category": "manuscript",
+    "size_bytes": 61164,
+    "sha256": "90fc0f20040b11ca3d1f7b22218964015a6a0f707814c8dfcf482c26cdcd620d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_7_final_manuscript_audit/experiment20_phase47_final_manuscript_audit.json",
+    "relative_path": "step_4_7_final_manuscript_audit/experiment20_phase47_final_manuscript_audit.json",
+    "category": "manuscript",
+    "size_bytes": 13904,
+    "sha256": "b017b17596833ea868c4562a9b21a304547d1dfa1bb8e98b3054d9ae4bd45a1e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_7_final_manuscript_audit/experiment20_phase47_final_manuscript_audit_report.md",
+    "relative_path": "step_4_7_final_manuscript_audit/experiment20_phase47_final_manuscript_audit_report.md",
+    "category": "manuscript",
+    "size_bytes": 5095,
+    "sha256": "98c23b86d49b2f57c053e2d3dd8abdb8fbab35f7839c068db2543b649cffa99c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase511_manuscript_evidence_inventory.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase511_manuscript_evidence_inventory.json",
+    "category": "manuscript",
+    "size_bytes": 9418,
+    "sha256": "83ebc7bf118484be9c3f9da8ebf601563b35e28e79add0e19f98e85389aaa1a2"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/model_assets/face_landmarker.task",
+    "relative_path": "model_assets/face_landmarker.task",
+    "category": "other_project_artifact",
+    "size_bytes": 3758596,
+    "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/displacement_analysis/experiment20_reference_evaluation_displacement.csv",
+    "relative_path": "step_2_7/displacement_analysis/experiment20_reference_evaluation_displacement.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 379103,
+    "sha256": "d24a2a6d628eca608b8ab8e6c056fb50bc7b0e1c6c34e253dfae7c9354c9892f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_hemisphere_comparison_results.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_hemisphere_comparison_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 729,
+    "sha256": "72e2db7a59abb4e142b8c0663f75ac07022d2968a07824ab6ba1416ae79a1982"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_identity_level_group_means.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_identity_level_group_means.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 10208,
+    "sha256": "b1640113782e5e1b05f782ef00e9fd64ff6c8c5e0e6aaea13c2a74f7b4cb33ca"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_identity_level_hemisphere_means.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_identity_level_hemisphere_means.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 7323,
+    "sha256": "9b47e10b4c5a5b7a02e4d0370078a12068a740be73d5b3f8ccce1f766a96e99d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_illumination_group_descriptive_statistics.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_illumination_group_descriptive_statistics.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 1143,
+    "sha256": "1b9a6ba8dae4431e807f1b15286276acaf7c9283a8a950bff3c844f8155c61e9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_paired_comparison_results.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_paired_comparison_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 1555,
+    "sha256": "56a04e265817173aa71dd89e79e71db9a9e74cd9cceef77285a0631fdb1fbffd"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_reference_evaluation_displacement.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_reference_evaluation_displacement.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 379103,
+    "sha256": "d24a2a6d628eca608b8ab8e6c056fb50bc7b0e1c6c34e253dfae7c9354c9892f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_repeated_measures_test_results.csv",
+    "relative_path": "step_2_7/final_freeze/experiment20_repeated_measures_test_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 217,
+    "sha256": "254ced9f4ecdcd5103a8dbce033ae54b248df2558a111f5dc2b20a79b917601d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/group_descriptive_analysis/experiment20_identity_level_group_means.csv",
+    "relative_path": "step_2_7/group_descriptive_analysis/experiment20_identity_level_group_means.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 10208,
+    "sha256": "b1640113782e5e1b05f782ef00e9fd64ff6c8c5e0e6aaea13c2a74f7b4cb33ca"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/group_descriptive_analysis/experiment20_illumination_group_descriptive_statistics.csv",
+    "relative_path": "step_2_7/group_descriptive_analysis/experiment20_illumination_group_descriptive_statistics.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 1143,
+    "sha256": "1b9a6ba8dae4431e807f1b15286276acaf7c9283a8a950bff3c844f8155c61e9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/hemisphere_analysis/experiment20_hemisphere_comparison_results.csv",
+    "relative_path": "step_2_7/hemisphere_analysis/experiment20_hemisphere_comparison_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 729,
+    "sha256": "72e2db7a59abb4e142b8c0663f75ac07022d2968a07824ab6ba1416ae79a1982"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/hemisphere_analysis/experiment20_identity_level_hemisphere_means.csv",
+    "relative_path": "step_2_7/hemisphere_analysis/experiment20_identity_level_hemisphere_means.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 7323,
+    "sha256": "9b47e10b4c5a5b7a02e4d0370078a12068a740be73d5b3f8ccce1f766a96e99d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/repeated_measures_analysis/experiment20_paired_comparison_results.csv",
+    "relative_path": "step_2_7/repeated_measures_analysis/experiment20_paired_comparison_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 1555,
+    "sha256": "56a04e265817173aa71dd89e79e71db9a9e74cd9cceef77285a0631fdb1fbffd"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/repeated_measures_analysis/experiment20_repeated_measures_test_results.csv",
+    "relative_path": "step_2_7/repeated_measures_analysis/experiment20_repeated_measures_test_results.csv",
+    "category": "other_project_artifact",
+    "size_bytes": 217,
+    "sha256": "254ced9f4ecdcd5103a8dbce033ae54b248df2558a111f5dc2b20a79b917601d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.json",
+    "relative_path": "step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.json",
+    "category": "phase_5_2_audit",
+    "size_bytes": 54682,
+    "sha256": "691a12e20894f55fcd3ef66d714c8a64abcbf813c1afec43e382adb6f0b65117"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.md",
+    "relative_path": "step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.md",
+    "category": "phase_5_2_audit",
+    "size_bytes": 2204,
+    "sha256": "83a5e65561dad9eca6f91ef932fe17fc5fb6c0b23ed7b5c29824d0bd8b016821"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_integrity_audit_20261112T121321Z.json",
+    "relative_path": "step_5_2_reproducibility_integrity_review/experiment20_phase52_integrity_audit_20261112T121321Z.json",
+    "category": "phase_5_2_audit",
+    "size_bytes": 132419,
+    "sha256": "75bb3f08f0cd2cd03cd8cd21577e690cb252d95e07f8841e8332ed0f31d6db11"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_integrity_audit_20261112T121321Z.md",
+    "relative_path": "step_5_2_reproducibility_integrity_review/experiment20_phase52_integrity_audit_20261112T121321Z.md",
+    "category": "phase_5_2_audit",
+    "size_bytes": 1484,
+    "sha256": "b5b6b2089dcac7139047630db3bfbb8f620ef3d4687a0a4f8d650d7877a704c3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.json",
+    "relative_path": "step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.json",
+    "category": "phase_5_3_audit",
+    "size_bytes": 8611,
+    "sha256": "08c38b6a6c5c4da89c346e066de1f3be1054dce6ec638883c2bc5edf1d9a7d3a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.md",
+    "relative_path": "step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.md",
+    "category": "phase_5_3_audit",
+    "size_bytes": 2667,
+    "sha256": "c762b373996b534dff66d1c6bda4319fee76dd234a8b070ce30bdc36d4132b0a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/README.md",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/README.md",
+    "category": "readme",
+    "size_bytes": 2126,
+    "sha256": "d3313c03074856e04004e93117e271ef10779639525024bfcf9122f2f7252aa2"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/figures/experiment20_figure1_euclidean_illumination_groups.png",
+    "relative_path": "step_2_7/figures/experiment20_figure1_euclidean_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 892771,
+    "sha256": "71623f613dc8202cf5cf6ff7bea005b315e4a31de73841d064c896b24e565b16"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/figures/experiment20_figure2_cosine_illumination_groups.png",
+    "relative_path": "step_2_7/figures/experiment20_figure2_cosine_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 882531,
+    "sha256": "de22ee98a909ef099199f5b49911633497c2c890d9d903224131f95db54c917c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "relative_path": "step_2_7/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 792089,
+    "sha256": "5a55b8947698a35dd20a258a4d185b927a64ccdac4a4b18d8aad4bd6d35fc0c6"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "relative_path": "step_2_7/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 789978,
+    "sha256": "0a06e0a5458ec2779aee94778f59fd576e585f8fc85fdd3e82afb6c91211851c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_figure1_euclidean_illumination_groups.png",
+    "relative_path": "step_2_7/final_freeze/experiment20_figure1_euclidean_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 892771,
+    "sha256": "71623f613dc8202cf5cf6ff7bea005b315e4a31de73841d064c896b24e565b16"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_figure2_cosine_illumination_groups.png",
+    "relative_path": "step_2_7/final_freeze/experiment20_figure2_cosine_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 882531,
+    "sha256": "de22ee98a909ef099199f5b49911633497c2c890d9d903224131f95db54c917c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "relative_path": "step_2_7/final_freeze/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 792089,
+    "sha256": "5a55b8947698a35dd20a258a4d185b927a64ccdac4a4b18d8aad4bd6d35fc0c6"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "relative_path": "step_2_7/final_freeze/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 789978,
+    "sha256": "0a06e0a5458ec2779aee94778f59fd576e585f8fc85fdd3e82afb6c91211851c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+    "relative_path": "step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 892771,
+    "sha256": "71623f613dc8202cf5cf6ff7bea005b315e4a31de73841d064c896b24e565b16"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+    "relative_path": "step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+    "category": "research_figure",
+    "size_bytes": 882531,
+    "sha256": "de22ee98a909ef099199f5b49911633497c2c890d9d903224131f95db54c917c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "relative_path": "step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 792089,
+    "sha256": "5a55b8947698a35dd20a258a4d185b927a64ccdac4a4b18d8aad4bd6d35fc0c6"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "relative_path": "step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+    "category": "research_figure",
+    "size_bytes": 789978,
+    "sha256": "0a06e0a5458ec2779aee94778f59fd576e585f8fc85fdd3e82afb6c91211851c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Freeze_Manifest.json",
+    "relative_path": "Experiment_20_Stage_2_Freeze_Manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3059,
+    "sha256": "8e58cb348108b2396a9918f305a8c3f232fb79619a947cf59970b24adf0922b3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_acquisition_environment_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_acquisition_environment_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1215,
+    "sha256": "882f6b8281c271831c57f6fa35ee336a5508d1c80b12fdfa03ab21766e124d54"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_angular_hemisphere_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_angular_hemisphere_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 883,
+    "sha256": "939af14d776f05c05a4e38c259de8ac28702586784d228c2915ea0ed4bdbafd9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_aria2_installation_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_aria2_installation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 319,
+    "sha256": "6c2b1b0e3fa3e8a631749537459de627c365268a63fd02c3215561a1f9b68dc9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_common_illumination_condition_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_common_illumination_condition_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 6711,
+    "sha256": "b3cef5bd1f84906c0bc690591923ddf397f5ea11b05668125861f758b7f6167d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_common_illumination_condition_manifest.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_common_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 147772,
+    "sha256": "49b79e31690e8ee3ad020fde51281068f6a6cb39a416eee98d62d5ca9892b9ad"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_corrected_illumination_condition_manifest.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_corrected_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 163656,
+    "sha256": "c5a05336d1882c4edaeaf4beaab6b71f72e379106e0ee97d4a489fdbe1a51c8d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_acquisition_record.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_acquisition_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 566,
+    "sha256": "5f46d410b8a04f47a0f2c36eea657de9e7cb879c21eb3c1325e9b6c09dac6a0d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_filename_completeness_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_filename_completeness_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 66495,
+    "sha256": "94800ea32fec990d8c89415f11f2a79018fe5df3e38a63312bd68357f6dedf34"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_image_integrity_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_croppedyale_image_integrity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7759,
+    "sha256": "90c9149fe4b0c7275f2fbf0d7561e55697521ab55b15f5b73186d5c62fe3e24d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_full_dataset_image_integrity_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_full_dataset_image_integrity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7216,
+    "sha256": "816488e04f31a11f21d86765f18d9cb75b099815ad71e68f60550e41928a5262"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_grouped_illumination_condition_manifest.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_grouped_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 159363,
+    "sha256": "4f701859873f7181be4edf9a221cf70c5f2a8b86b8f5178458620a1ccd7ad101"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_lighting_geometry_grouping_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_lighting_geometry_grouping_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4369,
+    "sha256": "0d867f645b48f005690ff84345e7e8e734a27dae8736a5bd5dc508f83f6431db"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_preprocessing_consistency_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_preprocessing_consistency_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7417,
+    "sha256": "187076023cc33d04f1a5fc7c396b95665ad1738d615cafd6503c83a499c24305"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_alternative_source_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_alternative_source_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1363,
+    "sha256": "54fcf8fcd57b37c8ff602597e498cefccda26d2d74ecccdcc6babf6d16f2d9fc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_source_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_source_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1431,
+    "sha256": "7b4afd97697c37a0bab427080e1102bee3c020afa94bdef0e77bfc47f88434c5"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_torrent_metadata_audit.json",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/audits/experiment20_yaleb_torrent_metadata_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1352,
+    "sha256": "bf37eb8f523c8459fc17da511c28fe563a463fa08477cdf3bc39a25b1e09d48c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_acquisition_environment_audit.json",
+    "relative_path": "dataset_audit/experiment20_acquisition_environment_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1215,
+    "sha256": "882f6b8281c271831c57f6fa35ee336a5508d1c80b12fdfa03ab21766e124d54"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_acquisition_source_reconciliation_audit.json",
+    "relative_path": "dataset_audit/experiment20_acquisition_source_reconciliation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1366,
+    "sha256": "a19e19940cddc18e39d37c321c00c0df73ba5e9434da03cc1a4101d42b5685d0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_angular_hemisphere_audit.json",
+    "relative_path": "dataset_audit/experiment20_angular_hemisphere_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 883,
+    "sha256": "939af14d776f05c05a4e38c259de8ac28702586784d228c2915ea0ed4bdbafd9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_aria2_installation_audit.json",
+    "relative_path": "dataset_audit/experiment20_aria2_installation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 319,
+    "sha256": "6c2b1b0e3fa3e8a631749537459de627c365268a63fd02c3215561a1f9b68dc9"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_common_illumination_condition_audit.json",
+    "relative_path": "dataset_audit/experiment20_common_illumination_condition_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 6711,
+    "sha256": "b3cef5bd1f84906c0bc690591923ddf397f5ea11b05668125861f758b7f6167d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_common_illumination_condition_manifest.json",
+    "relative_path": "dataset_audit/experiment20_common_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 147772,
+    "sha256": "49b79e31690e8ee3ad020fde51281068f6a6cb39a416eee98d62d5ca9892b9ad"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_corrected_illumination_condition_manifest.json",
+    "relative_path": "dataset_audit/experiment20_corrected_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 163656,
+    "sha256": "c5a05336d1882c4edaeaf4beaab6b71f72e379106e0ee97d4a489fdbe1a51c8d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_croppedyale_acquisition_record.json",
+    "relative_path": "dataset_audit/experiment20_croppedyale_acquisition_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 566,
+    "sha256": "5f46d410b8a04f47a0f2c36eea657de9e7cb879c21eb3c1325e9b6c09dac6a0d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_croppedyale_content_audit.json",
+    "relative_path": "dataset_audit/experiment20_croppedyale_content_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4596,
+    "sha256": "12246ea5eb1180ccf775120fd4f9491a87269f2e90ae65a54965d55998cbf736"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_croppedyale_filename_completeness_audit.json",
+    "relative_path": "dataset_audit/experiment20_croppedyale_filename_completeness_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 66495,
+    "sha256": "94800ea32fec990d8c89415f11f2a79018fe5df3e38a63312bd68357f6dedf34"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_croppedyale_image_integrity_audit.json",
+    "relative_path": "dataset_audit/experiment20_croppedyale_image_integrity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7759,
+    "sha256": "90c9149fe4b0c7275f2fbf0d7561e55697521ab55b15f5b73186d5c62fe3e24d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_facenet_preprocessing_compatibility_audit.json",
+    "relative_path": "dataset_audit/experiment20_facenet_preprocessing_compatibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 99799,
+    "sha256": "259a1e4a426f2446723ee5f050a1b07f3dd0bfe19a5c16ae58d779164f4fad1c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_full_dataset_image_integrity_audit.json",
+    "relative_path": "dataset_audit/experiment20_full_dataset_image_integrity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7216,
+    "sha256": "816488e04f31a11f21d86765f18d9cb75b099815ad71e68f60550e41928a5262"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_grouped_illumination_condition_manifest.json",
+    "relative_path": "dataset_audit/experiment20_grouped_illumination_condition_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 159363,
+    "sha256": "4f701859873f7181be4edf9a221cf70c5f2a8b86b8f5178458620a1ccd7ad101"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_lighting_geometry_grouping_audit.json",
+    "relative_path": "dataset_audit/experiment20_lighting_geometry_grouping_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4369,
+    "sha256": "0d867f645b48f005690ff84345e7e8e734a27dae8736a5bd5dc508f83f6431db"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_preprocessing_consistency_audit.json",
+    "relative_path": "dataset_audit/experiment20_preprocessing_consistency_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7417,
+    "sha256": "187076023cc33d04f1a5fc7c396b95665ad1738d615cafd6503c83a499c24305"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_yaleb_alternative_source_audit.json",
+    "relative_path": "dataset_audit/experiment20_yaleb_alternative_source_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1363,
+    "sha256": "54fcf8fcd57b37c8ff602597e498cefccda26d2d74ecccdcc6babf6d16f2d9fc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_yaleb_source_audit.json",
+    "relative_path": "dataset_audit/experiment20_yaleb_source_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1431,
+    "sha256": "7b4afd97697c37a0bab427080e1102bee3c020afa94bdef0e77bfc47f88434c5"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/dataset_audit/experiment20_yaleb_torrent_metadata_audit.json",
+    "relative_path": "dataset_audit/experiment20_yaleb_torrent_metadata_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1352,
+    "sha256": "bf37eb8f523c8459fc17da511c28fe563a463fa08477cdf3bc39a25b1e09d48c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/design/experiment20_stage_design.json",
+    "relative_path": "design/experiment20_stage_design.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2411,
+    "sha256": "321055bd3305fa0239b04691fb80fa37e9367ddb33e4b8de634652bf53c9dc0f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/displacement_analysis/experiment20_step272_displacement_audit.json",
+    "relative_path": "step_2_7/displacement_analysis/experiment20_step272_displacement_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1931,
+    "sha256": "3b0b5b76753beb8a17067ddec43e728aea487d8cfaa8f28f9f055ea60ee89d2e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/experiment20_step271_protocol_feasibility_audit.json",
+    "relative_path": "step_2_7/experiment20_step271_protocol_feasibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2669,
+    "sha256": "34cb3a4a232b35c1c4b0d224a61f0c0ec6c2e96065dad6b61f5ca37b0f46cb2a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/experiment20_step27_descriptive_analysis_protocol.json",
+    "relative_path": "step_2_7/experiment20_step27_descriptive_analysis_protocol.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 17182,
+    "sha256": "2bea63ee5d3eeece5d7db34ae5581e541ad9b340883a753967d5be3e73af106e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/figures/experiment20_step276_figure_generation_audit.json",
+    "relative_path": "step_2_7/figures/experiment20_step276_figure_generation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2717,
+    "sha256": "826b76dbe0471f7c8014d8619b766e40464f1106502a42d596f1887471de325a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_final_artifact_manifest.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_final_artifact_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 13269,
+    "sha256": "a318085345c2a9cdc05654f2727d6171a7a61c255d93e4cbffd588a9409eb021"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_final_results_summary.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_final_results_summary.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3054,
+    "sha256": "9004831c6694699150c3d7ebf977ba1ad906df7829926600a6b5f3d83980c439"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step271_protocol_feasibility_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step271_protocol_feasibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2669,
+    "sha256": "34cb3a4a232b35c1c4b0d224a61f0c0ec6c2e96065dad6b61f5ca37b0f46cb2a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step272_displacement_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step272_displacement_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1931,
+    "sha256": "3b0b5b76753beb8a17067ddec43e728aea487d8cfaa8f28f9f055ea60ee89d2e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step273_group_descriptive_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step273_group_descriptive_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1839,
+    "sha256": "ffb151d80662320152234e6194bd875d3667d504dbe20dfbf1ded48a8cac8555"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step274_repeated_measures_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step274_repeated_measures_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7680,
+    "sha256": "4873fcba58fccfbfa868987e2a9223132afe05fa7e61564fc7459ca0971c58fd"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step275_hemisphere_analysis_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step275_hemisphere_analysis_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3760,
+    "sha256": "8e67df43014df6f386c96af58da4054a39e1b00539453669d7d3fc62a88a20b4"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step276_figure_generation_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step276_figure_generation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2717,
+    "sha256": "826b76dbe0471f7c8014d8619b766e40464f1106502a42d596f1887471de325a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step277_final_freeze_audit.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step277_final_freeze_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 744,
+    "sha256": "a281eb4e48aa21c9380a8516abda49552e5a0a7f5758a3dfc886a138d1e1e0eb"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_step27_descriptive_analysis_protocol.json",
+    "relative_path": "step_2_7/final_freeze/experiment20_step27_descriptive_analysis_protocol.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 17182,
+    "sha256": "2bea63ee5d3eeece5d7db34ae5581e541ad9b340883a753967d5be3e73af106e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/group_descriptive_analysis/experiment20_step273_group_descriptive_audit.json",
+    "relative_path": "step_2_7/group_descriptive_analysis/experiment20_step273_group_descriptive_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1839,
+    "sha256": "ffb151d80662320152234e6194bd875d3667d504dbe20dfbf1ded48a8cac8555"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/hemisphere_analysis/experiment20_step275_hemisphere_analysis_audit.json",
+    "relative_path": "step_2_7/hemisphere_analysis/experiment20_step275_hemisphere_analysis_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3760,
+    "sha256": "8e67df43014df6f386c96af58da4054a39e1b00539453669d7d3fc62a88a20b4"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/repeated_measures_analysis/experiment20_step274_repeated_measures_audit.json",
+    "relative_path": "step_2_7/repeated_measures_analysis/experiment20_step274_repeated_measures_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7680,
+    "sha256": "4873fcba58fccfbfa868987e2a9223132afe05fa7e61564fc7459ca0971c58fd"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step311_holm_family_sensitivity.json",
+    "relative_path": "step_3_1/experiment20_step311_holm_family_sensitivity.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2362,
+    "sha256": "02599c3bd94b74f758e6cb329a289c818e2af064578b84732f16268d76b77ec7"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step316_final_methodological_review_audit.json",
+    "relative_path": "step_3_1/experiment20_step316_final_methodological_review_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2732,
+    "sha256": "ace73298d8832e7978bb2f4a8f7ae0b9eaca1ca5a4192a2e6764620407c5c3ca"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step316_methodological_risk_register.json",
+    "relative_path": "step_3_1/experiment20_step316_methodological_risk_register.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 8084,
+    "sha256": "1d8cb1f2adc0ac5c6bceb39f7e067f55075b429db8ef8f87af205391d4588819"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step317_unresolved_decisions.json",
+    "relative_path": "step_3_1/experiment20_step317_unresolved_decisions.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3782,
+    "sha256": "f68eccd4b6b778692661416921493294c781f85862fc2cf4477178357f2da943"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step317_unresolved_decisions_pre_D01_update.json",
+    "relative_path": "step_3_1/experiment20_step317_unresolved_decisions_pre_D01_update.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2345,
+    "sha256": "f95d3411d0a08d63407e4a071ef38ba01f2d5303277fa7eaba8ec15febdd1ce6"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step317_unresolved_decisions_pre_D02_update.json",
+    "relative_path": "step_3_1/experiment20_step317_unresolved_decisions_pre_D02_update.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2807,
+    "sha256": "f44050f36a2977e8f0b79af9c6d8c3bf77e6c7150bdfa1e5933a56b4310394f0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_1/experiment20_step317_unresolved_decisions_pre_D03_update.json",
+    "relative_path": "step_3_1/experiment20_step317_unresolved_decisions_pre_D03_update.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3200,
+    "sha256": "a386eca6fdb6b2b98c5c9d70528539f5aa9bffbce67387610773994729380d6d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3210_additional_model_feasibility.json",
+    "relative_path": "step_3_2/experiment20_step3210_additional_model_feasibility.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3543,
+    "sha256": "6e5941ad7c2fd8e97cd5c6426674850dd05ac7d1ea752a7524c44c7c81471586"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3211_verified_model_requirements.json",
+    "relative_path": "step_3_2/experiment20_step3211_verified_model_requirements.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2648,
+    "sha256": "5763de886f32ffb75cd9bd7bb032b0ab83cf2fb2c235189e7ce781cee7034d74"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3212_alignment_route_assessment.json",
+    "relative_path": "step_3_2/experiment20_step3212_alignment_route_assessment.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2106,
+    "sha256": "2ad7ce2676c6b351b572f097d1c3010afed16edaf92cc9f804481078b4a1953a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3213_mediapipe_pilot_sample_manifest.json",
+    "relative_path": "step_3_2/experiment20_step3213_mediapipe_pilot_sample_manifest.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 8371,
+    "sha256": "1fd31ff3e5f48ce5a80db1357df99a05f309ffaaba3789d4089a682b7fd7b893"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3214_mediapipe_environment_audit.json",
+    "relative_path": "step_3_2/experiment20_step3214_mediapipe_environment_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3706,
+    "sha256": "c4ece5708f221e845ee2db7c1a3620f2041ac2377b128a67aee67aff51827e61"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3215_landmarker_asset_audit.json",
+    "relative_path": "step_3_2/experiment20_step3215_landmarker_asset_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 718,
+    "sha256": "53a10e0ab8a92832cf3856b15c60662b8e93f9995d0aab8c7ecd63588411bc3f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3216_mediapipe_detection_pilot.json",
+    "relative_path": "step_3_2/experiment20_step3216_mediapipe_detection_pilot.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 13661,
+    "sha256": "2e25025d4ad598a5d6b2e218b54699df0af798cf1381d7b9c4da1e195f16739c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3217_detection_failure_analysis.json",
+    "relative_path": "step_3_2/experiment20_step3217_detection_failure_analysis.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 14113,
+    "sha256": "fb1903d6eaf640aa249e0a85479034341f365faa5cf80ff09ad2b126a08fd81c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3218_alignment_strategy_decision.json",
+    "relative_path": "step_3_2/experiment20_step3218_alignment_strategy_decision.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1943,
+    "sha256": "8f736992555b56398c36035162e0726513415c5b37f0bac5be3307209fe22217"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step3219_publication_strategy_decision.json",
+    "relative_path": "step_3_2/experiment20_step3219_publication_strategy_decision.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2067,
+    "sha256": "10476b3af1ce89f421ce0c42d63396d01f7dfdc5a2b38ba377a25b9c642c676b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step321_preliminary_literature_baseline.json",
+    "relative_path": "step_3_2/experiment20_step321_preliminary_literature_baseline.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5328,
+    "sha256": "5bbe49cb743128ea4a5bc7cafab9dc77cc3393b95ce4622ab9bc9d244e5b3287"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step322_closest_study_comparison.json",
+    "relative_path": "step_3_2/experiment20_step322_closest_study_comparison.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4777,
+    "sha256": "d91b16b89f91c627fc8642d0d9b211c960d779724ab8d25f681f14cd345f63ac"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step323_expanded_prior_art_assessment.json",
+    "relative_path": "step_3_2/experiment20_step323_expanded_prior_art_assessment.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4078,
+    "sha256": "15d3fe4f669e64e4b2ee029c4ce51758e3806ec5a6cbd8ae20838d038db0027b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step324_publication_viability_assessment.json",
+    "relative_path": "step_3_2/experiment20_step324_publication_viability_assessment.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2532,
+    "sha256": "20efeba54b149757ad1ab2e50b3ce08078871951075f22b4e11e81365c63df65"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_2/experiment20_step329_full_image_integrity_audit.json",
+    "relative_path": "step_3_2/experiment20_step329_full_image_integrity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2342,
+    "sha256": "728e5e822c8465dc15e4fc828e45e3af0293f402864b190bdc4d5c8f69366e54"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step332_research_gap_formulation.json",
+    "relative_path": "step_3_3/experiment20_step332_research_gap_formulation.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3063,
+    "sha256": "32f3aa1624398978e28b86f28a750e59dade3171c8e06a8ec7d79212e3c154bf"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step333_contributions_hypotheses.json",
+    "relative_path": "step_3_3/experiment20_step333_contributions_hypotheses.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2815,
+    "sha256": "2f1a445da7f05cf09377dc6cadfb7f2e430423e7a9eb757b4073f5f5ecf345df"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step334_abstract_draft.json",
+    "relative_path": "step_3_3/experiment20_step334_abstract_draft.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3502,
+    "sha256": "541445290489489458df79d5b4467df9c73b5658e5fc4abf65e7ff598a1c200a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step3362_introduction_illumination_context.json",
+    "relative_path": "step_3_3/experiment20_step3362_introduction_illumination_context.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4263,
+    "sha256": "356f7616479858585a005fd643e2df683c720e9b562dbca6c661ea9c0aee686a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step3363_introduction_research_gap.json",
+    "relative_path": "step_3_3/experiment20_step3363_introduction_research_gap.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3377,
+    "sha256": "9c03b439bdc691ab927908a541cc9490ef2298f7f989eb9305ca42b3617f03cc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step3364_introduction_research_questions_objectives.json",
+    "relative_path": "step_3_3/experiment20_step3364_introduction_research_questions_objectives.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3859,
+    "sha256": "3e07789ba13940fa1dbbbf3cc6162645f177524b6518f4e2ef7a54b4b0d59ffd"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step3365_introduction_contributions_scope.json",
+    "relative_path": "step_3_3/experiment20_step3365_introduction_contributions_scope.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3936,
+    "sha256": "b35ce9404d8b6dc04ddac569f3d21eae240d82e8877fabe90df0b924b4118236"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/experiment20_step336_introduction_section1_background.json",
+    "relative_path": "step_3_3/experiment20_step336_introduction_section1_background.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2436,
+    "sha256": "4ce33bfe964a3c39d119d5e25c1037e465c4c71a6039555a5ce1109e6892992c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3310/experiment20_step3310_hemisphere_analysis.json",
+    "relative_path": "step_3_3/step_3310/experiment20_step3310_hemisphere_analysis.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3043,
+    "sha256": "7dfcbbb1d11740b682f7cff9baaa31714f36ea27f416d6051092e4a36bc5eeb0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3310/experiment20_step3310_hemisphere_analysis_audit.json",
+    "relative_path": "step_3_3/step_3310/experiment20_step3310_hemisphere_analysis_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1109,
+    "sha256": "e0c8347993f1dad7576972f95661346a7f579551a2e024d1188aca9fb137ae33"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33101/experiment20_step33101_frozen_results_inventory.json",
+    "relative_path": "step_3_3/step_33101/experiment20_step33101_frozen_results_inventory.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 35647,
+    "sha256": "35a2287a622c2177a8a77e56d1414c80581df691a14399f384a2708e3b3ee4b7"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33102/experiment20_step33102_corrected_results_audit.json",
+    "relative_path": "step_3_3/step_33102/experiment20_step33102_corrected_results_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 6148,
+    "sha256": "f74429080bf58967bff757c2580345b653e8fbd7394d24f3a207fa5c31c8c7b7"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33103/experiment20_step33103_holm_correction_record.json",
+    "relative_path": "step_3_3/step_33103/experiment20_step33103_holm_correction_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1232,
+    "sha256": "39728905e4fbf5903a0c789a236cfdfddd331932a406e5f0ce16adc804667639"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33104/experiment20_step33104_descriptive_statistics_verification.json",
+    "relative_path": "step_3_3/step_33104/experiment20_step33104_descriptive_statistics_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3455,
+    "sha256": "5e3d7e8966f293656ccbace54f3a883dec6d4d75ca764ae5f267da82b12ae11d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33105/experiment20_step33105_repeated_measures_verification.json",
+    "relative_path": "step_3_3/step_33105/experiment20_step33105_repeated_measures_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2807,
+    "sha256": "7ce2867fe49f5b5af85f3244d388aee87f35274c86152386ee5484b21c78c38f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33106/experiment20_step33106_hemisphere_results_verification.json",
+    "relative_path": "step_3_3/step_33106/experiment20_step33106_hemisphere_results_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5373,
+    "sha256": "eef215f93bd0d94e169a5d0e087bed089f632db2517ce37495506b117477c7d3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33107/experiment20_step33107_results_consistency_audit.json",
+    "relative_path": "step_3_3/step_33107/experiment20_step33107_results_consistency_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 9432,
+    "sha256": "db3a74150dda687b9ec6c488c941631afee3b332b1c5f6fe85d2f061837ae39e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33108/experiment20_step33108_results_draft_record.json",
+    "relative_path": "step_3_3/step_33108/experiment20_step33108_results_draft_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 8479,
+    "sha256": "4c02d95be92fd16526cbaf8b5b3c658bc16d99d772dd5b224ce12ec791e01a1c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3311/experiment20_step3311_discussion_record.json",
+    "relative_path": "step_3_3/step_3311/experiment20_step3311_discussion_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3957,
+    "sha256": "9595e7e28df7b70739ac761dee69f25859149bb8d83c0a78c119f8e308da41e4"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3311/experiment20_step3311_limitations_reproducibility.json",
+    "relative_path": "step_3_3/step_3311/experiment20_step3311_limitations_reproducibility.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4757,
+    "sha256": "919db6d47eea94bb290f02a4d8e30d2ec7c699bf3934294405318a497476245c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3311/experiment20_step3311_limitations_reproducibility_audit.json",
+    "relative_path": "step_3_3/step_3311/experiment20_step3311_limitations_reproducibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1420,
+    "sha256": "53acd6633e79d9ab52bb891f52d8d36c0da7d7200072769c69d971abfa0680a2"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3312/experiment20_step3312_integration_record.json",
+    "relative_path": "step_3_3/step_3312/experiment20_step3312_integration_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 8810,
+    "sha256": "b7827ffeceb068b32022821117a92ad9381919eb8cca8d6447a0a455fd123fb0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_citation_reference_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_citation_reference_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 550,
+    "sha256": "d00d133395a2a16d02037a7cf8220c6422c63f9ca63012dbd0bf2e8aa3e59f70"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_figure_table_integration_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_figure_table_integration_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1022,
+    "sha256": "4d40597db6dc2376557be209c61b4cfc7a239a7562aa37553f036b1de0f28620"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_methodological_limitations_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_methodological_limitations_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1750,
+    "sha256": "ae835c99b82c93f700c48b4fe66d9c287bfa26c39a2a5b38f903769ed6bade83"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_numerical_verification_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_numerical_verification_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3755,
+    "sha256": "e1c477daca057e064fd5aa9b3f833ee647a8d3bd2a0ef8156a7a30bd451b2249"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_prioritised_correction_register.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_prioritised_correction_register.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5402,
+    "sha256": "a7a540c8b56ca5e051ee0a3479e51cabb4e72731086d8842e81699250d501380"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_scientific_editorial_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_scientific_editorial_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 27718,
+    "sha256": "32aa55fadc97191bef6d60944b7bf313c47b51dde9312397fd9c5c2d78327110"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3313_statistical_interpretation_audit.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3313_statistical_interpretation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 12426,
+    "sha256": "6503b881f1b79e1ba8e0935bf5ca427498fed6601aba4a68f1f19e338f1b86da"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3314_outstanding_review_checks.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3314_outstanding_review_checks.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 35847,
+    "sha256": "686201691e3b78330b3fe44b28736ec6dbdc293eaf9ba00e3956628ce5c60060"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3313/experiment20_step3316_holm_family_verification.json",
+    "relative_path": "step_3_3/step_3313/experiment20_step3316_holm_family_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1090,
+    "sha256": "ad19fe71c603681d0cf8ca2e4e7837a9a8fb47fc60088577f72da14a42f6094d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3317/experiment20_step3317_holm_implementation_trace.json",
+    "relative_path": "step_3_3/step_3317/experiment20_step3317_holm_implementation_trace.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 90001,
+    "sha256": "1a99028a933087cc86b7699567f08662a80e2939628ed875962a201f752998f4"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3318/experiment20_step3318_expanded_source_search.json",
+    "relative_path": "step_3_3/step_3318/experiment20_step3318_expanded_source_search.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 193251,
+    "sha256": "a1ca833409c9b88028024244db25ec3780f0dca2073f46b4f060c579d19afcec"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3321/experiment20_step3321_paired_comparison_verification.json",
+    "relative_path": "step_3_3/step_3321/experiment20_step3321_paired_comparison_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5761,
+    "sha256": "da102e2bd6aa785636ba0ace89ee7c2cacbd1b657d6932f5b1c2eaee5093cc29"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3322/experiment20_step3322_holm_reference_audit.json",
+    "relative_path": "step_3_3/step_3322/experiment20_step3322_holm_reference_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 97751,
+    "sha256": "b5fbe45321e064db7b73987826dceafdbdba556fcf95d64668c9394e457f2da0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3324/experiment20_step3324_holm_provenance_table2_verification.json",
+    "relative_path": "step_3_3/step_3324/experiment20_step3324_holm_provenance_table2_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3806,
+    "sha256": "4849b6a3ddd964e4f059728b2f2e13ec26c6af1932202e708e62157129ca91b4"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3325/experiment20_step3325_table2_verification.json",
+    "relative_path": "step_3_3/step_3325/experiment20_step3325_table2_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 15227,
+    "sha256": "8223590e21e1a415bfade8b05bf5d613a465af5c65e077030b67cced4cd465ba"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3326/experiment20_step3326_rounded_holm_verification.json",
+    "relative_path": "step_3_3/step_3326/experiment20_step3326_rounded_holm_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7890,
+    "sha256": "d47c07e38c5255b783bcdd06aa50677f6b72f95b066b2dd9f4748ffe82944cf0"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3328/experiment20_step3328_figure_inventory_placement_audit.json",
+    "relative_path": "step_3_3/step_3328/experiment20_step3328_figure_inventory_placement_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 14191,
+    "sha256": "d685d527360f8edb2243238d33c3a4e2ed0c7870722d8aca6647640d6036a40d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3329/experiment20_step3329_results_figure_review.json",
+    "relative_path": "step_3_3/step_3329/experiment20_step3329_results_figure_review.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7784,
+    "sha256": "f2d85a360a734273819218886d57832b87a1fd4555c2f2933998c8fa399c9053"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/experiment20_step3330_figure_integration_report.json",
+    "relative_path": "step_3_3/step_3330/experiment20_step3330_figure_integration_report.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3741,
+    "sha256": "6bba79cdd4b4d0b8a2d67e2d6178191a9411d8b8c1ea5c9bd89d9c346a4b00d1"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3332/experiment20_step3332_hemisphere_placement_diagnosis.json",
+    "relative_path": "step_3_3/step_3332/experiment20_step3332_hemisphere_placement_diagnosis.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2995,
+    "sha256": "e93a53f2c6b60910cb4149267f9e99b1b668ea671fcb02f7a6211bfda261de83"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3333/experiment20_step3333_corrected_hemisphere_placement_verification.json",
+    "relative_path": "step_3_3/step_3333/experiment20_step3333_corrected_hemisphere_placement_verification.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2006,
+    "sha256": "4df7db529016a97f250edbd5f9936d3ed12e0e5fb11b650239a318514925ebef"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3334/experiment20_step3334_scientific_consistency_review.json",
+    "relative_path": "step_3_3/step_3334/experiment20_step3334_scientific_consistency_review.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 15347,
+    "sha256": "5659f6907c8c48f6b7ff9ecaff3f11ba63a73deab7144082f58c0cc3239a275c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3335/experiment20_step3335_table1_source_recovery.json",
+    "relative_path": "step_3_3/step_3335/experiment20_step3335_table1_source_recovery.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4546,
+    "sha256": "49d8fa2271d443eab4a16b32168ea6de0c7559f5d7e9d932c3ad096fbe0aa685"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_337/experiment20_consolidated_introduction.json",
+    "relative_path": "step_3_3/step_337/experiment20_consolidated_introduction.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 12112,
+    "sha256": "0213b60d4be87f2faebe977c58118a03833bdeaa61a6f9b37afd1262af93b4ff"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_337/experiment20_step337_introduction_audit.json",
+    "relative_path": "step_3_3/step_337/experiment20_step337_introduction_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2060,
+    "sha256": "e5b6dd62c6c1e5cba4eff84d497f998340f0f9617c0a86d151e2f3d148b9c1d2"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_338/experiment20_step3381_angular_grouping_literature_audit.json",
+    "relative_path": "step_3_3/step_338/experiment20_step3381_angular_grouping_literature_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2508,
+    "sha256": "bd7f85bacb5af4bbe061731c61f77f7297c73f602e25efba99e54f65502c1064"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_338/experiment20_step338_citation_verification_audit.json",
+    "relative_path": "step_3_3/step_338/experiment20_step338_citation_verification_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4874,
+    "sha256": "65e86049b81c2689c443dd3f0ebc089b6e924c9192fb76dcb28def6474ce8c86"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3382/experiment20_consolidated_introduction_v2.json",
+    "relative_path": "step_3_3/step_3382/experiment20_consolidated_introduction_v2.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 12798,
+    "sha256": "e8baa8e8847a66d507b5a549f5ccec44d94880e841553923dee20d3bbf5fce65"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3382/experiment20_step3382_citation_integration_audit.json",
+    "relative_path": "step_3_3/step_3382/experiment20_step3382_citation_integration_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 794,
+    "sha256": "c6536af6d14b030566ae22570bfa9408bcda6a52519ba7667f829760c95be13c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3383/experiment20_reference_list_apa7.json",
+    "relative_path": "step_3_3/step_3383/experiment20_reference_list_apa7.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3603,
+    "sha256": "c495fa2eca8471a474d9f2014e4e560f2f7236898a8f5bc98da32e95727121d2"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3384/experiment20_step3384_citation_consistency_audit.json",
+    "relative_path": "step_3_3/step_3384/experiment20_step3384_citation_consistency_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1142,
+    "sha256": "45f704b22dec48217a8f3fd35467d799f6c134e5bd8deb927bc28fc905bc41a8"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3385/experiment20_step3385_corrected_citation_audit.json",
+    "relative_path": "step_3_3/step_3385/experiment20_step3385_corrected_citation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1726,
+    "sha256": "7a28b97bd1f1e8507e3dd572f8d81d7846a64158041a61d11f42ac28e20d4e72"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3387/experiment20_step3387_final_citation_consistency_audit.json",
+    "relative_path": "step_3_3/step_3387/experiment20_step3387_final_citation_consistency_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1547,
+    "sha256": "8994597b1575627f1a2be6959444926e72bf29a0340e79e7e381e3c6c300b774"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3388/experiment20_step3388_final_apa7_citation_audit.json",
+    "relative_path": "step_3_3/step_3388/experiment20_step3388_final_apa7_citation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2009,
+    "sha256": "d29292180f4b4c546730795abdeedd8f7edf43a9376d1848bf9396175740d08f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3391/experiment20_step3391_research_design.json",
+    "relative_path": "step_3_3/step_3391/experiment20_step3391_research_design.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4689,
+    "sha256": "6e7d3914f26775390c32acee663eecd9e4f8a115cfd90ad21695cb9b76169bbc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3391/experiment20_step3391_research_design_audit.json",
+    "relative_path": "step_3_3/step_3391/experiment20_step3391_research_design_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1264,
+    "sha256": "9435dea336ef6857c6664a60a659feda73aaed22c8e69ca8c8212f0d79659c45"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33913/experiment20_step33913_angular_reconstruction_audit.json",
+    "relative_path": "step_3_3/step_33913/experiment20_step33913_angular_reconstruction_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1691,
+    "sha256": "4729271ebea66bb31495dd662f50482dece0ac978164e2c7c8471afde8723c05"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33915/experiment20_step33915_bootstrap_methodology_audit.json",
+    "relative_path": "step_3_3/step_33915/experiment20_step33915_bootstrap_methodology_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 610,
+    "sha256": "a3b2b075364c6a4d08b49ccd34ea5994a000ebcf7d4409693f996969a71f32af"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33915/experiment20_step33915_statistical_analysis.json",
+    "relative_path": "step_3_3/step_33915/experiment20_step33915_statistical_analysis.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4971,
+    "sha256": "f87dbfc53e1ebe2ad94bd2bef10521d6f56be8f1a07eaec2283322a324c791da"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33916/experiment20_step33916_editorial_correction_audit.json",
+    "relative_path": "step_3_3/step_33916/experiment20_step33916_editorial_correction_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1025,
+    "sha256": "ffeda7ae6a72c22bf365f7376a6e81e82c8771131e51bd30de9a13ac9d7391bc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33917/experiment20_step33917_final_methodology_audit.json",
+    "relative_path": "step_3_3/step_33917/experiment20_step33917_final_methodology_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1960,
+    "sha256": "afe40c4eb114d770500ee563048594e66e07191afb8b63710e50d69cc4c885e5"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33919/experiment20_step33919_corrected_methodology_audit.json",
+    "relative_path": "step_3_3/step_33919/experiment20_step33919_corrected_methodology_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5320,
+    "sha256": "2443eeba59c9d939dd3c4514df361cf2ce69e9675db2970f560247b24f655686"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3392/experiment20_step3392_dataset_provenance.json",
+    "relative_path": "step_3_3/step_3392/experiment20_step3392_dataset_provenance.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4594,
+    "sha256": "67450e548c16d1cc5880e33a85d114b70f1df76ced3017aa2f6b426bb916838c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3392/experiment20_step3392_dataset_provenance_audit.json",
+    "relative_path": "step_3_3/step_3392/experiment20_step3392_dataset_provenance_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1222,
+    "sha256": "f89584341660d96841c6ecc31d5df4cf83b06f644d93e1b95dc15d7df561f64a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3393/experiment20_step3393_subject_condition_selection.json",
+    "relative_path": "step_3_3/step_3393/experiment20_step3393_subject_condition_selection.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4654,
+    "sha256": "d890e17fd76312fd50004f8cca17927b179c2d1156a760b5c91af56d8457960c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3393/experiment20_step3393_subject_condition_selection_audit.json",
+    "relative_path": "step_3_3/step_3393/experiment20_step3393_subject_condition_selection_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1343,
+    "sha256": "330e86b09a2ab3c0814ba68d4829ad18a73fdf947ac0027a761b33e82c89db2a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3394/experiment20_step3394_reference_count_audit.json",
+    "relative_path": "step_3_3/step_3394/experiment20_step3394_reference_count_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 961,
+    "sha256": "58e4d575700daba58bcb24aaa9f41f17bbe532f61f4bab8bb4d4424f8fdc4fff"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3395/experiment20_step3395_face_preprocessing.json",
+    "relative_path": "step_3_3/step_3395/experiment20_step3395_face_preprocessing.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3331,
+    "sha256": "104aaf8e5e13c7e75039d25e3652eddfa6a1249b5020076ad436f2de7c280fa3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3395/experiment20_step3395_face_preprocessing_audit.json",
+    "relative_path": "step_3_3/step_3395/experiment20_step3395_face_preprocessing_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1062,
+    "sha256": "a6ec797bf5672319a267996310247ad290e924a09d641b4e0041837f94241f15"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3397/experiment20_step3397_reference_relative_distances.json",
+    "relative_path": "step_3_3/step_3397/experiment20_step3397_reference_relative_distances.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4550,
+    "sha256": "4d3e38663eef99e319bafaff2593b838ada44a4eb6ee10cd2a91ea152ececdbb"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3397/experiment20_step3397_reference_relative_distances_audit.json",
+    "relative_path": "step_3_3/step_3397/experiment20_step3397_reference_relative_distances_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 919,
+    "sha256": "1d4f464f57c153e8eae18880e61f1b6f3f1bd64a15f2d10ce2a24cb3fadafda3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3398/experiment20_step3398_illumination_geometry.json",
+    "relative_path": "step_3_3/step_3398/experiment20_step3398_illumination_geometry.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3377,
+    "sha256": "b06c5d845a6947fb10f1b835417f5d98cdeb1640e586db6a28b04f5817698ea7"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3398/experiment20_step3398_illumination_geometry_audit.json",
+    "relative_path": "step_3_3/step_3398/experiment20_step3398_illumination_geometry_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1033,
+    "sha256": "ce4b191e3ea9541aa90162e7081307b9545648d11dea91f52f1d0909a6e0902d"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3399/experiment20_step3399_statistical_analysis.json",
+    "relative_path": "step_3_3/step_3399/experiment20_step3399_statistical_analysis.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4595,
+    "sha256": "83fba3d4ded0caeb59ab3aa4289925df1c94b90e8ceaa3a9e6898d98dd26c792"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3399/experiment20_step3399_statistical_analysis_audit.json",
+    "relative_path": "step_3_3/step_3399/experiment20_step3399_statistical_analysis_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1303,
+    "sha256": "7059f08e8bd3de60adb7095dd8b5c7ef00d723b53c111c3ca22f28c9c8a70d43"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_4_results_interpretation/experiment20_phase34_results_statistical_interpretation_audit.json",
+    "relative_path": "step_3_4_results_interpretation/experiment20_phase34_results_statistical_interpretation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 5757,
+    "sha256": "d48b14add84ab0bb11a11fefff808b574b4835f8e0229eff7b12c9cb767e1db3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_5_discussion_limitations/experiment20_phase35_discussion_limitations_audit.json",
+    "relative_path": "step_3_5_discussion_limitations/experiment20_phase35_discussion_limitations_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 4126,
+    "sha256": "ea639c0c2767ca86be83909f8eb7568ca052e4e3922fa71290ffbb792c66c441"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_6_abstract_conclusion/experiment20_phase36_abstract_conclusion_audit.json",
+    "relative_path": "step_3_6_abstract_conclusion/experiment20_phase36_abstract_conclusion_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2620,
+    "sha256": "42376508c27c573bbdb2212899f4cf33f88fe289d6598467406297e21f963615"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_7_references_audit/experiment20_phase37_reference_citation_audit.json",
+    "relative_path": "step_3_7_references_audit/experiment20_phase37_reference_citation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 2871,
+    "sha256": "57d7b5b8a375fb31c5cbb182658ce71b15df108c4bcfdaa839ccbf4a81bb7595"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_1_dataset_cohort_audit/experiment20_phase41_dataset_cohort_audit.json",
+    "relative_path": "step_4_1_dataset_cohort_audit/experiment20_phase41_dataset_cohort_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 15179,
+    "sha256": "380c83174fe5ea09494f0d044630c4f86da9f517d30fe7d202c60e974d42450e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_1_dataset_cohort_audit/experiment20_phase41_dataset_cohort_reconciliation.json",
+    "relative_path": "step_4_1_dataset_cohort_audit/experiment20_phase41_dataset_cohort_reconciliation.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 564843,
+    "sha256": "2508cd22c2a7eab812a5c4129152c44cd3868d64d5beaafca8246b797a7ac9a1"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_2_pipeline_reproducibility/experiment20_phase42_pipeline_reproducibility_audit.json",
+    "relative_path": "step_4_2_pipeline_reproducibility/experiment20_phase42_pipeline_reproducibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 150662,
+    "sha256": "725267752a51e7bee3c3861d1c303791162a9d92025e9bcf76c97bebac552960"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_2_pipeline_reproducibility/experiment20_phase42_pipeline_reproducibility_audit_corrected.json",
+    "relative_path": "step_4_2_pipeline_reproducibility/experiment20_phase42_pipeline_reproducibility_audit_corrected.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 153359,
+    "sha256": "5ebd62f0b36541263bdce498a71d829492d159e56712ab7a3c3fd901b2b36865"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_3_displacement_calculation_audit/experiment20_phase43_displacement_calculation_audit.json",
+    "relative_path": "step_4_3_displacement_calculation_audit/experiment20_phase43_displacement_calculation_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 6039,
+    "sha256": "b9b1015dcc86353d71f4cb25f8b87066791e43a18176cebeba40b44789b82725"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_3_displacement_calculation_audit/experiment20_phase43_displacement_calculation_audit_corrected.json",
+    "relative_path": "step_4_3_displacement_calculation_audit/experiment20_phase43_displacement_calculation_audit_corrected.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 7596,
+    "sha256": "b2306667bb0fed608603b66a479c7f04be8a510a32e336209f982c727d3939cf"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_4_statistical_reproducibility/experiment20_phase44_statistical_reproducibility_audit.json",
+    "relative_path": "step_4_4_statistical_reproducibility/experiment20_phase44_statistical_reproducibility_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 35979,
+    "sha256": "026a40ccd17718d2762d13f8b45b5ca1f10cafdacd3c818a6a8d3b62c95dd3ef"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_4_statistical_reproducibility/experiment20_phase44_statistical_reproducibility_audit_corrected.json",
+    "relative_path": "step_4_4_statistical_reproducibility/experiment20_phase44_statistical_reproducibility_audit_corrected.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 16270,
+    "sha256": "9d7f9d825805ccc03d973d462c7427b2c8d11199cb7440e155af65d02718a214"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_phase45_sign_test_sensitivity_audit.json",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_phase45_sign_test_sensitivity_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3989,
+    "sha256": "e7951e7b891d6e3c3399aa82c299229ef14f3cc54067ede09d7d5598461d0d25"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_5_statistical_methodology_audit/experiment20_phase45_statistical_methodology_audit.json",
+    "relative_path": "step_4_5_statistical_methodology_audit/experiment20_phase45_statistical_methodology_audit.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 13162,
+    "sha256": "bf08cfbc118a7173962e3eb29e5b8987e049274645e0304ac0c570f569228237"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_4_7_final_manuscript_audit/experiment20_phase47_conclusion_insertion_record.json",
+    "relative_path": "step_4_7_final_manuscript_audit/experiment20_phase47_conclusion_insertion_record.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 1400,
+    "sha256": "ad5f66de442bcb195186b6e0e803f5c61a3465b411ecf1283fda92b5124f198a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_bibliography_verification_20261112T120443Z.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_bibliography_verification_20261112T120443Z.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 3088,
+    "sha256": "44c14c10d69f6776bdc385df0a29d53fbb73179c34c09874acc5f08bf0e568ef"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_corrected_audit_20261112T115428Z.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_corrected_audit_20261112T115428Z.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 19654,
+    "sha256": "bc9e7bce115b450f56be56d57f675bd2e5605d8de498ba17e017bc142f6e1455"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_final_consistency_audit_20261112T115101Z.json",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_final_consistency_audit_20261112T115101Z.json",
+    "category": "structured_metadata_or_audit",
+    "size_bytes": 152691,
+    "sha256": "93eaebc88820e3777e729c69061ab5d2e730924e52d41dbed41de05f669a3e4b"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/SHA256SUMS.txt",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/SHA256SUMS.txt",
+    "category": "supporting_documentation",
+    "size_bytes": 2887,
+    "sha256": "b36885cee5d2fd352b0fa4d2f62de7ab03ccd83a7c35cfbda97244a630016c5e"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset_SHA256.txt",
+    "relative_path": "Experiment_20_Stage_2_Frozen_Dataset_SHA256.txt",
+    "category": "supporting_documentation",
+    "size_bytes": 107,
+    "sha256": "44ad27e30a307776472d71d490ae39cb53f6e840109b9ff6f6bcc7514292b3be"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_2_7/final_freeze/experiment20_final_results_report.md",
+    "relative_path": "step_2_7/final_freeze/experiment20_final_results_report.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2419,
+    "sha256": "d21a5f7651b650059c373733a0dfea33327443f9641ae68d19f50c8ce17665b5"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3310/experiment20_methodology_3_9_hemisphere_analysis.md",
+    "relative_path": "step_3_3/step_3310/experiment20_methodology_3_9_hemisphere_analysis.md",
+    "category": "supporting_documentation",
+    "size_bytes": 1636,
+    "sha256": "6a709b0d0eca83d04c8b55f27e4d6a71fccee3d85df168b205cc45294e9e908c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33108/experiment20_results_section_draft_v1.md",
+    "relative_path": "step_3_3/step_33108/experiment20_results_section_draft_v1.md",
+    "category": "supporting_documentation",
+    "size_bytes": 5133,
+    "sha256": "72ad6035771e58c2380c27980db202758507e3f94ddaa501c804124bdbe94615"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3311/experiment20_discussion_section_draft_v1.md",
+    "relative_path": "step_3_3/step_3311/experiment20_discussion_section_draft_v1.md",
+    "category": "supporting_documentation",
+    "size_bytes": 12355,
+    "sha256": "ed78d4dfcf079d369ad775115ea4abe0cbd8f3f469ca1c9cc9fa81846c666125"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3311/experiment20_methodology_3_10_limitations_reproducibility.md",
+    "relative_path": "step_3_3/step_3311/experiment20_methodology_3_10_limitations_reproducibility.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2210,
+    "sha256": "e590fcca054a085506adf38652560e1917fd3f574dc135387e770bb49bff0039"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_337/experiment20_consolidated_introduction.md",
+    "relative_path": "step_3_3/step_337/experiment20_consolidated_introduction.md",
+    "category": "supporting_documentation",
+    "size_bytes": 10968,
+    "sha256": "353d741b5de5b194a3c9c9ac17d969eb6dd12d5d4c01acb5cf1e927c0ae8ed7c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3382/experiment20_consolidated_introduction_v2.md",
+    "relative_path": "step_3_3/step_3382/experiment20_consolidated_introduction_v2.md",
+    "category": "supporting_documentation",
+    "size_bytes": 11459,
+    "sha256": "777a130c75f9dfb7d47b9143b1ba0a219ae7efaf7221744e762ad7c7ca38e33c"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3383/experiment20_reference_list_apa7.md",
+    "relative_path": "step_3_3/step_3383/experiment20_reference_list_apa7.md",
+    "category": "supporting_documentation",
+    "size_bytes": 1029,
+    "sha256": "299d86ecfed0a860db8de719c5d31d2dceb3bae05e850dc767beeb8f841b22d7"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3384/experiment20_consolidated_introduction_apa7_corrected.md",
+    "relative_path": "step_3_3/step_3384/experiment20_consolidated_introduction_apa7_corrected.md",
+    "category": "supporting_documentation",
+    "size_bytes": 11447,
+    "sha256": "ca3ab908d847959898ace51269ca4ecf5f0103e86cd5d4cc03d2dd1f0c95166f"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3391/experiment20_methodology_3_1_research_design.md",
+    "relative_path": "step_3_3/step_3391/experiment20_methodology_3_1_research_design.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2734,
+    "sha256": "f9cb13daa5a1b58fb3433417f1ed0429aab1207d14ecebbf42f3908e69b4c6ab"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33915/experiment20_methodology_3_8_statistical_analysis_v2.md",
+    "relative_path": "step_3_3/step_33915/experiment20_methodology_3_8_statistical_analysis_v2.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2632,
+    "sha256": "ed86e780323d7dbb332c035fa9038da36fd0db64f2aee004720496c8ec0e37db"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_33916/experiment20_methodology_3_8_statistical_analysis_v3.md",
+    "relative_path": "step_3_3/step_33916/experiment20_methodology_3_8_statistical_analysis_v3.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2392,
+    "sha256": "229c12aa9a3393472e1dfd7c8cf827ef62e176f7e81535b590145382ab96ddbc"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3392/experiment20_methodology_3_2_dataset_provenance.md",
+    "relative_path": "step_3_3/step_3392/experiment20_methodology_3_2_dataset_provenance.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2490,
+    "sha256": "fe94ff53746516a8e7ce25a8edcb602daeb7dd06d0e6532a7940d1d1ecfc25c8"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3393/experiment20_methodology_3_3_subject_condition_selection.md",
+    "relative_path": "step_3_3/step_3393/experiment20_methodology_3_3_subject_condition_selection.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2406,
+    "sha256": "8356f660cd9813c4a4b2ea7f28cd38c6dd5645a42d15a45a50b92684764a96c3"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3395/experiment20_methodology_3_4_face_preprocessing.md",
+    "relative_path": "step_3_3/step_3395/experiment20_methodology_3_4_face_preprocessing.md",
+    "category": "supporting_documentation",
+    "size_bytes": 1513,
+    "sha256": "4d521282ec97ad02566a28715e17bcfeaf637fb93f865ee41b9babf6161faab5"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3397/experiment20_methodology_3_6_reference_relative_distances.md",
+    "relative_path": "step_3_3/step_3397/experiment20_methodology_3_6_reference_relative_distances.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2346,
+    "sha256": "6a623d38aed2351cd5ac7aa1dd386e9f58bce81d97c292757c3b14ca05743216"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3398/experiment20_methodology_3_7_illumination_geometry.md",
+    "relative_path": "step_3_3/step_3398/experiment20_methodology_3_7_illumination_geometry.md",
+    "category": "supporting_documentation",
+    "size_bytes": 1686,
+    "sha256": "45c2815d424c0961270b8f95ce53ac267bc376f86a54a9f7b0c9940a2d5b8ecb"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3399/experiment20_methodology_3_8_statistical_analysis.md",
+    "relative_path": "step_3_3/step_3399/experiment20_methodology_3_8_statistical_analysis.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2325,
+    "sha256": "e9c897d23d77ff1273badf32bae4a77f1c7e95d6aa2728d230fc814a54371d04"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_bibliography_verification_20261112T120443Z.md",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_bibliography_verification_20261112T120443Z.md",
+    "category": "supporting_documentation",
+    "size_bytes": 2148,
+    "sha256": "bb69b85c98d096f2f2814c33a9b2059fdaed3fba3f97efe6568f22bc8c20fb33"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_corrected_audit_20261112T115428Z.md",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_corrected_audit_20261112T115428Z.md",
+    "category": "supporting_documentation",
+    "size_bytes": 5969,
+    "sha256": "52270295d1971888a490081bf816618cad4cc4299c55ef7b69fe9e8ff38d5c6a"
+  },
+  {
+    "path": "/content/drive/MyDrive/Experiment_20_Results/step_5_1_final_consistency_review/experiment20_phase51_final_consistency_audit_20261112T115101Z.md",
+    "relative_path": "step_5_1_final_consistency_review/experiment20_phase51_final_consistency_audit_20261112T115101Z.md",
+    "category": "supporting_documentation",
+    "size_bytes": 7677,
+    "sha256": "5ab5962ff88a21065eebec28745a21665d136bc3c3f5a4413959ab8c7c75e7bf"
+  }
+]

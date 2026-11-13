@@ -1,0 +1,375 @@
+{
+  "experiment": "Experiment 20",
+  "phase": "Phase 4.7",
+  "audit_name": "Final Manuscript Scientific and Structural Audit",
+  "audit_timestamp_utc": "2026-11-12T11:30:58.374328+00:00",
+  "audit_mode": "READ_ONLY",
+  "audit_status": "PHASE_4_7_AUTOMATED_CHECKS_FAILED_PENDING_REVIEW",
+  "source_manuscript": "/content/drive/MyDrive/Experiment_20_Results/step_4_6_manuscript_reporting_audit/experiment20_integrated_manuscript_v2_phase46_final.md",
+  "expected_source_sha256": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1",
+  "source_sha256_before": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1",
+  "source_sha256_after": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1",
+  "source_hash_matches_expected": true,
+  "structural_inventory": {
+    "title": {
+      "present": true,
+      "matching_headings": []
+    },
+    "abstract": {
+      "present": true,
+      "matching_headings": [
+        "Abstract"
+      ]
+    },
+    "introduction": {
+      "present": true,
+      "matching_headings": [
+        "1. Introduction"
+      ]
+    },
+    "research_objectives": {
+      "present": true,
+      "matching_headings": [
+        "1.4 Research Questions and Objectives"
+      ]
+    },
+    "related_work": {
+      "present": true,
+      "matching_headings": [
+        "1.1 Background: Face Recognition and Deep Face Embeddings"
+      ]
+    },
+    "methodology": {
+      "present": true,
+      "matching_headings": [
+        "2. Methodology"
+      ]
+    },
+    "results": {
+      "present": true,
+      "matching_headings": [
+        "3. Results"
+      ]
+    },
+    "discussion": {
+      "present": true,
+      "matching_headings": [
+        "4. Discussion",
+        "4.8 Overall discussion"
+      ]
+    },
+    "limitations": {
+      "present": true,
+      "matching_headings": [
+        "2.10 Methodological Limitations and Reproducibility",
+        "4.6 Limitations"
+      ]
+    },
+    "conclusion": {
+      "present": false,
+      "matching_headings": []
+    },
+    "references": {
+      "present": true,
+      "matching_headings": [
+        "References"
+      ]
+    }
+  },
+  "heading_inventory": [
+    "Reference-Relative Face Embedding Displacement Across Illumination Geometry Conditions: An Identity-Level Empirical Study",
+    "Abstract",
+    "Keywords",
+    "1. Introduction",
+    "1.1 Background: Face Recognition and Deep Face Embeddings",
+    "1.2 Illumination Variation and Its Effect on Facial Representations",
+    "1.3 Research Gap and Motivation",
+    "1.4 Research Questions and Objectives",
+    "1.5 Study Contributions and Scope",
+    "2. Methodology",
+    "2.1 Research Design and Experimental Overview",
+    "2.2 Dataset and Acquisition Provenance",
+    "2.3 Subject Selection and Illumination-Condition Coverage",
+    "2.4 Face-Image Preprocessing",
+    "2.5 FaceNet Architecture and Embedding Extraction",
+    "2.6 Embedding Normalisation and Reference-Relative Distance Calculation",
+    "2.7 Illumination Geometry Classification",
+    "2.8 Statistical Analysis",
+    "2.9 Exploratory Hemisphere-Based Analysis",
+    "2.10 Methodological Limitations and Reproducibility",
+    "3. Results",
+    "3.1 Evaluation cohort and analysis coverage",
+    "3.2 Overall reference-relative embedding displacement",
+    "3.3 Displacement across illumination geometry groups",
+    "Table 1. Descriptive statistics by illumination geometry group",
+    "3.4 Identity-level repeated-measures analysis",
+    "Table 2. Identity-level pairwise comparisons",
+    "3.5 Exploratory frontal and beyond-frontal comparison",
+    "3.6 Summary of findings",
+    "4. Discussion",
+    "4.1 Principal findings",
+    "4.2 Interpretation of illumination geometry and embedding displacement",
+    "4.3 Identity-level consistency and statistical evidence",
+    "4.4 Relationship to previous illumination research",
+    "4.5 Implications for face-embedding evaluation",
+    "4.6 Limitations",
+    "4.7 Future research directions",
+    "4.8 Overall discussion",
+    "References"
+  ],
+  "duplicate_headings": {},
+  "figure_inventory": [
+    {
+      "alt_text": "Identity-level Euclidean displacement across near-frontal, oblique, and large-angular-deviation illumination groups.",
+      "reference": "../step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+      "resolved_path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+      "exists": true
+    },
+    {
+      "alt_text": "Identity-level cosine distance across near-frontal, oblique, and large-angular-deviation illumination groups.",
+      "reference": "../step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+      "resolved_path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+      "exists": true
+    },
+    {
+      "alt_text": "Paired identity-level Euclidean displacement for frontal and beyond-frontal illumination hemispheres.",
+      "reference": "../step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+      "resolved_path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+      "exists": true
+    },
+    {
+      "alt_text": "Paired identity-level cosine distance for frontal and beyond-frontal illumination hemispheres.",
+      "reference": "../step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+      "resolved_path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+      "exists": true
+    }
+  ],
+  "figure_caption_headings": [],
+  "table_inventory": {
+    "markdown_table_count": 2,
+    "table_caption_headings": [
+      "Table 1. Descriptive statistics by illumination geometry group",
+      "Table 2. Identity-level pairwise comparisons"
+    ],
+    "table_heading_count": 2,
+    "table_row_counts": [
+      5,
+      8
+    ]
+  },
+  "statistical_reporting_inventory": {
+    "Friedman test": {
+      "occurrences": 4,
+      "present": true
+    },
+    "Wilcoxon signed-rank": {
+      "occurrences": 5,
+      "present": true
+    },
+    "Holm correction": {
+      "occurrences": 12,
+      "present": true
+    },
+    "Bootstrap confidence interval": {
+      "occurrences": 7,
+      "present": true
+    },
+    "Mean paired difference": {
+      "occurrences": 3,
+      "present": true
+    },
+    "Identity-level analysis": {
+      "occurrences": 33,
+      "present": true
+    }
+  },
+  "methodological_limitations_inventory": {
+    "different captures": {
+      "phrase_present": true
+    },
+    "one common reference": {
+      "phrase_present": true
+    },
+    "FaceNet": {
+      "phrase_present": true
+    },
+    "false acceptance rate": {
+      "phrase_present": false
+    },
+    "false rejection rate": {
+      "phrase_present": false
+    },
+    "fairness": {
+      "phrase_present": true
+    },
+    "hemisphere": {
+      "phrase_present": true
+    },
+    "Euclidean displacement": {
+      "phrase_present": true
+    },
+    "statistical independence between identities": {
+      "phrase_present": true
+    },
+    "real-time drift detection": {
+      "phrase_present": false
+    }
+  },
+  "citation_inventory": {
+    "numeric_citation_occurrences": 0,
+    "author_year_citation_occurrences": 1,
+    "bibliography_section_found": true,
+    "bibliography_entry_count": 4,
+    "possible_duplicate_entries": [],
+    "bibliography_entries": [
+      "Beveridge, J. R., Draper, B. A., Chang, J.-M., Kirby, M., Kley, H., & Peterson, C. (2009). Principal angles separate subject illumination spaces in YDB and CMU-PIE. *IEEE Transactions on Pattern Analysis and Machine Intelligence, 31*(2), 351–363. https://doi.org/10.1109/TPAMI.2008.200",
+      "Han, H., Shan, S., Chen, X., & Gao, W. (2013). A comparative study on illumination preprocessing in face recognition. *Pattern Recognition, 46*(6), 1691–1699. https://doi.org/10.1016/j.patcog.2012.11.022",
+      "Moses, Y., Adini, Y., & Ullman, S. (1994). Face recognition: The problem of compensating for changes in illumination direction. In J.-O. Eklundh (Ed.), *Computer vision—ECCV 1994* (Vol. 800, pp. 286–296). Springer. https://doi.org/10.1007/3-540-57956-7_33",
+      "Ochoa-Villegas, M. A., Nolazco-Flores, J. A., Barron-Cano, O., & Kakadiaris, I. A. (2015). Addressing the illumination challenge in two-dimensional face recognition: A survey. *IET Computer Vision, 9*(6), 978–992. https://doi.org/10.1049/iet-cvi.2014.0086"
+    ],
+    "manual_citation_source_verification_required": true
+  },
+  "preservation_inventory": {
+    "phase45_manuscript": {
+      "exists": true,
+      "expected_sha256": "eb175d98a9018797a712e90614ace8972d2589bc1ecfd54fb59b76bdebf203e3",
+      "actual_sha256": "eb175d98a9018797a712e90614ace8972d2589bc1ecfd54fb59b76bdebf203e3",
+      "hash_matches": true
+    },
+    "phase44_statistical_report": {
+      "exists": true,
+      "expected_sha256": "9d7f9d825805ccc03d973d462c7427b2c8d11199cb7440e155af65d02718a214",
+      "actual_sha256": "9d7f9d825805ccc03d973d462c7427b2c8d11199cb7440e155af65d02718a214",
+      "hash_matches": true
+    }
+  },
+  "unavailable_preservation_checks": [],
+  "automated_checks": [
+    {
+      "check": "phase46_source_hash_matches_verified_hash",
+      "status": "PASS",
+      "details": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1"
+    },
+    {
+      "check": "structure_title_identified",
+      "status": "PASS",
+      "details": "[]"
+    },
+    {
+      "check": "structure_abstract_identified",
+      "status": "PASS",
+      "details": "['Abstract']"
+    },
+    {
+      "check": "structure_methodology_identified",
+      "status": "PASS",
+      "details": "['2. Methodology']"
+    },
+    {
+      "check": "structure_results_identified",
+      "status": "PASS",
+      "details": "['3. Results']"
+    },
+    {
+      "check": "structure_limitations_identified",
+      "status": "PASS",
+      "details": "['2.10 Methodological Limitations and Reproducibility', '4.6 Limitations']"
+    },
+    {
+      "check": "structure_conclusion_identified",
+      "status": "FAIL",
+      "details": "[]"
+    },
+    {
+      "check": "structure_references_identified",
+      "status": "PASS",
+      "details": "['References']"
+    },
+    {
+      "check": "exactly_four_local_figure_references",
+      "status": "PASS",
+      "details": "Found 4 local image references."
+    },
+    {
+      "check": "all_local_figure_files_exist",
+      "status": "PASS",
+      "details": "['../step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png', '../step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png', '../step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png', '../step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png']"
+    },
+    {
+      "check": "table1_caption_identified",
+      "status": "PASS",
+      "details": "['Table 1. Descriptive statistics by illumination geometry group', 'Table 2. Identity-level pairwise comparisons']"
+    },
+    {
+      "check": "table2_caption_identified",
+      "status": "PASS",
+      "details": "['Table 1. Descriptive statistics by illumination geometry group', 'Table 2. Identity-level pairwise comparisons']"
+    },
+    {
+      "check": "identity_independence_qualification_retained",
+      "status": "PASS",
+      "details": "Exact qualification phrase searched."
+    },
+    {
+      "check": "bibliography_section_identified",
+      "status": "PASS",
+      "details": "Entries detected: 4"
+    },
+    {
+      "check": "phase45_manuscript_preservation_hash_matches",
+      "status": "PASS",
+      "details": "{'exists': True, 'expected_sha256': 'eb175d98a9018797a712e90614ace8972d2589bc1ecfd54fb59b76bdebf203e3', 'actual_sha256': 'eb175d98a9018797a712e90614ace8972d2589bc1ecfd54fb59b76bdebf203e3', 'hash_matches': True}"
+    },
+    {
+      "check": "phase44_statistical_report_preservation_hash_matches",
+      "status": "PASS",
+      "details": "{'exists': True, 'expected_sha256': '9d7f9d825805ccc03d973d462c7427b2c8d11199cb7440e155af65d02718a214', 'actual_sha256': '9d7f9d825805ccc03d973d462c7427b2c8d11199cb7440e155af65d02718a214', 'hash_matches': True}"
+    },
+    {
+      "check": "phase46_manuscript_unchanged_during_audit",
+      "status": "PASS",
+      "details": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1"
+    }
+  ],
+  "failed_check_count": 1,
+  "failed_checks": [
+    {
+      "check": "structure_conclusion_identified",
+      "status": "FAIL",
+      "details": "[]"
+    }
+  ],
+  "manual_review_requirements": [
+    {
+      "area": "Scientific consistency",
+      "task": "Read objectives, methodology, results and conclusions together."
+    },
+    {
+      "area": "Dataset reporting",
+      "task": "Compare manuscript dataset counts against the frozen evaluation evidence."
+    },
+    {
+      "area": "Statistical interpretation",
+      "task": "Verify interpretation against the Phase 4.4 report without substituting other tests."
+    },
+    {
+      "area": "Citation accuracy",
+      "task": "Open and verify each cited original source and its bibliographic details."
+    },
+    {
+      "area": "Figure and table interpretation",
+      "task": "Check that surrounding discussion accurately describes the displayed evidence."
+    },
+    {
+      "area": "Abstract and conclusion",
+      "task": "Check for unsupported recognition, fairness, causality or deployment claims."
+    },
+    {
+      "area": "Publication readiness",
+      "task": "Conduct an expert-level scientific and editorial review."
+    }
+  ],
+  "scientific_validity_independently_established": false,
+  "publication_readiness_established": false,
+  "manuscript_modified": false
+}

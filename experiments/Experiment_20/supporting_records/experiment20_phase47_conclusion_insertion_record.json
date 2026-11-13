@@ -1,0 +1,31 @@
+{
+  "experiment": "Experiment 20",
+  "phase": "Phase 4.7",
+  "operation": "Conclusion insertion",
+  "timestamp_utc": "2026-11-12T11:35:43.683274+00:00",
+  "source_path": "/content/drive/MyDrive/Experiment_20_Results/step_4_6_manuscript_reporting_audit/experiment20_integrated_manuscript_v2_phase46_final.md",
+  "output_path": "/content/drive/MyDrive/Experiment_20_Results/step_4_7_final_manuscript_audit/experiment20_integrated_manuscript_v2_phase47_final.md",
+  "source_sha256": "35e6943f8dc79ac4f646c93b809430419e2064d7c2dbabd7af4b56159f6a2ac1",
+  "output_sha256": "90fc0f20040b11ca3d1f7b22218964015a6a0f707814c8dfcf482c26cdcd620d",
+  "source_word_count": 7276,
+  "output_word_count": 7654,
+  "checks": {
+    "source_hash_matches": true,
+    "source_manuscript_unchanged": true,
+    "new_manuscript_exists": true,
+    "new_manuscript_matches_expected_content": true,
+    "conclusion_inserted_once": true,
+    "conclusion_precedes_references": true,
+    "original_content_preserved": true,
+    "all_four_figure_references_retained": true,
+    "table1_caption_retained": true,
+    "table2_caption_retained": true,
+    "independence_limitation_retained": true,
+    "references_section_retained": true,
+    "new_manuscript_sha256_generated": true
+  },
+  "failed_checks": [],
+  "source_modified": false,
+  "previous_phase_records_modified": false,
+  "status": "PHASE_4_7_CONCLUSION_INSERTION_VERIFIED"
+}

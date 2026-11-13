@@ -1,0 +1,202 @@
+{
+  "experiment": "Experiment 20",
+  "phase": "5.5",
+  "title": "Final Project Closure and Completion Report",
+  "timestamp_utc": "2026-11-12T12:35:36.926922+00:00",
+  "final_administrative_status": "ADMINISTRATIVELY_CLOSED",
+  "phase_summary": {
+    "Phase 5.2": {
+      "report_path": "/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.json",
+      "recorded_status": "PASS",
+      "timestamp_utc": "2026-11-12T12:29:32.960406+00:00",
+      "status_counts": {
+        "PASS": 11,
+        "FAIL": 0,
+        "REVIEW": 0
+      }
+    },
+    "Phase 5.3": {
+      "report_path": "/content/drive/MyDrive/Experiment_20_Results/step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.json",
+      "recorded_status": "PASS",
+      "timestamp_utc": "2026-11-12T12:32:09.691881+00:00",
+      "status_counts": {
+        "PASS": 9,
+        "FAIL": 0,
+        "REVIEW": 0
+      }
+    },
+    "Phase 5.4": {
+      "report_path": "/content/drive/MyDrive/Experiment_20_Results/step_5_4_documentation_repository_consolidation/experiment20_phase54_consolidation_report_20261112T123333Z.json",
+      "recorded_status": "PASS",
+      "timestamp_utc": "2026-11-12T12:33:33.874432+00:00",
+      "status_counts": {
+        "PASS": 14,
+        "FAIL": 0,
+        "REVIEW": 0
+      }
+    }
+  },
+  "verified_deliverables": [
+    {
+      "name": "Experiment 20 notebook",
+      "path": "/content/drive/MyDrive/Colab Notebooks/Experiment 20: Paired Identity-Level Evaluation of Within-Identity Embedding Drift Detection Under Multiple Controlled Biometric Acquisition Changes.ipynb",
+      "size_bytes": 5984597,
+      "sha256": "9191a3d6c5fb88cf618eb011c59672437e67fd1889eae6eec6c6b0781da17b7f"
+    },
+    {
+      "name": "Integrated manuscript v2",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/experiment20_integrated_manuscript_v2.md",
+      "size_bytes": 55248,
+      "sha256": "2cc4156af63987fae717c37e997e6478e4253d81f584854fb5fab9f18da5e752"
+    },
+    {
+      "name": "Frozen Stage 2 dataset archive",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset.zip",
+      "size_bytes": 67496777,
+      "sha256": "d65c657861e093c50f54666deb63185e5ac72af65ef450610f2ea98502b26339"
+    },
+    {
+      "name": "FaceNet embedding output",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/embeddings/experiment20_croppedyale_facenet_embeddings.npz",
+      "size_bytes": 4597741,
+      "sha256": "127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+    },
+    {
+      "name": "Final experiment closure report",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3336/experiment20_step3336_final_integrity_and_closure_report.json",
+      "size_bytes": 8405,
+      "sha256": "b41f8899cef4aed09d53eb615bb995eeec088545e548a9ac09d2d090ce9af66b"
+    },
+    {
+      "name": "Research figure — experiment20_figure1_euclidean_illumination_groups.png",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+      "size_bytes": 892771,
+      "sha256": "71623f613dc8202cf5cf6ff7bea005b315e4a31de73841d064c896b24e565b16"
+    },
+    {
+      "name": "Research figure — experiment20_figure2_cosine_illumination_groups.png",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+      "size_bytes": 882531,
+      "sha256": "de22ee98a909ef099199f5b49911633497c2c890d9d903224131f95db54c917c"
+    },
+    {
+      "name": "Research figure — experiment20_figure3_euclidean_hemisphere_comparison.png",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+      "size_bytes": 792089,
+      "sha256": "5a55b8947698a35dd20a258a4d185b927a64ccdac4a4b18d8aad4bd6d35fc0c6"
+    },
+    {
+      "name": "Research figure — experiment20_figure4_cosine_hemisphere_comparison.png",
+      "path": "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png",
+      "size_bytes": 789978,
+      "sha256": "0a06e0a5458ec2779aee94778f59fd576e585f8fc85fdd3e82afb6c91211851c"
+    }
+  ],
+  "research_figures": [
+    "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure1_euclidean_illumination_groups.png",
+    "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure2_cosine_illumination_groups.png",
+    "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure3_euclidean_hemisphere_comparison.png",
+    "/content/drive/MyDrive/Experiment_20_Results/step_3_3/step_3330/figures/experiment20_figure4_cosine_hemisphere_comparison.png"
+  ],
+  "documentation": {
+    "readme_files": [
+      "/content/drive/MyDrive/Experiment_20_Results/Experiment_20_Stage_2_Frozen_Dataset/Experiment_20_Stage_2_Frozen_Dataset/README.md"
+    ],
+    "artifact_index_path": "/content/drive/MyDrive/Experiment_20_Results/step_5_4_documentation_repository_consolidation/experiment20_consolidated_artifact_index_20261112T123333Z.json"
+  },
+  "limitations": [
+    "The integrity checks verify artifact consistency and file readability; they do not independently reproduce the experiments.",
+    "The evaluated results do not, by themselves, establish real-world biometric recognition accuracy or deployment readiness.",
+    "Fairness claims require appropriate dedicated evaluation and supporting evidence.",
+    "No local Git repository was detected inside the Experiment 20 results directory or its parent directories during Phase 5.4.",
+    "Publication acceptance has not been established by these administrative closure checks."
+  ],
+  "closure_checks": [
+    {
+      "check": "Phase 5.2 report status",
+      "status": "PASS",
+      "details": "Recorded status=PASS; report=/content/drive/MyDrive/Experiment_20_Results/step_5_2_reproducibility_integrity_review/experiment20_phase52_consolidated_audit_20261112T122932Z.json"
+    },
+    {
+      "check": "Phase 5.3 report status",
+      "status": "PASS",
+      "details": "Recorded status=PASS; report=/content/drive/MyDrive/Experiment_20_Results/step_5_3_final_artifact_verification/experiment20_phase53_final_artifact_verification_20261112T123209Z.json"
+    },
+    {
+      "check": "Phase 5.4 report status",
+      "status": "PASS",
+      "details": "Recorded status=PASS; report=/content/drive/MyDrive/Experiment_20_Results/step_5_4_documentation_repository_consolidation/experiment20_phase54_consolidation_report_20261112T123333Z.json"
+    },
+    {
+      "check": "Final deliverable: Experiment 20 notebook",
+      "status": "PASS",
+      "details": "Present; size=5984597 bytes; SHA256=9191a3d6c5fb88cf618eb011c59672437e67fd1889eae6eec6c6b0781da17b7f"
+    },
+    {
+      "check": "Final deliverable: Integrated manuscript v2",
+      "status": "PASS",
+      "details": "Present; size=55248 bytes; SHA256=2cc4156af63987fae717c37e997e6478e4253d81f584854fb5fab9f18da5e752"
+    },
+    {
+      "check": "Final deliverable: Frozen Stage 2 dataset archive",
+      "status": "PASS",
+      "details": "Present; size=67496777 bytes; SHA256=d65c657861e093c50f54666deb63185e5ac72af65ef450610f2ea98502b26339"
+    },
+    {
+      "check": "Final deliverable: FaceNet embedding output",
+      "status": "PASS",
+      "details": "Present; size=4597741 bytes; SHA256=127ffb6e71b871ebab9ed10fd8ce5f2b78b9f3971db4075cf14b44f7df2d3c4c"
+    },
+    {
+      "check": "Final deliverable: Final experiment closure report",
+      "status": "PASS",
+      "details": "Present; size=8405 bytes; SHA256=b41f8899cef4aed09d53eb615bb995eeec088545e548a9ac09d2d090ce9af66b"
+    },
+    {
+      "check": "Final deliverable: Research figure — experiment20_figure1_euclidean_illumination_groups.png",
+      "status": "PASS",
+      "details": "Present; size=892771 bytes; SHA256=71623f613dc8202cf5cf6ff7bea005b315e4a31de73841d064c896b24e565b16"
+    },
+    {
+      "check": "Final deliverable: Research figure — experiment20_figure2_cosine_illumination_groups.png",
+      "status": "PASS",
+      "details": "Present; size=882531 bytes; SHA256=de22ee98a909ef099199f5b49911633497c2c890d9d903224131f95db54c917c"
+    },
+    {
+      "check": "Final deliverable: Research figure — experiment20_figure3_euclidean_hemisphere_comparison.png",
+      "status": "PASS",
+      "details": "Present; size=792089 bytes; SHA256=5a55b8947698a35dd20a258a4d185b927a64ccdac4a4b18d8aad4bd6d35fc0c6"
+    },
+    {
+      "check": "Final deliverable: Research figure — experiment20_figure4_cosine_hemisphere_comparison.png",
+      "status": "PASS",
+      "details": "Present; size=789978 bytes; SHA256=0a06e0a5458ec2779aee94778f59fd576e585f8fc85fdd3e82afb6c91211851c"
+    },
+    {
+      "check": "Research figure collection",
+      "status": "PASS",
+      "details": "All 4 identified figure files were indexed."
+    },
+    {
+      "check": "Project README documentation",
+      "status": "PASS",
+      "details": "Found 1 readable README files."
+    },
+    {
+      "check": "Consolidated artifact index",
+      "status": "PASS",
+      "details": "Readable index; entries=274; path=/content/drive/MyDrive/Experiment_20_Results/step_5_4_documentation_repository_consolidation/experiment20_consolidated_artifact_index_20261112T123333Z.json"
+    },
+    {
+      "check": "Final administrative closure decision",
+      "status": "PASS",
+      "details": "Final status=ADMINISTRATIVELY_CLOSED; phase statuses={'Phase 5.2': 'PASS', 'Phase 5.3': 'PASS', 'Phase 5.4': 'PASS'}"
+    }
+  ],
+  "environment": {
+    "python_version": "3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "results_root": "/content/drive/MyDrive/Experiment_20_Results"
+  },
+  "interpretation": "Administrative closure is based on the recorded successful outcomes of Phases 5.2, 5.3, and 5.4 and the final deliverable checks performed in Phase 5.5. It does not constitute independent scientific validation, publication acceptance, or deployment approval."
+}
