@@ -450,6 +450,7 @@ baseline alarm behaviour remains a significant unresolved limitation.
 These findings should be treated as preliminary evidence about
 embedding-level detector sensitivity.
 
+
 ## Experiment 13: False-Alarm-Controlled Embedding-Level Drift Detection
 
 Experiment 13 investigates threshold-calibrated and sequential drift detection using synthetic embedding distributions and an exploratory real-image embedding pilot. The work progresses from synthetic robustness analysis to controlled LFW brightness transformations, sequential CUSUM evaluation, fresh-identity stream validation, and repeated bootstrap resampling.
@@ -573,7 +574,7 @@ A further exploratory evaluation performs 20 paired resampling replicates for ea
 | Brightness 0.70 | 20 | 40% | 90% |
 | Brightness 1.30 | 20 | 40% | 100% |
 
-These figures count any alarm at or after window 10, including alarms that occurred after an earlier pre-onset alarm. They must not be interpreted as valid first Post-onset alarm rate (all replicates).
+These figures count any alarm at or after window 10, including alarms that occurred after an earlier pre-onset alarm. They must not be interpreted as valid first post-onset alarm rates.
 
 #### Mutually exclusive first-alarm classification
 
@@ -638,6 +639,135 @@ Environment and model configuration records:
 - [`Experiment_13_FaceNet_Model_Configuration.txt`](results/Experiment_13_FaceNet_Model_Configuration.txt)
 - [`Experiment_13_LFW_Dataset_Configuration.txt`](results/Experiment_13_LFW_Dataset_Configuration.txt)
 
+### Embedding Provenance and Reproducibility Audit
+
+#### 1. Audit Objective
+
+A provenance audit was conducted to investigate the correspondence between the regenerated embedding matrix, its associated metadata, and the original Labeled Faces in the Wild (LFW) images.
+
+The original embedding-generation pipeline preserved identity labels and sequential dataset indices but did not record the corresponding image filenames or paths. Therefore, direct verification of the original image-to-embedding mapping was not possible from the saved metadata alone.
+
+#### 2. Verified Dataset and Model Configuration
+
+| Property | Verified result |
+|---|---|
+| Dataset | Labeled Faces in the Wild (LFW) |
+| Total images | 13,233 |
+| Total identities | 5,749 |
+| Embedding dimension | 512 |
+| Embedding data type | float32 |
+| Embedding model | FaceNet / Inception-ResNet-v1 |
+| `keras-facenet` version | 0.3.2 |
+
+The LFW source archive was verified using SHA-256:
+
+```text
+055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0
+```
+
+The pretrained FaceNet weights were verified using SHA-256:
+
+```text
+8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
+```
+
+#### 3. Reconstruction and Matching Method
+
+Fresh FaceNet embeddings were independently generated from the verified LFW image archive.
+
+The regenerated embedding matrix was compared against the independently recomputed embedding matrix using identity-constrained cosine similarity matching. A one-to-one Hungarian assignment was performed within each identity group to establish image-level correspondence.
+
+#### 4. Image-Level Correspondence Results
+
+| Validation metric | Result |
+|---|---:|
+| Total embedding rows matched | 13,233 |
+| Unmatched rows | 0 |
+| Unique image assignments | True |
+| Identity consistency | 13,233 / 13,233 |
+| Minimum cosine similarity | 0.997429 |
+| Median cosine similarity | 0.999820 |
+| Mean cosine similarity | 0.999795 |
+| Maximum cosine similarity | 0.999970 |
+
+All 13,233 embedding rows were assigned to unique images, with identity consistency maintained throughout the matching process.
+
+#### 5. Numerical Similarity Analysis
+
+After aligning the independently generated embeddings with their assigned image positions, numerical differences were evaluated.
+
+| Metric | Result |
+|---|---:|
+| Median L2 difference | 0.018968 |
+| Mean L2 difference | 0.019624 |
+| Maximum L2 difference | 0.071707 |
+| Mean absolute element-wise difference | 0.000696 |
+| Median cosine similarity | 0.999820 |
+| Minimum cosine similarity | 0.997429 |
+
+The regenerated and independently recomputed embedding matrices exhibited nearly identical vector norm distributions, with norms approximately equal to 1.
+
+Despite the high cosine similarity, the embedding vectors were not numerically identical. Exact numerical reproducibility has therefore not been established.
+
+#### 6. Dataset and Metadata Verification
+
+The regenerated metadata contained 13,233 unique, consecutive dataset indices ranging from 0 to 13,232.
+
+Additional checks established that:
+
+- All 5,749 identities were represented.
+- Identity counts matched the reconstructed LFW dataset for all 5,749 identities.
+- The total image count matched 13,233.
+- Direct positional alignment with the reconstructed archive ordering was not established.
+
+The original pipeline did not preserve image paths, and its exact TFDS enumeration order could not be independently reconstructed with sufficient certainty.
+
+#### 7. Diagnostic Image Mapping Artifact
+
+A separate diagnostic CSV was generated to preserve the reconstructed image-level correspondence.
+
+**Diagnostic CSV:** [`lfw_embedding_image_mapping_diagnostic.csv`](experiments/lfw_embedding_image_mapping_diagnostic.csv)
+
+**Repository location:** `experiments/lfw_embedding_image_mapping_diagnostic.csv`
+
+The CSV contains 13,233 records and seven columns:
+
+| Column | Description |
+|---|---|
+| `recovered_row` | Row position in the regenerated embedding matrix |
+| `dataset_index` | Original metadata dataset index |
+| `metadata_identity` | Identity recorded in the metadata |
+| `matched_identity` | Identity associated with the matched image |
+| `matched_image_path` | Reconstructed LFW image path |
+| `cosine_similarity` | Similarity score for the assigned correspondence |
+| `identity_match` | Boolean identity consistency indicator |
+
+The saved CSV was reloaded and verified. All checks passed, including identity consistency, unique image paths, finite similarity values, and preservation of dataset indices, image paths, and similarity scores.
+
+This CSV is a diagnostic provenance artifact. It does not replace or modify the existing embedding or metadata artifacts.
+
+#### 8. Reproducibility Limitations
+
+The audit identified the following limitations:
+
+1. The original extraction pipeline did not preserve image filenames or image paths alongside embedding vectors.
+2. Exact original TFDS enumeration order could not be independently established.
+3. The regenerated embeddings were not numerically identical to the independently recomputed embeddings.
+4. The precise cause of the remaining numerical differences has not been isolated.
+5. High cosine similarity does not independently establish real-world biometric recognition accuracy, fairness, or deployment readiness.
+
+#### 9. Audit Conclusion
+
+The provenance audit established one-to-one image-level correspondence for all 13,233 regenerated embedding rows against the verified LFW source images.
+
+The reconstructed embeddings demonstrated consistently high cosine similarity, with a mean of 0.999795 and a minimum of 0.997429.
+
+These findings provide strong evidence of embedding-level correspondence. However, exact reproduction of the original dataset enumeration order and numerical embedding values has not been demonstrated.
+
+The regenerated artifacts and diagnostic mapping CSV should therefore be treated as reconstructed research artifacts rather than exact recovered copies of the original pipeline outputs.
+
+**Audit status:** Image-level correspondence verified; exact numerical and ordering reproducibility not established.
+
 ### Limitations
 
 These experiments use synthetic distributions and controlled transformations of static face images, not naturally occurring temporal biometric drift. Bootstrap/resampling replicates overlap and are not independent observations. Stage 3 uses one stream per condition, and the repeated-resampling control results show substantial late alarms and pre-onset alarms.
@@ -655,6 +785,7 @@ Experiment 13 investigates false-alarm-controlled embedding-level drift detectio
 The evidence supports continued methodological investigation, not a claim of reliable real-world biometric drift detection. The frozen detector parameters, Stage 3 fresh-identity results, and Stage 3 bootstrap results and trace are available in the repository. The corrected bootstrap analysis identifies substantial pre-onset and control-condition alarm concerns. Exact reproduction of the original Mahalanobis scores remains unverified because the original reference-model artifacts were not recovered.
 
 **Overall status:** exploratory experiment completed; selected outputs verified; full numerical reproducibility remains incomplete.
+
 
 ## Experiment 14: Drift Detection Under Gradual and Recurring Distribution Shifts
 
@@ -1432,134 +1563,366 @@ Further evaluation across more identities, independent datasets, and naturally o
 
 **Overall status:** Controlled illumination experiment completed; statistical analyses and saved-artifact verification completed; real-world biometric validation remains outstanding.
 
-## Experiment 13 – Embedding Provenance and Reproducibility Audit
 
-### 1. Audit Objective
+## Experiment 19: Disentangling Identity-Composition Drift from Within-Identity Embedding Drift in Biometric Representation Systems
 
-A provenance audit was conducted to investigate the correspondence between the regenerated embedding matrix, its associated metadata, and the original Labeled Faces in the Wild (LFW) images.
+### Objective
 
-The original embedding-generation pipeline preserved identity labels and sequential dataset indices but did not record the corresponding image filenames or paths. Therefore, direct verification of the original image-to-embedding mapping was not possible from the saved metadata alone.
+Experiment 19 investigates the distinction between identity-composition drift and within-identity embedding drift in biometric representation systems.
 
-### 2. Verified Dataset and Model Configuration
+The experiment examines how changes in the proportions of represented identities and changes in embedding distributions within individual identities affect global embedding distributions and drift-monitoring methods.
 
-| Property | Verified result |
+The study uses controlled scenarios constructed from an LFW-derived FaceNet embedding subset.
+
+### Research Questions
+
+The experiment addresses four research questions:
+
+1. How do changes in identity composition affect global embedding distributions?
+2. Can within-identity embedding distribution changes be detected independently of identity-composition changes?
+3. How effectively can global and identity-conditioned monitoring distinguish these mechanisms?
+4. How do detection performance and false alarms change when both mechanisms occur simultaneously?
+
+### Experimental Design
+
+Four controlled scenarios were constructed:
+
+| Scenario | Description |
 |---|---|
-| Dataset | Labeled Faces in the Wild (LFW) |
-| Total images | 13,233 |
-| Total identities | 5,749 |
+| C0 — No drift | Identity composition and conditional distributions remain stable. |
+| C1 — Composition drift | Identity proportions change while original embeddings are used. |
+| C2 — Within-identity drift | Identity proportions remain stable while low-illumination embedding variants are introduced. |
+| C3 — Combined drift | Identity proportions change and low-illumination embedding variants are introduced. |
+
+Each scenario contains 440 observations:
+
+- 220 baseline observations.
+- 220 post-change observations.
+- 22 windows per scenario.
+- Window size of 20 observations.
+
+The scenarios share the same baseline observations.
+
+Bootstrap sampling with replacement was used to construct the controlled scenarios because of substantial identity imbalance in the source cohort.
+
+### Dataset and Embeddings
+
+The experiment uses a filtered LFW-derived biometric embedding subset.
+
+| Property | Value |
+|---|---:|
+| Unique identities | 13 |
 | Embedding dimension | 512 |
-| Embedding data type | float32 |
-| Embedding model | FaceNet / Inception-ResNet-v1 |
-| `keras-facenet` version | 0.3.2 |
+| Original paired observations | 889 |
+| Embedding model | InceptionResnetV1 |
+| Pretrained weights | VGGFace2 |
+| Within-identity perturbation | Low-illumination embedding variants |
 
-The LFW source archive was verified using SHA-256:
+Identity 14 accounts for approximately 56.69% of the original paired cohort.
 
-```text
-055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0
-```
+The bootstrap-generated observations are not independent images. This limitation is considered when interpreting the results.
 
-The pretrained FaceNet weights were verified using SHA-256:
+### Drift Monitoring Methods
 
-```text
-8b71e7045497e841c00ee568f031d1a4d30908fceadf6884aef2dec4d545202b
-```
+Three monitoring approaches were evaluated:
 
-### 3. Reconstruction and Matching Method
+1. **Global Euclidean detector:** Measures normalized Euclidean distance from the global reference centroid.
+2. **Global Mahalanobis detector:** Measures covariance-adjusted distance from the global reference distribution, using covariance shrinkage of 0.10.
+3. **Identity-conditioned detector:** Measures standardized Euclidean displacement relative to identity-specific reference centroids and dispersion.
 
-Fresh FaceNet embeddings were independently generated from the verified LFW image archive.
+The identity-conditioned approach uses identity labels. It should not be interpreted as a label-free operational monitoring method.
 
-The regenerated embedding matrix was compared against the independently recomputed embedding matrix using identity-constrained cosine similarity matching. A one-to-one Hungarian assignment was performed within each identity group to establish image-level correspondence.
+### Calibration and Evaluation
 
-### 4. Image-Level Correspondence Results
+The reference observations were divided into model-fitting and calibration partitions.
 
-| Validation metric | Result |
+| Partition | Observations |
 |---|---:|
-| Total embedding rows matched | 13,233 |
-| Unmatched rows | 0 |
-| Unique image assignments | True |
-| Identity consistency | 13,233 / 13,233 |
-| Minimum cosine similarity | 0.997429 |
-| Median cosine similarity | 0.999820 |
-| Mean cosine similarity | 0.999795 |
-| Maximum cosine similarity | 0.999970 |
+| Model fitting | 261 |
+| Calibration | 181 |
+| Evaluation | 447 |
 
-All 13,233 embedding rows were assigned to unique images, with identity consistency maintained throughout the matching process.
+The model-fitting and calibration partitions were disjoint.
 
-### 5. Numerical Similarity Analysis
+Calibration thresholds were estimated using bootstrap windows of calibration scores. The thresholds are sample-dependent and should not be interpreted as operationally validated false-positive rates.
 
-After aligning the independently generated embeddings with their assigned image positions, numerical differences were evaluated.
+### Main Results
 
-| Metric | Result |
+#### 1. Identity-composition drift
+
+At the 5% calibration threshold:
+
+| Detector | C1: Composition drift | C3: Combined drift |
+|---|---:|---:|
+| Global Euclidean | 11/11 | 11/11 |
+| Global Mahalanobis | 11/11 | 11/11 |
+
+Both global detectors detected all 11 post-change windows in the composition-drift and combined-drift scenarios.
+
+This indicates strong sensitivity to the constructed identity-composition changes.
+
+#### 2. Within-identity drift
+
+For C2, the within-identity drift scenario:
+
+| Detector | Detected post-change windows |
 |---|---:|
-| Median L2 difference | 0.018968 |
-| Mean L2 difference | 0.019624 |
-| Maximum L2 difference | 0.071707 |
-| Mean absolute element-wise difference | 0.000696 |
-| Median cosine similarity | 0.999820 |
-| Minimum cosine similarity | 0.997429 |
+| Global Euclidean | 1/11 |
+| Global Mahalanobis | 0/11 |
+| Identity-conditioned | 1/11 |
 
-The regenerated and independently recomputed embedding matrices exhibited nearly identical vector norm distributions, with norms approximately equal to 1.
+The low-illumination condition produced measurable identity-level embedding displacement, although window-level detection was weak.
 
-Despite the high cosine similarity, the embedding vectors were not numerically identical. Exact numerical reproducibility has therefore not been established.
+#### 3. Combined drift
 
-### 6. Dataset and Metadata Verification
+For C3 at the 5% calibration threshold:
 
-The regenerated metadata contained 13,233 unique, consecutive dataset indices ranging from 0 to 13,232.
+| Detector | Detected post-change windows |
+|---|---:|
+| Global Euclidean | 11/11 |
+| Global Mahalanobis | 11/11 |
+| Identity-conditioned | 7/11 |
 
-Additional checks established that:
+The combined scenario was strongly detected by global monitoring, primarily in the presence of the constructed composition change.
 
-- All 5,749 identities were represented.
-- Identity counts matched the reconstructed LFW dataset for all 5,749 identities.
-- The total image count matched 13,233.
-- Direct positional alignment with the reconstructed archive ordering was not established.
+#### 4. Identity-level statistical analysis
 
-The original pipeline did not preserve image paths, and its exact TFDS enumeration order could not be independently reconstructed with sufficient certainty.
+Paired Wilcoxon signed-rank tests were performed across 13 identities, with Holm correction across four comparisons.
 
-### 7. Diagnostic Image Mapping Artifact
+| Comparison | Mean paired difference | Holm-adjusted p-value | Significant at 0.05 |
+|---|---:|---:|---|
+| C2 vs C0 | 0.091008 | 0.001953 | Yes |
+| C3 vs C1 | 0.036232 | 0.064453 | No |
+| C1 vs C0 | 0.011150 | 0.735352 | No |
+| C3 vs C2 | -0.043626 | 0.487793 | No |
 
-A separate diagnostic CSV was generated to preserve the reconstructed image-level correspondence.
+The C2 versus C0 comparison provides evidence of increased identity-level displacement under the within-identity drift condition.
 
-**Diagnostic CSV:** [lfw_embedding_image_mapping_diagnostic.csv](experiments/lfw_embedding_image_mapping_diagnostic.csv)
+The C3 versus C1 comparison did not remain statistically significant after Holm correction.
 
-**Repository location:** `experiments/lfw_embedding_image_mapping_diagnostic.csv`
+#### 5. Drift attribution
 
-The CSV contains 13,233 records and seven columns:
+The global mean-shift decomposition was:
 
-| Column | Description |
-|---|---|
-| `recovered_row` | Row position in the regenerated embedding matrix |
-| `dataset_index` | Original metadata dataset index |
-| `metadata_identity` | Identity recorded in the metadata |
-| `matched_identity` | Identity associated with the matched image |
-| `matched_image_path` | Reconstructed LFW image path |
-| `cosine_similarity` | Similarity score for the assigned correspondence |
-| `identity_match` | Boolean identity consistency indicator |
+\[
+\Delta\mu =
+\sum_i(p_{1,i}-p_{0,i})\mu_{0,i}
++
+\sum_i p_{1,i}(\mu_{1,i}-\mu_{0,i})
+\]
 
-The saved CSV was reloaded and verified. All checks passed, including identity consistency, unique image paths, finite similarity values, and preservation of dataset indices, image paths, and similarity scores.
+The two terms represent the composition component and within-identity component, respectively.
 
-This CSV is a diagnostic provenance artifact. It does not replace or modify the existing embedding or metadata artifacts.
+The maximum numerical reconstruction error was approximately \(8.85\times10^{-17}\).
 
-### 8. Reproducibility Limitations
+This confirms numerical consistency of the decomposition, not causal isolation of the underlying mechanisms.
 
-The audit identified the following limitations:
+### Statistical Interpretation
 
-1. The original extraction pipeline did not preserve image filenames or image paths alongside embedding vectors.
-2. Exact original TFDS enumeration order could not be independently established.
-3. The regenerated embeddings were not numerically identical to the independently recomputed embeddings.
-4. The precise cause of the remaining numerical differences has not been isolated.
-5. High cosine similarity does not independently establish real-world biometric recognition accuracy, fairness, or deployment readiness.
+The findings demonstrate that identity-composition changes and within-identity embedding displacement can affect global embedding distributions differently.
 
-### 9. Audit Conclusion
+The composition-drift scenarios produced strong detection responses from both global detectors. In contrast, within-identity drift produced measurable identity-level displacement but weak window-level detection.
 
-The provenance audit established one-to-one image-level correspondence for all 13,233 regenerated embedding rows against the verified LFW source images.
+The identity-level statistical comparison identified a significant difference between C2 and C0 after Holm correction. However, the C3 versus C1 comparison was not statistically significant after correction.
 
-The reconstructed embeddings demonstrated consistently high cosine similarity, with a mean of 0.999795 and a minimum of 0.997429.
+These findings highlight the limitations of aggregate global monitoring when attempting to distinguish different sources of biometric embedding drift.
 
-These findings provide strong evidence of embedding-level correspondence. However, exact reproduction of the original dataset enumeration order and numerical embedding values has not been demonstrated.
+### Reproducibility and Integrity Verification
 
-The regenerated artifacts and diagnostic mapping CSV should therefore be treated as reconstructed research artifacts rather than exact recovered copies of the original pipeline outputs.
+The experiment includes:
 
-**Audit status:** Image-level correspondence verified; exact numerical and ordering reproducibility not established.
+- Environment and configuration records.
+- Sampling and scenario-generation protocols.
+- Detector configuration and calibration thresholds.
+- Scenario validation outputs.
+- Detection and attribution results.
+- Identity-level statistical results.
+- SHA-256 reproducibility manifest.
+- Consolidated research evidence.
+
+The independent artifact audit passed all 55 checks.
+
+These checks support the integrity and consistency of the recorded research artifacts. They do not establish independent reproduction of the complete experimental pipeline or generalisation to external datasets.
+
+### Research Artifacts
+
+**Visual results:**
+
+- [Figure 1 — Drift Attribution](plots/experiment19_figure1_drift_attribution.png)
+- [Figure 2 — Identity Displacement](plots/experiment19_figure2_identity_displacement.png)
+- [Figure 3 — Statistical Significance](plots/experiment19_figure3_statistical_significance.png)
+
+The experiment also includes sampling protocols, detector configurations, calibration thresholds, statistical results, scenario validation outputs, and reproducibility documentation.
+
+### Limitations
+
+- The experiment uses only 13 identities from a filtered LFW-derived subset.
+- The identity distribution is substantially imbalanced.
+- Bootstrap sampling with replacement creates repeated observations.
+- Each scenario contains only 22 evaluation windows.
+- Calibration is based on 181 observations.
+- Identity-conditioned monitoring requires identity labels.
+- Low illumination is the specific within-identity perturbation studied.
+- Post-change samples are independently resampled rather than strictly paired image observations.
+- Statistical inference is based on only 13 identity-level paired observations.
+- The experiment does not establish real-world biometric recognition accuracy, operational fairness, or deployment readiness.
+
+### Interpretation Boundary
+
+The findings apply to the controlled LFW-derived embedding experiment.
+
+They do not establish:
+
+- Label-free operational monitoring.
+- Generalisation across biometric datasets or recognition models.
+- Causal isolation of drift mechanisms.
+- Real-world biometric recognition performance.
+- Deployment readiness.
+
+### Data Availability
+
+The experiment uses biometric-derived embeddings and identity labels. Raw embeddings and identity-level data should not be publicly redistributed without verifying the source dataset's licensing, applicable ethical conditions, and data-sharing permissions.
+
+Aggregated results, figures, methodological descriptions, and reproducibility documentation can be provided separately.
+
+### Conclusion
+
+Experiment 19 provides controlled evidence that identity-composition changes and within-identity embedding displacement can affect global embedding distributions differently.
+
+The global Euclidean and Mahalanobis detectors showed strong sensitivity to the constructed composition-drift scenarios, while detection of within-identity drift was substantially weaker.
+
+The identity-level statistical analysis identified increased displacement in the within-identity drift scenario compared with the no-drift scenario. However, the combined-drift comparison did not remain statistically significant after Holm correction.
+
+The results demonstrate the importance of distinguishing identity-composition changes from within-identity representation changes when designing biometric drift-monitoring systems.
+
+Further evaluation across larger identity cohorts, independent biometric datasets, and additional acquisition conditions is required.
+
+**Overall status:** Experiment completed; controlled drift scenarios evaluated; statistical analysis and 55 artifact integrity checks completed; external generalisation and operational validation remain outstanding.
+
+
+## Experiment 20: Paired Identity-Level Evaluation of Within-Identity Embedding Drift Detection Under Multiple Controlled Biometric Acquisition Changes
+
+### Objective
+
+Experiment 20 investigates reference-relative face embedding displacement across illumination geometry conditions using the Cropped Extended Yale B dataset.
+
+The experiment evaluates within-identity embedding displacement across multiple biometric acquisition conditions using a paired identity-level evaluation design.
+
+### Dataset and Evaluation Cohort
+
+The experiment uses the Cropped Extended Yale B dataset with the following recorded characteristics:
+
+| Property | Value |
+|---|---:|
+| Dataset | Cropped Extended Yale B |
+| Identities | 38 |
+| Total images | 2,414 |
+| Common acquisition conditions | 57 |
+| Non-reference observations | 2,128 |
+| Non-reference conditions | 56 |
+| Embedding dimension | 512 |
+| Embedding model | FaceNet InceptionResnetV1 VGGFace2 |
+
+The evaluation examines non-reference observations relative to identity-specific reference captures across the available illumination conditions.
+
+### Methodology
+
+- Use the Cropped Extended Yale B dataset for identity-level biometric evaluation.
+- Generate 512-dimensional face embeddings using FaceNet InceptionResnetV1 VGGFace2.
+- Evaluate reference-relative embedding displacement across illumination geometry conditions.
+- Compare within-identity observations across multiple acquisition conditions.
+- Apply paired identity-level statistical analysis.
+- Evaluate statistical differences using the Friedman test and Holm-adjusted pairwise comparisons.
+
+### Statistical Results
+
+The experiment evaluated differences across the illumination conditions using the Friedman test.
+
+| Statistical measure | Result |
+|---|---:|
+| Friedman chi-square statistic | 76.0 |
+| Friedman test p-value | 3.139 × 10⁻¹⁷ |
+| Kendall's coefficient of concordance (W) | 1.0 |
+| Holm-adjusted pairwise comparisons | Remained significant |
+
+The Friedman test identified statistically significant differences across the evaluated conditions.
+
+The Kendall's W value indicates complete concordance in the observed condition rankings within this evaluation. These findings describe the evaluated dataset and experimental design; they do not establish generalisation to other biometric datasets or systems.
+
+### Statistical Interpretation
+
+The results indicate systematic differences in reference-relative embedding displacement across the evaluated illumination geometry conditions.
+
+The statistically significant Friedman result and Holm-adjusted pairwise comparisons provide evidence of differences among the tested conditions.
+
+However, statistical significance does not independently establish biometric recognition failure, reliable operational drift detection, or successful detection of naturally occurring acquisition changes.
+
+### Reproducibility and Integrity Verification
+
+The experiment's research package includes:
+
+- Frozen source dataset archive.
+- Face embedding artifacts.
+- Experimental configuration records.
+- Dataset and embedding audit records.
+- SHA-256 checksum manifest.
+- Research figures.
+- Integrated research manuscript.
+- Supporting audit and administrative closure records.
+
+The Phase 4.7 manuscript audit verified the conclusion insertion but reported one structural check requiring review. Therefore, the overall automated manuscript audit must not be described as fully passed.
+
+The Phase 5.5 project closure record documents administrative closure. It does not establish independent scientific validation.
+
+### Research Artifacts
+
+**Notebook:**
+
+[Experiment 20 Notebook](notebook/Experiment_20.ipynb)
+
+**Final research manuscript:**
+
+[Phase 4.7 Integrated Manuscript](manuscript/experiment20_integrated_manuscript_v2_phase47_final.md)
+
+**Research figures:**
+
+[Figures directory](figures/)
+
+The figures directory contains four frozen research figures.
+
+**Supporting records:**
+
+[Supporting audits and closure records](supporting_records/)
+
+**Dataset package:**
+
+The frozen dataset package contains the source archive, embeddings, configuration, audits, and checksum manifest.
+
+The dataset ZIP is maintained separately because of its size and is not included in this repository.
+
+### Limitations
+
+- The acquisition captures are not controlled transformations.
+- The dataset archive has not been authenticated against the official UCSD checksum.
+- Exact model-weight checksum preservation is incomplete.
+- One reference capture per identity was used.
+- Only one embedding architecture was evaluated.
+- The study does not establish biometric recognition accuracy.
+- The experiment does not demonstrate operational drift detection.
+- The results do not establish deployment readiness or generalisation to independent biometric datasets.
+
+### Conclusion
+
+Experiment 20 provides an identity-level evaluation of reference-relative face embedding displacement across illumination geometry conditions using the Cropped Extended Yale B dataset.
+
+The Friedman test identified statistically significant differences across the evaluated conditions, with a chi-square statistic of 76.0, a p-value of 3.139 × 10⁻¹⁷, and Kendall's W of 1.0. Holm-adjusted pairwise comparisons also remained significant.
+
+These findings provide evidence of systematic embedding displacement differences across the tested acquisition conditions. However, the study does not establish real-world biometric recognition accuracy, operational drift detection, or deployment readiness.
+
+Further evaluation using independently authenticated datasets, multiple embedding architectures, and additional reference captures is required.
+
+**Overall status:** Experiment completed and administratively closed; statistical results and research artifacts documented; independent scientific validation and operational drift detection remain outstanding.
+
 
 ## Author
 
